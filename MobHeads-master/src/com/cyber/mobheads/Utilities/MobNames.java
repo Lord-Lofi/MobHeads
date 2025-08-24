@@ -629,16 +629,34 @@ public enum MobNames {
 			return Zombie_Nitwit_Villager;
 		}
 		switch (zombieVillager.getVillagerProfession()) {
-			case TOOLSMITH:
-				return Zombie_Smith_Villager;
+			case ARMORER:
+				return Zombie_Armorer_Villager;
 			case BUTCHER:
 				return Zombie_Butcher_Villager;
-			case FARMER:
-				return Zombie_Farmer_Villager;
-			case LIBRARIAN:
-				return Zombie_Librarian_Villager;
+			case CARTOGRAPHER:
+				return Zombie_Cartographer_Villager;
 			case CLERIC:
 				return Zombie_Cleric_Villager;
+			case FARMER:
+				return Zombie_Farmer_Villager;
+			case FISHERMAN:
+				return Zombie_Fisherman_Villager;
+			case FLETCHER:
+				return Zombie_Fletcher_Villager;
+			case LEATHERWORKER:
+				return Zombie_Leatherworker_Villager;
+			case LIBRARIAN:
+				return Zombie_Librarian_Villager;
+			case MASON:
+				return Zombie_Mason_Villager;
+			case NITWIT:
+				return Zombie_Nitwit_Villager;
+			case SHEPHERD:
+				return Zombie_Shepherd_Villager;
+			case TOOLSMITH:
+				return Zombie_Toolsmith_Villager;
+			case WEAPONSMITH:
+				return Zombie_Weaponsmith_Villager;
 			default:
 				return Zombie_Nitwit_Villager;
 		}
@@ -664,10 +682,18 @@ public enum MobNames {
 				return Villager_Fisherman;
 			case FLETCHER:
 				return Villager_Fletcher;
+			case LEATHERWORKER:
+				return Villager_Leatherworker;
 			case LIBRARIAN:
 				return Villager_Librarian;
+			case MASON:
+				return Villager_Mason;
+			case NITWIT:
+				return Villager_Nitwit;
 			case SHEPHERD:
 				return Villager_Shepherd;
+			case TOOLSMITH:
+				return Villager_Toolsmith;
 			case WEAPONSMITH:
 				return Villager_Weaponsmith;
 			default:
