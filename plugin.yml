@@ -1,0 +1,15 @@
+name: MobHeads
+main: com.cyber.mobheads.Main
+version: 5.0
+authors:
+    - CyberDrain
+    - Zombie_Striker
+    - Lord_Lofi
+api-version: 1.21.8
+description: Allows players to behead mobs and other players!
+commands:
+    mobheads:
+        description: Main command with several sub commands
+        aliases: [mh, mobhead]
+softdepend:
+    - WorldGuard
