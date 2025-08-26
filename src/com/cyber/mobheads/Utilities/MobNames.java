@@ -9,7 +9,6 @@ import org.bukkit.NamespacedKey;
 public enum MobNames {
 	Allay,
 	Armadillo,
-	Axolotl,
 	Bat,
 	Bee,
 	Blaze,
@@ -29,7 +28,6 @@ public enum MobNames {
 	Ghast,
 	Giant,
 	Glow_Squid,
-	Goat,
 	Guardian,
 	Happy_Ghast,
 	Hoglin,
@@ -52,7 +50,6 @@ public enum MobNames {
 	Skeleton,
 	Slime,
 	Sniffer,
-	Snow_Golem,
 	Spider,
 	Squid,
 	Stray,
@@ -104,6 +101,14 @@ public enum MobNames {
 	Villager_Toolsmith,
 	Villager_Weaponsmith,
 
+	//goat types
+	Goat,
+	Screaming_Goat,
+
+	//snow_golem types
+	Snow_Golem,
+	Derpy_Snow_Golem,
+
 	//creeper types
 	Creeper,
 	Charged_Creeper,
@@ -154,6 +159,14 @@ public enum MobNames {
 	Cold_Frog,
 	Warm_Frog,
 	
+	//axolotl types
+	Axolotl,
+	Blue_Axolotl,
+	Cyan_Axolotl,
+	Gold_Axolotl,
+	Lucy_Axolotl,
+	Wild_Axolotl,
+
 	//llama types
 	Brown_Llama,
 	Creamy_Llama,
@@ -348,7 +361,7 @@ public enum MobNames {
 			case SNIFFER:
 				return Sniffer;
 			case SNOW_GOLEM:
-				return Snow_Golem;
+				return getSnowGolemName((Snowman) entity);
 			case SPIDER:
 				return Spider;
 			case SQUID:
@@ -424,7 +437,7 @@ public enum MobNames {
 			case AXOLOTL:
 				return Axolotl;
 			case GOAT:
-				return Goat;
+				return getGoatName((Goat) entity);
 		}
 		return null;
 	}
@@ -565,6 +578,26 @@ public enum MobNames {
 		}
 		return MobNames.Temperate_Frog;
 	}
+
+	private static MobNames getAxolotlName(Axolotl axolotl) {
+		if (axolotl.getVariant() == null) {
+			return null;
+		}
+		switch (axolotl.getVariant()) {
+			case BLUE:
+				return Blue_Axolotl;
+			case CYAN:
+				return Cyan_Axolotl;
+			case GOLD:
+				return Gold_Axolotl;
+			case LUCY:
+				return Lucy_Axolotl;
+			case WILD:
+				return Wild_Axolotl;
+		}
+		return null;
+	}
+
 	private static MobNames getMooshroomName(MushroomCow mooshroom) {
 		if (mooshroom.getVariant() == MushroomCow.Variant.BROWN) {
 			return Mooshroom_Brown;
@@ -578,6 +611,20 @@ public enum MobNames {
 			return Charged_Creeper;
 		}
 		return Creeper;
+	}
+
+	private static MobNames getGoatName(Goat goat) {
+		if (goat.isScreaming()) {
+			return Screaming_Goat;
+		}
+		return Goat;
+	}
+
+	private static MobNames getSnowGolemName(Snowman snowgolem) {
+		if (snowgolem.isDerp()) {
+			return Derpy_Snow_Golem;
+		}
+		return Snow_Golem;
 	}
 
 	private static MobNames getHorseName(Horse horse) {
