@@ -14,7 +14,6 @@ Releases are located on the Right-Hand side -->
   ```yaml
 Allay,
 Armadillo,
-Axolotl,
 Bat,
 Bee,
 Blaze,
@@ -34,7 +33,6 @@ Evoker,
 Ghast,
 Giant,
 Glow_Squid,
-Goat,
 Guardian,
 Happy_Ghast,
 Hoglin,
@@ -57,7 +55,6 @@ Silverfish,
 Skeleton,
 Slime,
 Sniffer,
-Snow_Golem,
 Spider,
 Squid,
 Stray,
@@ -112,6 +109,21 @@ Villager_Weaponsmith,
 ----creeper types----
 Creeper,
 Charged_Creeper,
+
+----snow golem types----
+Snow_Golem,
+Derpy_Snow_Golem,
+
+----goat types----
+Goat,
+Screaming_Goat,
+
+----axolotl types----
+Blue_Axolotl,
+Cyan_Axolotl,
+Gold_Axolotl,
+Lucy_Axolotl,
+Wild_Axolotl,
 
 ----cow types----
 Cow,
