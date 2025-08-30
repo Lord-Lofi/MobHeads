@@ -435,7 +435,7 @@ public enum MobNames {
 			case GLOW_SQUID:
 				return Glow_Squid;
 			case AXOLOTL:
-				return Axolotl;
+				return getAxolotlName((Axolotl) entity);
 			case GOAT:
 				return getGoatName((Goat) entity);
 		}
@@ -504,19 +504,24 @@ public enum MobNames {
 		}
 		// Get the NamespacedKey of the cow's variant
 		final NamespacedKey cowVariantKey = cow.getVariant().getKey();
-		// Compare the key to the registry variants
-		if (cowVariantKey.equals(Registry.COW_VARIANT.get(new NamespacedKey("minecraft", "cold")).getKey())) {
+
+		// Define the NamespacedKeys for comparison
+		final NamespacedKey coldKey = new NamespacedKey("minecraft", "cold");
+		final NamespacedKey temperateKey = new NamespacedKey("minecraft", "temperate");
+		final NamespacedKey warmKey = new NamespacedKey("minecraft", "warm");
+
+		// Get the variants from the registry using their NamespacedKeys and compare
+		if (cowVariantKey.equals(Registry.COW_VARIANT.get(coldKey).getKey())) {
 			return MobNames.Cold_Cow;
 		}
-		if (cowVariantKey.equals(Registry.COW_VARIANT.get(new NamespacedKey("minecraft", "temperate")).getKey())) {
+		if (cowVariantKey.equals(Registry.COW_VARIANT.get(temperateKey).getKey())) {
 			return MobNames.Temperate_Cow;
 		}
-		if (cowVariantKey.equals(Registry.COW_VARIANT.get(new NamespacedKey("minecraft", "warm")).getKey())) {
+		if (cowVariantKey.equals(Registry.COW_VARIANT.get(warmKey).getKey())) {
 			return MobNames.Warm_Cow;
 		}
-		// Default return if no match is found
-		return Cow;
-		}
+		return MobNames.Temperate_Cow;
+	}
 	private static MobNames getChickenName(Chicken chicken) {
 		// Check if the chicken's variant is null
 		if (chicken.getVariant() == null) {
@@ -524,38 +529,48 @@ public enum MobNames {
 		}
 		// Get the NamespacedKey of the chicken's variant
 		final NamespacedKey chickenVariantKey = chicken.getVariant().getKey();
-		// Compare the key to the registry variants
-		if (chickenVariantKey.equals(Registry.CHICKEN_VARIANT.get(new NamespacedKey("minecraft", "cold")).getKey())) {
+
+		// Define the NamespacedKeys for comparison
+		final NamespacedKey coldKey = new NamespacedKey("minecraft", "cold");
+		final NamespacedKey temperateKey = new NamespacedKey("minecraft", "temperate");
+		final NamespacedKey warmKey = new NamespacedKey("minecraft", "warm");
+
+		// Get the variants from the registry using their NamespacedKeys and compare
+		if (chickenVariantKey.equals(Registry.CHICKEN_VARIANT.get(coldKey).getKey())) {
 			return MobNames.Cold_Chicken;
 		}
-		if (chickenVariantKey.equals(Registry.CHICKEN_VARIANT.get(new NamespacedKey("minecraft", "temperate")).getKey())) {
+		if (chickenVariantKey.equals(Registry.CHICKEN_VARIANT.get(temperateKey).getKey())) {
 			return MobNames.Temperate_Chicken;
 		}
-		if (chickenVariantKey.equals(Registry.CHICKEN_VARIANT.get(new NamespacedKey("minecraft", "warm")).getKey())) {
+		if (chickenVariantKey.equals(Registry.CHICKEN_VARIANT.get(warmKey).getKey())) {
 			return MobNames.Warm_Chicken;
 		}
-		// Default return if no match is found
-		return Chicken;
+		return MobNames.Temperate_Chicken;
 		}
 	private static MobNames getPigName(Pig pig) {
 		// Check if the pig's variant is null
 		if (pig.getVariant() == null) {
 			return Pig;
 		}
-		// Get the NamespacedKey of the pig's variant
+		// Get the NamespacedKey of the pig's variant using the getKey() method
 		final NamespacedKey pigVariantKey = pig.getVariant().getKey();
-		// Compare the key to the registry variants
-		if (pigVariantKey.equals(Registry.PIG_VARIANT.get(new NamespacedKey("minecraft", "cold")).getKey())) {
+
+		// Define the NamespacedKeys for comparison
+		final NamespacedKey coldKey = new NamespacedKey("minecraft", "cold");
+		final NamespacedKey temperateKey = new NamespacedKey("minecraft", "temperate");
+		final NamespacedKey warmKey = new NamespacedKey("minecraft", "warm");
+
+		// Get the variants from the registry using their NamespacedKeys and compare
+		if (pigVariantKey.equals(Registry.PIG_VARIANT.get(coldKey).getKey())) {
 			return MobNames.Cold_Pig;
 		}
-		if (pigVariantKey.equals(Registry.PIG_VARIANT.get(new NamespacedKey("minecraft", "temperate")).getKey())) {
+		if (pigVariantKey.equals(Registry.PIG_VARIANT.get(temperateKey).getKey())) {
 			return MobNames.Temperate_Pig;
 		}
-		if (pigVariantKey.equals(Registry.PIG_VARIANT.get(new NamespacedKey("minecraft", "warm")).getKey())) {
+		if (pigVariantKey.equals(Registry.PIG_VARIANT.get(warmKey).getKey())) {
 			return MobNames.Warm_Pig;
 		}
-		// Default return if no match is found
-		return Pig;
+		return MobNames.Temperate_Pig;
 	}
 	private static MobNames getFrogName(Frog frog) {
 		// Get the NamespacedKey of the frog's variant using the getKey() method
