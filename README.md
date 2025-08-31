@@ -58,7 +58,6 @@ Sniffer,
 Spider,
 Squid,
 Stray,
-Strider,
 Tadpole,
 Turtle,
 Vex,
@@ -117,6 +116,10 @@ Derpy_Snow_Golem,
 ----goat types----
 Goat,
 Screaming_Goat,
+
+----strider types----
+Hot_Strider,
+Cold_Strider,
 
 ----axolotl types----
 Blue_Axolotl,
