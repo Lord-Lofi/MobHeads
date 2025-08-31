@@ -1,87 +1,214 @@
-{
-  "display": {
-    "description": {
-      "text": "Obtain all water creatures heads",
-      "color": "white"
-    },
-    "title": {
-      "text": "Legendary Poseidon",
-      "color": "white"
-    },
-    "icon": {
-      "item": "trident",
-      "tag": 0
-    },
-    "frame": "challenge"
-  },
-  "criteria": {
-    "cod": {
-      "trigger": "minecraft:impossible"
-    },
-    "dolphin": {
-      "trigger": "minecraft:impossible"
-    },
-    "drowned": {
-      "trigger": "minecraft:impossible"
-    },
-    "elder_guardian": {
-      "trigger": "minecraft:impossible"
-    },
-    "guardian": {
-      "trigger": "minecraft:impossible"
-    },
-    "pufferfish": {
-      "trigger": "minecraft:impossible"
-    },
-    "salmon": {
-      "trigger": "minecraft:impossible"
-    },
-    "squid": {
-      "trigger": "minecraft:impossible"
-    },
-    "tropical_fish": {
-      "trigger": "minecraft:impossible"
-    },
-    "turtle": {
-      "trigger": "minecraft:impossible"
+{  
+   "display":{  
+      "description":{  
+         "text":"Obtain all water creatures heads",
+         "color":"white"
+      },
+      "title":{  
+         "text":"Legendary Poseidon",
+         "color":"white"
+      },
+      "icon":{  
+         "id":"trident",
+         "tag":0
+      },
+      "frame":"challenge"
+   },
+   "criteria":{
+      "cod":{  
+         "trigger":"minecraft:impossible"
+      },
+      "dolphin":{  
+         "trigger":"minecraft:impossible"
+      },
+      "drowned":{  
+         "trigger":"minecraft:impossible"
+      },
+      "elder_guardian":{  
+         "trigger":"minecraft:impossible"
+      },
+      "guardian":{  
+         "trigger":"minecraft:impossible"
+      },
+      "pufferfish":{  
+         "trigger":"minecraft:impossible"
+      },
+      "salmon":{  
+         "trigger":"minecraft:impossible"
+      },
+      "glowsquidhead1":{  
+         "trigger":"minecraft:impossible"
+      },
+      "babyglowsquid":{  
+         "trigger":"minecraft:impossible"
+      },
+      "squidhead1":{  
+         "trigger":"minecraft:impossible"
+      },
+      "babysquid":{  
+         "trigger":"minecraft:impossible"
+      },
+      "turtle":{  
+         "trigger":"minecraft:impossible"
+      },
+      "Blue_Axolotl":{  
+         "trigger":"minecraft:impossible"
+      },
+      "Wild_Axolotl":{  
+         "trigger":"minecraft:impossible"
+      },
+      "Gold_Axolotl":{  
+         "trigger":"minecraft:impossible"
+      },
+      "Cyan_Axolotl":{  
+         "trigger":"minecraft:impossible"
+      },
+   	 "Lucy_Axolotl": {
+         "trigger": "minecraft:impossible"
+   	 },
+      "tropical_fish_1": {
+         "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_2": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_3": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_4": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_5": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_6": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_7": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_8": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_9": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_11": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_10": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_12": {
+        "trigger": "minecraft:impossible"
+      },
+      "tropical_fish_13": {
+        "trigger": "minecraft:impossible"
     }
   },
-  "rewards": {
-  },
-  "requirements": [
-    [
-      "cod"
-    ],
-    [
-      "dolphin"
-    ],
-    [
-      "drowned"
-    ],
-    [
-      "elder_guardian"
-    ],
-    [
-      "guardian"
-    ],
-    [
-      "pufferfish"
-    ],
-    [
-      "salmon"
-    ],
-    [
-      "squid"
-    ],
-    [
-      "tropical_fish"
-    ],
-    [
-      "turtle"
-    ]
-  ],
-  "filename": 21,
-  "parent-count": 3,
-  "parent-type": "child",
-  "parent": "mobheads:ocean_monument"
+   "rewards":{  
+
+   },
+   "requirements":[  
+      [  
+         "cod"
+      ],
+      [  
+         "dolphin"
+      ],
+      [  
+         "drowned"
+      ],
+      [  
+         "elder_guardian"
+      ],
+      [  
+         "guardian"
+      ],
+      [  
+         "pufferfish"
+      ],
+      [  
+         "salmon"
+      ],
+      [  
+         "glowsquidhead1" 
+      ],
+      [   
+         "guardian"
+      ],
+      [   
+         "salmon"
+      ],
+      [   
+         "babyglowsquid" 
+      ],
+      [ 
+         "squidhead1"
+      ],
+      [   
+         "babysquid" 
+      ],
+      [ 
+         "turtle"
+      ],
+      [  
+         "Blue_Axolotl"
+      ],
+      [  
+         "Wild_Axolotl"
+      ],
+      [  
+         "Gold_Axolotl" 
+      ],
+      [  
+         "Cyan_Axolotl"
+      ],
+      [
+         "tropical_fish_1"
+      ],
+      [
+         "tropical_fish_2"
+      ],
+      [
+         "tropical_fish_3"
+      ],
+      [
+         "tropical_fish_4"
+      ],
+      [
+         "tropical_fish_5"
+      ],
+      [
+         "tropical_fish_6"
+      ],
+      [
+         "tropical_fish_7"
+      ],
+      [
+         "tropical_fish_8"
+      ],
+      [
+         "tropical_fish_9"
+      ],
+      [
+         "tropical_fish_10"
+      ],
+      [
+         "tropical_fish_11"
+      ],
+      [
+         "tropical_fish_12"
+      ],
+      [
+         "tropical_fish_13"
+      ],
+      [  
+         "Lucy_Axolotl"
+      ]
+   ],
+   "filename":9,
+   "parent-count":3,
+   "parent-type":"parent",
+   "parent":"mobheads:firstmobhead"
 }

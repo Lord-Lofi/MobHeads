@@ -1,0 +1,116 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain all villager heads",
+      "color": "white"
+    },
+    "title": {
+      "text": "Wiped Off the Map",
+      "color": "white"
+    },
+    "icon": {
+      "id": "emerald",
+      "tag": 0
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_armorer": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_butcher": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_cartographer": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_cleric": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_farmer": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_fisherman": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_fletcher": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_librarian": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_shepherd": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_weaponsmith": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_nitwit": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_leatherworker": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_mason": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_toolsmith": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "villager"
+    ],
+    [
+      "villager_armorer"
+    ],
+    [
+      "villager_butcher"
+    ],
+    [
+      "villager_cartographer"
+    ],
+    [
+      "villager_cleric"
+    ],
+    [
+      "villager_farmer"
+    ],
+    [
+      "villager_fisherman"
+    ],
+    [
+      "villager_fletcher"
+    ],
+    [
+      "villager_librarian"
+    ],
+    [
+      "villager_shepherd"
+    ],
+    [
+      "villager_weaponsmith"
+    ],
+    [
+      "villager_nitwit"
+    ],
+    [
+      "villager_leatherworker"
+    ],
+    [
+      "villager_mason"
+    ],
+    [
+      "villager_toolsmith"
+    ]
+  ],
+  "filename": 26,
+  "parent-count": 3,
+  "parent-type": "parent",
+  "parent": "mobheads:firstmobhead"
+}

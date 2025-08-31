@@ -1,0 +1,89 @@
+{
+   "display":{
+      "description":{
+         "text":"Obtain all wild wolf heads",
+         "color":"white"
+      },
+      "title":{
+         "text":"The Pack Ends Here",
+         "color":"white"
+      },
+      "icon":{
+         "id":"bone",
+		 "tag":0
+      },
+      "frame":"challenge"
+   },
+   "criteria":{
+    "wild_ashen_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_black_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_chestnut_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_pale_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_rusty_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_snowy_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_striped_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_woods_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_spotted_wolf": {
+      "trigger": "minecraft:impossible"
+      }
+   },
+   "rewards":{
+
+   },
+   "requirements":[
+    [
+     "wild_ashen_wolf"
+    ],
+    [
+      "wild_black_wolf"
+    ],
+    [
+      "wild_chestnut_wolf"
+    ],
+    [
+      "wild_wolf"
+    ],
+    [
+      "wild_pale_wolf"
+    ],
+    [
+      "wild_rusty_wolf"
+    ],
+    [
+      "wild_striped_wolf"
+    ],
+    [
+      "wild_woods_wolf"
+    ],
+    [
+      "wild_snowy_wolf"
+    ],
+    [
+      "wild_spotted_wolf"
+    ]
+   ],
+     
+   "filename":160,
+   "parent-count":3,
+   "parent-type":"parent",
+   "parent":"mobheads:firstmobhead"
+}

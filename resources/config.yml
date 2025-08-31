@@ -1756,7 +1756,7 @@ ListOfMobs:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 hoglin"
       - "mobheads:nether_dimension hoglin"
-  Strider:
+  Hot_Strider:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
     dropOnChargedCreeperDeath: true
@@ -1770,6 +1770,12 @@ ListOfMobs:
           - "mobheads:firstmobhead first_mob_head"
           - "mobheads:thelegend27 striderhot"
           - "mobheads:nether_dimension striderhot"
+  Cold_Strider:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    skullList:
       StriderCold:
         displayName: "&eStrider(Cold) Head"
         random_uuid: 08c34ceb-dd07-4447-adbc-21d402e885b9

@@ -1,0 +1,33 @@
+{
+  "display": {
+    "description": {
+      "text": "Kill and behead the Happy Ghast",
+      "color": "white"
+    },
+    "title": {
+      "text": "Not So Happy Now",
+      "color": "white"
+    },
+    "icon": {
+      "id": "ghast_tear",
+      "tag": 0
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "happy_ghast": {
+      "trigger": "minecraft:impossible"
+    }
+
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "happy_ghast"
+    ]
+  ],
+  "filename": 255,
+  "parent-count": 3,
+  "parent-type": "parent",
+  "parent": "mobheads:firstmobhead"
+}

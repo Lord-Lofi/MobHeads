@@ -1,0 +1,88 @@
+{
+   "display":{
+      "description":{
+         "text":"Obtain all tamed wolf heads",
+         "color":"white"
+      },
+      "title":{
+         "text":"Betrayal of the Pack",
+         "color":"white"
+      },
+      "icon":{
+         "id":"lead",
+		 "tag":0
+      },
+      "frame":"challenge",
+      "hidden": false
+   },
+   "criteria":{
+    "tamed_ashen_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_black_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_chestnut_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_pale_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_rusty_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_snowy_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_striped_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_woods_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_spotted_wolf": {
+      "trigger": "minecraft:impossible"
+      }
+   },
+   "rewards": {},
+   "requirements": [
+    [
+     "tamed_ashen_wolf"
+    ],
+    [
+      "tamed_black_wolf"
+    ],
+    [
+      "tamed_chestnut_wolf"
+    ],
+    [
+      "tamed_wolf"
+    ],
+    [
+      "tamed_pale_wolf"
+    ],
+    [
+      "tamed_rusty_wolf"
+    ],
+    [
+      "tamed_striped_wolf"
+    ],
+    [
+      "tamed_woods_wolf"
+    ],
+    [
+      "tamed_snowy_wolf"
+    ],
+    [
+      "tamed_spotted_wolf"
+    ]
+   ],
+     
+   "filename":21,
+   "parent-count":9,
+   "parent-type":"child",
+   "parent":"mobheads:wildwolf"
+}

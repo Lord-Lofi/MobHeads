@@ -1,0 +1,33 @@
+{
+  "display": {
+    "description": {
+      "text": "Kill and behead the Creaking",
+      "color": "white"
+    },
+    "title": {
+      "text": "Broken Silence",
+      "color": "white"
+    },
+    "icon": {
+      "id": "creaking_heart",
+      "tag": 0
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "creaking": {
+      "trigger": "minecraft:impossible"
+    }
+
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "creaking"
+    ]
+  ],
+  "filename": 250,
+  "parent-count": 3,
+  "parent-type": "parent",
+  "parent": "mobheads:firstmobhead"
+}

@@ -9,7 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "item": "player_head",
+      "id": "player_head",
       "tag": 0
     },
     "frame": "task"

@@ -9,10 +9,10 @@
       "color": "white"
     },
     "icon": {
-      "item": "golden_carrot",
+      "id": "golden_carrot",
       "tag": 0
     },
-    "frame": "goal",
+    "frame": "challenge",
     "hidden": true
   },
   "criteria": {

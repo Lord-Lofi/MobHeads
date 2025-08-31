@@ -9,7 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "item": "rotten_flesh",
+      "id": "rotten_flesh",
       "tag": 0
     },
     "frame": "goal",

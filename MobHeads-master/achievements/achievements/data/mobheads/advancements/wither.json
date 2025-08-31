@@ -9,7 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "item": "nether_star",
+      "id": "nether_star",
       "tag": 0
     },
     "frame": "challenge"

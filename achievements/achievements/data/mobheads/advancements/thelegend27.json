@@ -5,16 +5,44 @@
       "color": "white"
     },
     "title": {
-      "text": "thelegend27",
+      "text": "The Grand Collection",
       "color": "white"
     },
     "icon": {
-      "item": "dragon_head",
+      "id": "dragon_head",
       "tag": 0
-    }
+    },
+    "frame": "challenge"
   },
   "criteria": {
+    "allay": {
+      "trigger": "minecraft:impossible"
+    },
+    "Blue_Axolotl": {
+      "trigger": "minecraft:impossible"
+    },
+    "Wild_Axolotl": {
+      "trigger": "minecraft:impossible"
+    },
+    "Gold_Axolotl": {
+      "trigger": "minecraft:impossible"
+    },
+    "Cyan_Axolotl": {
+      "trigger": "minecraft:impossible"
+    },
+    "Lucy_Axolotl": {
+      "trigger": "minecraft:impossible"
+    },
+    "goat_head1": {
+      "trigger": "minecraft:impossible"
+    },
+    "screaming_goat_head1": {
+      "trigger": "minecraft:impossible"
+    },
     "bat": {
+      "trigger": "minecraft:impossible"
+    },
+    "bee": {
       "trigger": "minecraft:impossible"
     },
     "blaze": {
@@ -23,13 +51,34 @@
     "cave_spider": {
       "trigger": "minecraft:impossible"
     },
-    "chicken": {
+    "temperate_chicken": {
+      "trigger": "minecraft:impossible"
+    },
+    "cold_chicken": {
+      "trigger": "minecraft:impossible"
+    },
+    "warm_chicken": {
+      "trigger": "minecraft:impossible"
+    },
+    "camel": {
       "trigger": "minecraft:impossible"
     },
     "cod": {
       "trigger": "minecraft:impossible"
     },
-    "cow": {
+    "temperate_cow": {
+      "trigger": "minecraft:impossible"
+    },
+    "cold_cow": {
+      "trigger": "minecraft:impossible"
+    },
+    "warm_cow": {
+      "trigger": "minecraft:impossible"
+    },
+    "coldfroghead": {
+      "trigger": "minecraft:impossible"
+    },
+    "coldfroggy": {
       "trigger": "minecraft:impossible"
     },
     "charged_creeper": {
@@ -59,7 +108,19 @@
     "ghast": {
       "trigger": "minecraft:impossible"
     },
+    "glowsquidhead1": {
+      "trigger": "minecraft:impossible"
+    },
+    "babyglowsquid": {
+      "trigger": "minecraft:impossible"
+    },
+    "babysquid": {
+      "trigger": "minecraft:impossible"
+    },
     "guardian": {
+      "trigger": "minecraft:impossible"
+    },
+    "hoglin": {
       "trigger": "minecraft:impossible"
     },
     "black_horse": {
@@ -78,6 +139,12 @@
       "trigger": "minecraft:impossible"
     },
     "gray_horse": {
+      "trigger": "minecraft:impossible"
+    },
+    "warmfroghead": {
+      "trigger": "minecraft:impossible"
+    },
+    "warmfroggy": {
       "trigger": "minecraft:impossible"
     },
     "white_horse": {
@@ -134,7 +201,25 @@
     "phantom": {
       "trigger": "minecraft:impossible"
     },
-    "pig": {
+    "temperate_pig": {
+      "trigger": "minecraft:impossible"
+    },
+    "cold_pig": {
+      "trigger": "minecraft:impossible"
+    },
+    "warm_pig": {
+      "trigger": "minecraft:impossible"
+    },
+    "creaking": {
+      "trigger": "minecraft:impossible"
+    },
+    "happy_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "piglin": {
+      "trigger": "minecraft:impossible"
+    },
+    "piglin_brute": {
       "trigger": "minecraft:impossible"
     },
     "polar_bear": {
@@ -221,19 +306,28 @@
     "slime": {
       "trigger": "minecraft:impossible"
     },
+    "sniffer": {
+      "trigger": "minecraft:impossible"
+    },
     "snow_golem": {
       "trigger": "minecraft:impossible"
     },
     "spider": {
       "trigger": "minecraft:impossible"
     },
-    "squid": {
+    "squidhead1": {
       "trigger": "minecraft:impossible"
     },
     "stray": {
       "trigger": "minecraft:impossible"
     },
-    "tropical_fish": {
+    "tadpole": {
+      "trigger": "minecraft:impossible"
+    },
+    "temperatefroghead": {
+      "trigger": "minecraft:impossible"
+    },
+    "temperatefroggy": {
       "trigger": "minecraft:impossible"
     },
     "turtle": {
@@ -245,16 +339,115 @@
     "villager": {
       "trigger": "minecraft:impossible"
     },
+    "villager_armorer": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_butcher": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_cartographer": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_cleric": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_farmer": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_fisherman": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_fletcher": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_librarian": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_shepherd": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_weaponsmith": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_nitwit": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_leatherworker": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_mason": {
+      "trigger": "minecraft:impossible"
+    },
+    "villager_toolsmith": {
+      "trigger": "minecraft:impossible"
+    },
     "vindicator": {
       "trigger": "minecraft:impossible"
     },
     "witch": {
       "trigger": "minecraft:impossible"
     },
+    "wild_ashen_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_black_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_chestnut_wolf": {
+      "trigger": "minecraft:impossible"
+    },
     "wild_wolf": {
       "trigger": "minecraft:impossible"
     },
+    "wild_pale_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_rusty_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_snowy_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_striped_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_woods_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "wild_spotted_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_ashen_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_black_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_chestnut_wolf": {
+      "trigger": "minecraft:impossible"
+    },
     "tamed_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_pale_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_rusty_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_snowy_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_striped_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_woods_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "tamed_spotted_wolf": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_villager": {
       "trigger": "minecraft:impossible"
     },
     "zombie_pigman": {
@@ -275,13 +468,49 @@
     "zombie_nitwit_villager": {
       "trigger": "minecraft:impossible"
     },
-    "zombie_smith_villager": {
+    "zombie_toolsmith_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_armorer_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_cartographer_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_fisherman_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_fletcher_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_leatherworker_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_mason_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_shepherd_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_weaponsmith_villager": {
       "trigger": "minecraft:impossible"
     },
     "zombie": {
       "trigger": "minecraft:impossible"
     },
     "skeleton": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze": {
+      "trigger": "minecraft:impossible"
+    },
+    "bogged": {
+      "trigger": "minecraft:impossible"
+    },
+    "armadillo_head1": {
+      "trigger": "minecraft:impossible"
+    },
+    "armadillo_head2": {
       "trigger": "minecraft:impossible"
     },
     "creeper": {
@@ -303,9 +532,6 @@
       "trigger": "minecraft:impossible"
     },
     "fish": {
-      "trigger": "minecraft:impossible"
-    },
-    "clownfish": {
       "trigger": "minecraft:impossible"
     },
     "salmon": {
@@ -385,11 +611,65 @@
     },
     "cat_white": {
       "trigger": "minecraft:impossible"
+    },
+    "zoglin": {
+      "trigger": "minecraft:impossible"
+    },
+    "strider_hot": {
+      "trigger": "minecraft:impossible"
+    },
+    "strider_cold": {
+      "trigger": "minecraft:impossible"
+    },
+    "warden": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_1": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_2": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_3": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_4": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_5": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_6": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_7": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_8": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_9": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_10": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_11": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_12": {
+      "trigger": "minecraft:impossible"
+    },
+    "tropical_fish_13": {
+      "trigger": "minecraft:impossible"
     }
   },
   "rewards": {
   },
   "requirements": [
+    [
+      "allay"
+    ],
     [
       "bat"
     ],
@@ -400,13 +680,31 @@
       "cave_spider"
     ],
     [
-      "chicken"
+      "temperate_chicken"
+    ],
+    [
+      "cold_chicken"
+    ],
+    [
+      "warm_chicken"
     ],
     [
       "cod"
     ],
     [
-      "cow"
+      "goat_head1"
+    ],
+    [
+      "screaming_goat_head1"
+    ],
+    [
+      "temperate_cow"
+    ],
+    [
+      "cold_cow"
+    ],
+    [
+      "warm_cow"
     ],
     [
       "charged_creeper"
@@ -511,10 +809,22 @@
       "phantom"
     ],
     [
-      "pig"
+      "temperate_pig"
+    ],
+    [
+      "warm_pig"
+    ],
+    [
+      "cold_pig"
     ],
     [
       "polar_bear"
+    ],
+    [
+      "creaking"
+    ],
+    [
+      "happy_ghast"
     ],
     [
       "black_rabbit"
@@ -604,13 +914,13 @@
       "spider"
     ],
     [
-      "squid"
+      "squidhead1"
+    ],
+    [
+      "babysquid"
     ],
     [
       "stray"
-    ],
-    [
-      "tropical_fish"
     ],
     [
       "turtle"
@@ -622,19 +932,118 @@
       "villager"
     ],
     [
+      "villager_armorer"
+    ],
+    [
+      "villager_butcher"
+    ],
+    [
+      "villager_cartographer"
+    ],
+    [
+      "villager_cleric"
+    ],
+    [
+      "villager_farmer"
+    ],
+    [
+      "villager_fisherman"
+    ],
+    [
+      "villager_fletcher"
+    ],
+    [
+      "villager_librarian"
+    ],
+    [
+      "villager_shepherd"
+    ],
+    [
+      "villager_weaponsmith"
+    ],
+    [
+      "villager_nitwit"
+    ],
+    [
+      "villager_leatherworker"
+    ],
+    [
+      "villager_mason"
+    ],
+    [
+      "villager_toolsmith"
+    ],
+    [
       "vindicator"
     ],
     [
       "witch"
     ],
     [
+      "wild_ashen_wolf"
+    ],
+    [
+      "wild_black_wolf"
+    ],
+    [
+      "wild_chestnut_wolf"
+    ],
+    [
       "wild_wolf"
+    ],
+    [
+      "wild_pale_wolf"
+    ],
+    [
+      "wild_rusty_wolf"
+    ],
+    [
+      "wild_striped_wolf"
+    ],
+    [
+      "wild_woods_wolf"
+    ],
+    [
+      "wild_snowy_wolf"
+    ],
+    [
+      "wild_spotted_wolf"
+    ],
+    [
+      "tamed_ashen_wolf"
+    ],
+    [
+      "tamed_black_wolf"
+    ],
+    [
+      "tamed_chestnut_wolf"
     ],
     [
       "tamed_wolf"
     ],
     [
+      "tamed_pale_wolf"
+    ],
+    [
+      "tamed_rusty_wolf"
+    ],
+    [
+      "tamed_striped_wolf"
+    ],
+    [
+      "tamed_woods_wolf"
+    ],
+    [
+      "tamed_snowy_wolf"
+    ],
+    [
+      "tamed_spotted_wolf"
+    ],
+    [
       "zombie_pigman"
+    ],
+    [
+      "zombie_villager"
     ],
     [
       "zombie_butcher_villager"
@@ -652,13 +1061,52 @@
       "zombie_nitwit_villager"
     ],
     [
-      "zombie_smith_villager"
+      "zombie_toolsmith_villager"
+    ],
+    [
+      "zombie_nitwit_villager"
+    ],
+    [
+      "zombie_armorer_villager"
+    ],
+    [
+      "zombie_cartographer_villager"
+    ],
+    [
+      "zombie_fisherman_villager"
+    ],
+    [
+      "zombie_fletcher_villager"
+    ],
+    [
+      "zombie_leatherworker_villager"
+    ],
+    [
+      "zombie_mason_villager"
+    ],
+    [
+      "zombie_shepherd_villager"
+    ],
+    [
+      "zombie_weaponsmith_villager"
     ],
     [
       "zombie"
     ],
     [
       "skeleton"
+    ],
+    [
+      "bogged"
+    ],
+    [
+      "armadillo_head1"
+    ],
+    [
+      "armadillo_head2"
+    ],
+    [
+      "breeze"
     ],
     [
       "creeper"
@@ -680,9 +1128,6 @@
     ],
     [
       "fish"
-    ],
-    [
-      "clownfish"
     ],
     [
       "salmon"
@@ -761,6 +1206,117 @@
     ],
     [
       "cat_white"
+    ],
+    [
+      "Blue_Axolotl"
+    ],
+    [
+      "Wild_Axolotl"
+    ],
+    [
+      "Gold_Axolotl"
+    ],
+    [
+      "Cyan_Axolotl"
+    ],
+    [
+      "Lucy_Axolotl"
+    ],
+    [
+      "camel"
+    ],
+    [
+      "coldfroghead"
+    ],
+    [
+      "coldfroggy"
+    ],
+    [
+      "warmfroghead"
+    ],
+    [
+      "warmfroggy"
+    ],
+    [
+      "temperatefroghead"
+    ],
+    [
+      "temperatefroggy"
+    ],
+    [
+      "tadpole"
+    ],
+    [
+      "glowsquidhead1"
+    ],
+    [
+      "babyglowsquid"
+    ],
+    [
+      "sniffer"
+    ],
+    [
+      "bee"
+    ],
+    [
+      "hoglin"
+    ],
+    [
+      "piglin"
+    ],
+    [
+      "piglin_brute"
+    ],
+    [
+      "zoglin"
+    ],
+    [
+      "strider_hot"
+    ],
+    [
+      "strider_cold"
+    ],
+    [
+      "tropical_fish_1"
+    ],
+    [
+      "tropical_fish_2"
+    ],
+    [
+      "tropical_fish_3"
+    ],
+    [
+      "tropical_fish_4"
+    ],
+    [
+      "tropical_fish_5"
+    ],
+    [
+      "tropical_fish_6"
+    ],
+    [
+      "tropical_fish_7"
+    ],
+    [
+      "tropical_fish_8"
+    ],
+    [
+      "tropical_fish_9"
+    ],
+    [
+      "tropical_fish_10"
+    ],
+    [
+      "tropical_fish_11"
+    ],
+    [
+      "tropical_fish_12"
+    ],
+    [
+      "tropical_fish_13"
+    ],
+    [
+      "warden"
     ]
   ],
   "parent": "mobheads:root"

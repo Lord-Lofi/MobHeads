@@ -1,0 +1,34 @@
+{
+	"display": {
+		"description": {
+			"text": "Obtain all goat heads",
+			"color": "white"
+		},
+		"title": {
+			"text": "Ram-bunctious!",
+			"color": "white"
+		},
+		"icon": {
+			"id": "goat_horn",
+			"tag": 0
+		},
+		"frame": "challenge"
+	},
+	"criteria": {
+		"goat_head1": {
+			"trigger": "minecraft:impossible"
+		},
+		"screaming_goat_head1": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"rewards": {},
+	"requirements": [
+		["goat_head1"],
+		["screaming_goat_head1"]
+	],
+	"filename": 23,
+	"parent-count": 3,
+	"parent-type": "parent",
+	"parent": "mobheads:firstmobhead"
+}

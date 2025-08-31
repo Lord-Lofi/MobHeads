@@ -9,7 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "item": "rabbit_foot",
+      "id": "carrot",
       "tag": 0
     },
     "frame": "challenge"

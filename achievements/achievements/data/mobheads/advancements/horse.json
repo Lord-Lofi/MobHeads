@@ -9,7 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "item": "saddle",
+      "id": "saddle",
       "tag": 0
     },
     "frame": "challenge"
