@@ -396,7 +396,7 @@ public enum MobNames {
 			case SALMON:
 				return Salmon;
 			case TROPICAL_FISH:
-				return Tropical_Fish;
+				return getTropicalFishName((TropicalFish) entity);
 			case ARROW:
 				return getFishName(entity);
 			case WANDERING_TRADER:
@@ -662,7 +662,69 @@ public enum MobNames {
 		}
 		return null;
 	}
+	private static MobNames getTropicalFishName(TropicalFish tropicalfish) {
 
+		if (tropicalfish.getPattern() == null) {
+			return Tropical_Fish;
+		}
+		switch (tropicalfish.getPattern()) {
+			case BETTY:
+				switch (tropicalfish.getBodyColor()){
+					case RED:
+						switch (tropicalfish.getPatternColor()){
+							case WHITE:
+								return Red_Cichlid;
+						}
+				}
+			case BLOCKFISH:
+				switch (tropicalfish.getBodyColor()){
+					case PURPLE:
+						switch (tropicalfish.getPatternColor()){
+							case YELLOW:
+								return Dottyback;
+						}
+					case RED:
+						switch (tropicalfish.getPatternColor()){
+							case WHITE:
+								return Red_Snapper;
+						}
+				}
+			case BRINELY:
+				switch (tropicalfish.getBodyColor()){
+					case LIME:
+						switch (tropicalfish.getPatternColor()){
+							case LIGHT_BLUE:
+								return Queen_Angelfish;
+						}
+					case RED:
+						switch (tropicalfish.getPatternColor()){
+							case WHITE:
+								return Red_Snapper;
+						}
+				}
+			case CLAYFISH:
+				return Fox_Normal;
+			case DASHER:
+				return Fox_Normal;
+			case FLOPPER:
+				return Fox_Normal;
+			case GLITTER:
+				return Fox_Normal;
+			case KOB:
+				return Fox_Normal;
+			case SNOOPER:
+				return Fox_Normal;
+			case SPOTTY:
+				return Fox_Normal;
+			case STRIPEY:
+				return Fox_Normal;
+			case SUNSTREAK:
+				return Fox_Normal;
+
+		}
+		return Tropical_Fish;
+
+	}
 	private static MobNames getLLamaName(Llama llama) {
 		if (llama.getColor() == null) {
 			return null;
