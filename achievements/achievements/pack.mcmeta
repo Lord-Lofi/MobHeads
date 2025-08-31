@@ -1,6 +1,15 @@
 {
-  "pack": {
-      "pack_format": 1,
-      "description": "Mob Heads Advancements"
-  }
+	"pack": {
+		"pack_format": 48,
+		"supported_formats": {
+			"min_inclusive": 48,
+			"max_inclusive": 81
+		},
+		"description": [
+			{
+				"text": "Mob Heads Advancements",
+				"color": "gold"
+			}
+		]
+	}
 }

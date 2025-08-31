@@ -19,15 +19,11 @@
       }
    },
    "rewards":{
-
    },
    "requirements":[
       [
          "first_mob_head"
       ]
    ],
-   "parent":"mobheads:root",
-   "filename":3,
-   "parent-count":1,
-   "parent-type":"child"
+   "parent":"mobheads:root"
 }
