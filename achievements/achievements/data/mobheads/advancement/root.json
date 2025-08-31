@@ -1,0 +1,28 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:parrot_spawn_egg"
+		},
+		"title": "Mob Heads",
+		"frame": "challenge",
+		"description": [
+			"",
+			{
+				"text": "Gotta behead 'em all\n",
+				"color": "gold"
+			},
+			{
+				"text": "- LordLofi",
+				"color": "yellow"
+			}
+		],
+		"background": "minecraft:block/oak_log",
+		"show_toast": false,
+		"announce_to_chat": false
+	},
+	"criteria": {
+		"tick": {
+			"trigger": "minecraft:tick"
+		}
+	}
+}
