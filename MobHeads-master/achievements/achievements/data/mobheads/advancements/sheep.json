@@ -9,7 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "item": "white_wool",
+      "id": "white_wool",
       "tag": 0
     },
     "frame": "challenge"

@@ -681,11 +681,11 @@ public enum MobNames {
 		return null;
 	}
 
-	private static MobNames getPandaName(Panda rabbit) {
-		if (rabbit.getMainGene() == null) {
+	private static MobNames getPandaName(Panda panda) {
+		if (panda.getMainGene() == null) {
 			return null;
 		}
-		switch (rabbit.getMainGene()) {
+		switch (panda.getMainGene()) {
 			case LAZY:
 				return Panda_Lazy;
 			case WEAK:

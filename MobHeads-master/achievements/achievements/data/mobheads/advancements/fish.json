@@ -9,7 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "item": "tropical_fish",
+      "id": "tropical_fish",
       "tag": 0
     },
     "frame": "challenge"

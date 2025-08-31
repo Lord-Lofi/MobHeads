@@ -1,0 +1,46 @@
+{
+	"display": {
+		"description": {
+			"text": "Obtain all axolotl heads",
+			"color": "white"
+		},
+		"title": {
+			"text": "Ex-stream-ly cool!",
+			"color": "white"
+		},
+		"icon": {
+			"id": "axolotl_bucket",
+			"tag": 0
+		},
+		"frame": "challenge"
+	},
+	"criteria": {
+		"Blue_Axolotl": {
+			"trigger": "minecraft:impossible"
+		},
+		"Cyan_Axolotl": {
+			"trigger": "minecraft:impossible"
+		},
+		"Gold_Axolotl": {
+			"trigger": "minecraft:impossible"
+		},
+		"Lucy_Axolotl": {
+			"trigger": "minecraft:impossible"
+		},
+		"Wild_Axolotl": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"rewards": {},
+	"requirements": [
+		["Blue_Axolotl"],
+		["Cyan_Axolotl"],
+		["Gold_Axolotl"],
+		["Lucy_Axolotl"],
+		["Wild_Axolotl"]
+	],
+	"filename": 24,
+	"parent-count": 3,
+	"parent-type": "parent",
+	"parent": "mobheads:firstmobhead"
+}

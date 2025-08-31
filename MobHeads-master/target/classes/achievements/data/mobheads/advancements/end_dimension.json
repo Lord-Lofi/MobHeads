@@ -9,7 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "item": "end_stone",
+      "id": "end_stone",
       "tag": 0
     },
     "frame": "challenge"
