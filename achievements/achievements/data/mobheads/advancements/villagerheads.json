@@ -1,127 +1,115 @@
 {
   "display": {
     "description": {
-      "text": "Obtain all sheep heads",
+      "text": "Obtain all villager heads",
       "color": "white"
     },
     "title": {
-      "text": "Raising the baa!",
+      "text": "Wiped Off the Map",
       "color": "white"
     },
     "icon": {
-      "id": "white_wool",
+      "id": "emerald",
       "tag": 0
     },
     "frame": "challenge"
   },
   "criteria": {
-    "black_sheep": {
+    "villager": {
       "trigger": "minecraft:impossible"
     },
-    "blue_sheep": {
+    "villager_armorer": {
       "trigger": "minecraft:impossible"
     },
-    "brown_sheep": {
+    "villager_butcher": {
       "trigger": "minecraft:impossible"
     },
-    "cyan_sheep": {
+    "villager_cartographer": {
       "trigger": "minecraft:impossible"
     },
-    "gray_sheep": {
+    "villager_cleric": {
       "trigger": "minecraft:impossible"
     },
-    "green_sheep": {
+    "villager_farmer": {
       "trigger": "minecraft:impossible"
     },
-    "light_blue_sheep": {
+    "villager_fisherman": {
       "trigger": "minecraft:impossible"
     },
-    "lime_sheep": {
+    "villager_fletcher": {
       "trigger": "minecraft:impossible"
     },
-    "magenta_sheep": {
+    "villager_librarian": {
       "trigger": "minecraft:impossible"
     },
-    "orange_sheep": {
+    "villager_shepherd": {
       "trigger": "minecraft:impossible"
     },
-    "pink_sheep": {
+    "villager_weaponsmith": {
       "trigger": "minecraft:impossible"
     },
-    "purple_sheep": {
+    "villager_nitwit": {
       "trigger": "minecraft:impossible"
     },
-    "rainbow_sheep": {
+    "villager_leatherworker": {
       "trigger": "minecraft:impossible"
     },
-    "red_sheep": {
+    "villager_mason": {
       "trigger": "minecraft:impossible"
     },
-    "light_gray_sheep": {
-      "trigger": "minecraft:impossible"
-    },
-    "white_sheep": {
-      "trigger": "minecraft:impossible"
-    },
-    "yellow_sheep": {
+    "villager_toolsmith": {
       "trigger": "minecraft:impossible"
     }
   },
   "rewards": {},
   "requirements": [
     [
-      "black_sheep"
+      "villager"
     ],
     [
-      "blue_sheep"
+      "villager_armorer"
     ],
     [
-      "brown_sheep"
+      "villager_butcher"
     ],
     [
-      "cyan_sheep"
+      "villager_cartographer"
     ],
     [
-      "gray_sheep"
+      "villager_cleric"
     ],
     [
-      "green_sheep"
+      "villager_farmer"
     ],
     [
-      "light_blue_sheep"
+      "villager_fisherman"
     ],
     [
-      "lime_sheep"
+      "villager_fletcher"
     ],
     [
-      "magenta_sheep"
+      "villager_librarian"
     ],
     [
-      "orange_sheep"
+      "villager_shepherd"
     ],
     [
-      "pink_sheep"
+      "villager_weaponsmith"
     ],
     [
-      "purple_sheep"
+      "villager_nitwit"
     ],
     [
-      "rainbow_sheep"
+      "villager_leatherworker"
     ],
     [
-      "red_sheep"
+      "villager_mason"
     ],
     [
-      "light_gray_sheep"
-    ],
-    [
-      "white_sheep"
-    ],
-    [
-      "yellow_sheep"
+      "villager_toolsmith"
     ]
   ],
-  "filename": 17,
+  "filename": 26,
   "parent-count": 3,
   "parent-type": "parent",
   "parent": "mobheads:firstmobhead"

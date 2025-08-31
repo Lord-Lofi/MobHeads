@@ -53,7 +53,8 @@ public enum MobNames {
 	Spider,
 	Squid,
 	Stray,
-	Strider,
+	Hot_Strider,
+    Cold_Strider,
 	Tadpole,
 	Turtle,
 	Vex,
@@ -419,7 +420,7 @@ public enum MobNames {
 			case PIGLIN_BRUTE:
 				return Piglin_Brute;
 			case STRIDER:
-				return Strider;
+				return getStriderName((Strider) entity);
 			case ZOGLIN:
 				return Zoglin;
 			case HOGLIN:
@@ -624,6 +625,13 @@ public enum MobNames {
 		}
 		return Goat;
 	}
+
+    private static MobNames getStriderName(Strider strider) {
+        if (strider.isShivering()) {
+            return Cold_Strider;
+        }
+        return Hot_Strider;
+    }
 
 	private static MobNames getSnowGolemName(Snowman snowgolem) {
 		if (snowgolem.isDerp()) {

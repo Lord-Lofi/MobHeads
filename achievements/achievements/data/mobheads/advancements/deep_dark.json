@@ -1,32 +1,33 @@
 {
   "display": {
     "description": {
-      "text": "Obtain a player head",
+      "text": "Obtain the Wardens Head!",
       "color": "white"
     },
     "title": {
-      "text": "First player head!",
+      "text": "Silenced the Darkness",
       "color": "white"
     },
     "icon": {
-      "id": "player_head",
+      "id": "sculk_shrieker",
       "tag": 0
     },
-    "frame": "task"
+    "frame": "challenge"
   },
   "criteria": {
-    "first_player_head": {
+    "warden": {
       "trigger": "minecraft:impossible"
     }
+
   },
   "rewards": {},
   "requirements": [
     [
-      "first_player_head"
+      "warden"
     ]
   ],
-  "parent": "mobheads:root",
-  "filename": 4,
-  "parent-count": 1,
-  "parent-type": "parent"
+  "filename": 25,
+  "parent-count": 3,
+  "parent-type": "parent",
+  "parent": "mobheads:firstmobhead"
 }

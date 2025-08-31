@@ -1,0 +1,43 @@
+{
+	"display": {
+		"description": {
+			"text": "Obtain all trader llama heads",
+			"color": "white"
+		},
+		"title": {
+			"text": "Trader Llama",
+			"color": "white"
+		},
+		"icon": {
+			"id": "lead",
+			"tag": 0
+		},
+		"frame": "challenge",
+        "hidden": true
+	},
+	"criteria": {
+		"white_llama_trader": {
+			"trigger": "minecraft:impossible"
+		},
+		"gray_llama_trader": {
+			"trigger": "minecraft:impossible"
+		},
+		"creamy_llama_trader": {
+			"trigger": "minecraft:impossible"
+		},
+		"brown_llama_trader": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"rewards": {},
+	"requirements": [
+		["white_llama_trader"],
+		["gray_llama_trader"],
+		["creamy_llama_trader"],
+		["brown_llama_trader"]
+	],
+	"filename": 30,
+	"parent-count": 13,
+    "parent-type": "child",
+    "parent": "mobheads:llama"
+}

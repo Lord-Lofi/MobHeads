@@ -9,7 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "item": "netherrack",
+      "id": "magma_cream",
       "tag": 0
     },
     "frame": "challenge"
@@ -24,6 +24,24 @@
     "blaze": {
       "trigger": "minecraft:impossible"
     },
+    "piglin": {
+      "trigger": "minecraft:impossible"
+    },
+    "piglin_brute": {
+      "trigger": "minecraft:impossible"
+    },
+    "zoglin": {
+      "trigger": "minecraft:impossible"
+    },
+    "hoglin": {
+      "trigger": "minecraft:impossible"
+    },
+    "strider_hot": {
+      "trigger": "minecraft:impossible"
+    },
+    "strider_cold": {
+      "trigger": "minecraft:impossible"
+    },
     "magma_cube": {
       "trigger": "minecraft:impossible"
     }
@@ -32,6 +50,24 @@
   "requirements": [
     [
       "zombie_pigman"
+    ],
+    [
+      "hoglin"
+    ],
+    [
+      "piglin"
+    ],
+    [
+      "piglin_brute"
+    ],
+    [
+      "zoglin"
+    ],
+    [
+      "strider_hot"
+    ],
+    [
+      "strider_cold"
     ],
     [
       "ghast"

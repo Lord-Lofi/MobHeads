@@ -1,37 +1,32 @@
 {
   "display": {
     "description": {
-      "text": "Obtain all ocean monument mob heads",
+      "text": "Kill and behead the Happy Ghast",
       "color": "white"
     },
     "title": {
-      "text": "Ocean monument",
+      "text": "Not So Happy Now",
       "color": "white"
     },
     "icon": {
-      "id": "prismarine",
+      "id": "ghast_tear",
       "tag": 0
     },
     "frame": "challenge"
   },
   "criteria": {
-    "guardian": {
-      "trigger": "minecraft:impossible"
-    },
-    "elder_guardian": {
+    "happy_ghast": {
       "trigger": "minecraft:impossible"
     }
+
   },
   "rewards": {},
   "requirements": [
     [
-      "guardian"
-    ],
-    [
-      "elder_guardian"
+      "happy_ghast"
     ]
   ],
-  "filename": 15,
+  "filename": 255,
   "parent-count": 3,
   "parent-type": "parent",
   "parent": "mobheads:firstmobhead"

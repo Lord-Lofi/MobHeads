@@ -1,0 +1,116 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain all zombie villager heads",
+      "color": "white"
+    },
+    "title": {
+      "text": "No Cure for You",
+      "color": "white"
+    },
+    "icon": {
+      "id": "zombie_villager_spawn_egg",
+      "tag": 0
+    },
+    "frame": "challenge"
+  },
+  "parent": "mobheads:firstmobhead",
+  "criteria": {
+    "zombie_nitwit_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_butcher_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_cleric_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_farmer_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_librarian_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_toolsmith_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_armorer_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_cartographer_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_fisherman_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_fletcher_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_leatherworker_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_mason_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_shepherd_villager": {
+      "trigger": "minecraft:impossible"
+    },
+    "zombie_weaponsmith_villager": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "zombie_nitwit_villager"
+    ],
+    [
+      "zombie_villager"
+    ],
+    [
+      "zombie_butcher_villager"
+    ],
+    [
+      "zombie_cleric_villager"
+    ],
+    [
+      "zombie_farmer_villager"
+    ],
+    [
+      "zombie_librarian_villager"
+    ],
+    [
+      "zombie_toolsmith_villager"
+    ],
+    [
+      "zombie_armorer_villager"
+    ],
+    [
+      "zombie_cartographer_villager"
+    ],
+    [
+      "zombie_fisherman_villager"
+    ],
+    [
+      "zombie_fletcher_villager"
+    ],
+    [
+      "zombie_leatherworker_villager"
+    ],
+    [
+      "zombie_mason_villager"
+    ],
+    [
+      "zombie_shepherd_villager"
+    ],
+    [
+      "zombie_weaponsmith_villager"
+    ]
+  ],
+  "filename": 27,
+  "parent-count": 3,
+  "parent-type": "parent"
+}

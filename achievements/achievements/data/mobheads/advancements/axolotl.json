@@ -1,41 +1,45 @@
 {
 	"display": {
 		"description": {
-			"text": "Obtain all llama heads",
+			"text": "Obtain all axolotl heads",
 			"color": "white"
 		},
 		"title": {
-			"text": "Watch out! They spit!",
+			"text": "Ex-stream-ly cool!",
 			"color": "white"
 		},
 		"icon": {
-			"id": "water_bucket",
+			"id": "axolotl_bucket",
 			"tag": 0
 		},
 		"frame": "challenge"
 	},
 	"criteria": {
-		"white_llama": {
+		"Blue_Axolotl": {
 			"trigger": "minecraft:impossible"
 		},
-		"gray_llama": {
+		"Cyan_Axolotl": {
 			"trigger": "minecraft:impossible"
 		},
-		"creamy_llama": {
+		"Gold_Axolotl": {
 			"trigger": "minecraft:impossible"
 		},
-		"brown_llama": {
+		"Lucy_Axolotl": {
+			"trigger": "minecraft:impossible"
+		},
+		"Wild_Axolotl": {
 			"trigger": "minecraft:impossible"
 		}
 	},
 	"rewards": {},
 	"requirements": [
-		["white_llama"],
-		["gray_llama"],
-		["creamy_llama"],
-		["brown_llama"]
+		["Blue_Axolotl"],
+		["Cyan_Axolotl"],
+		["Gold_Axolotl"],
+		["Lucy_Axolotl"],
+		["Wild_Axolotl"]
 	],
-	"filename": 13,
+	"filename": 24,
 	"parent-count": 3,
 	"parent-type": "parent",
 	"parent": "mobheads:firstmobhead"
