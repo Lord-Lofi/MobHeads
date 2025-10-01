@@ -16,6 +16,7 @@ public enum MobNames {
 	Breeze,
 	Camel,
 	Cave_Spider,
+	Copper_Golem,
 	Creaking,
 	Dolphin,
 	Donkey,
@@ -287,6 +288,8 @@ public enum MobNames {
 				return Cave_Spider;
 			case CHICKEN:
 				return getChickenName((Chicken) entity);
+			case COPPER_GOLEM:
+				return getCopperGolemName((CopperGolem) entity);
 			case COW:
 				return getCowName((Cow) entity);
 			case CREAKING:
@@ -638,6 +641,23 @@ public enum MobNames {
 			return Derpy_Snow_Golem;
 		}
 		return Snow_Golem;
+	}
+
+	private static MobNames getCopperGolemName(CopperGolem coppergolem) {
+		if (coppergolem.getWeatheringState() == null) {
+                return Copper_Golem;
+		}
+		switch (coppergolem.getWeatheringState()) {
+			case EXPOSED:
+				return Exposed_Copper_Golem;
+			case OXIDIZED:
+				return Oxidized_Copper_Golem;
+			case WEATHERED:
+				return Weathered_Copper_Golem;
+			case UNAFFECTED:
+				return Copper_Golem;
+		}
+		return Copper_Golem;
 	}
 
 	private static MobNames getHorseName(Horse horse) {
