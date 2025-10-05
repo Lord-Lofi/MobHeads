@@ -250,6 +250,12 @@ Panda_Weak,
 Fox_Normal,
 Fox_Snow,
 
+----copper golem types----
+Copper_Golem,
+Exposed_Copper_Golem,
+Oxidized_Copper_Golem,
+Weathered_Copper_Golem,
+
 ----cat types----
 Cat_AllBack,
 Cat_Black,

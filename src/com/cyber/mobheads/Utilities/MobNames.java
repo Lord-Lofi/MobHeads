@@ -16,7 +16,6 @@ public enum MobNames {
 	Breeze,
 	Camel,
 	Cave_Spider,
-	Copper_Golem,
 	Creaking,
 	Dolphin,
 	Donkey,
@@ -244,6 +243,12 @@ public enum MobNames {
 	//fox types
 	Fox_Normal,
 	Fox_Snow,
+
+	//copper golem types
+	Copper_Golem,
+	Exposed_Copper_Golem,
+	Oxidized_Copper_Golem,
+	Weathered_Copper_Golem,
 
 	//These are the invalid cats. Still have to load them:
 	Black_Cat,
@@ -644,10 +649,10 @@ public enum MobNames {
 	}
 
 	private static MobNames getCopperGolemName(CopperGolem coppergolem) {
-		if (coppergolem.getWeatheringState() == null) {
+		if (coppergolem.getWeatherState() == null) {
                 return Copper_Golem;
 		}
-		switch (coppergolem.getWeatheringState()) {
+		switch (coppergolem.getWeatherState()) {
 			case EXPOSED:
 				return Exposed_Copper_Golem;
 			case OXIDIZED:
