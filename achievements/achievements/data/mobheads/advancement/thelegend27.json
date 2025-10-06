@@ -33,10 +33,10 @@
     "Lucy_Axolotl": {
       "trigger": "minecraft:impossible"
     },
-    "goat_head1": {
+    "goat": {
       "trigger": "minecraft:impossible"
     },
-    "screaming_goat_head1": {
+    "screaming_goat": {
       "trigger": "minecraft:impossible"
     },
     "bat": {
@@ -75,10 +75,10 @@
     "warm_cow": {
       "trigger": "minecraft:impossible"
     },
-    "coldfroghead": {
+    "cold_frog": {
       "trigger": "minecraft:impossible"
     },
-    "coldfroggy": {
+    "cold_froggy": {
       "trigger": "minecraft:impossible"
     },
     "charged_creeper": {
@@ -91,6 +91,9 @@
       "trigger": "minecraft:impossible"
     },
     "drowned": {
+      "trigger": "minecraft:impossible"
+    },
+    "drowned_villager": {
       "trigger": "minecraft:impossible"
     },
     "elder_guardian": {
@@ -108,13 +111,13 @@
     "ghast": {
       "trigger": "minecraft:impossible"
     },
-    "glowsquidhead1": {
+    "glow_squid": {
       "trigger": "minecraft:impossible"
     },
-    "babyglowsquid": {
+    "baby_glow_squid": {
       "trigger": "minecraft:impossible"
     },
-    "babysquid": {
+    "baby_squid": {
       "trigger": "minecraft:impossible"
     },
     "guardian": {
@@ -141,10 +144,10 @@
     "gray_horse": {
       "trigger": "minecraft:impossible"
     },
-    "warmfroghead": {
+    "warm_frog": {
       "trigger": "minecraft:impossible"
     },
-    "warmfroggy": {
+    "warm_froggy": {
       "trigger": "minecraft:impossible"
     },
     "white_horse": {
@@ -169,6 +172,18 @@
       "trigger": "minecraft:impossible"
     },
     "white_llama": {
+      "trigger": "minecraft:impossible"
+    },
+    "brown_llama_trader": {
+      "trigger": "minecraft:impossible"
+    },
+    "creamy_llama_trader": {
+      "trigger": "minecraft:impossible"
+    },
+    "gray_llama_trader": {
+      "trigger": "minecraft:impossible"
+    },
+    "white_llama_trader": {
       "trigger": "minecraft:impossible"
     },
     "magma_cube": {
@@ -315,7 +330,7 @@
     "spider": {
       "trigger": "minecraft:impossible"
     },
-    "squidhead1": {
+    "squid": {
       "trigger": "minecraft:impossible"
     },
     "stray": {
@@ -324,10 +339,10 @@
     "tadpole": {
       "trigger": "minecraft:impossible"
     },
-    "temperatefroghead": {
+    "temperate_frog": {
       "trigger": "minecraft:impossible"
     },
-    "temperatefroggy": {
+    "temperate_froggy": {
       "trigger": "minecraft:impossible"
     },
     "turtle": {
@@ -507,10 +522,10 @@
     "bogged": {
       "trigger": "minecraft:impossible"
     },
-    "armadillo_head1": {
+    "armadillo": {
       "trigger": "minecraft:impossible"
     },
-    "armadillo_head2": {
+    "scared_armadillo": {
       "trigger": "minecraft:impossible"
     },
     "creeper": {
@@ -692,10 +707,10 @@
       "cod"
     ],
     [
-      "goat_head1"
+      "goat"
     ],
     [
-      "screaming_goat_head1"
+      "screaming_goat"
     ],
     [
       "temperate_cow"
@@ -717,6 +732,9 @@
     ],
     [
       "drowned"
+    ],
+    [
+      "drowned_villager"
     ],
     [
       "elder_guardian"
@@ -777,6 +795,18 @@
     ],
     [
       "white_llama"
+    ],
+    [
+      "brown_llama_trader"
+    ],
+    [
+      "creamy_llama_trader"
+    ],
+    [
+      "gray_llama_trader"
+    ],
+    [
+      "white_llama_trader"
     ],
     [
       "magma_cube"
@@ -914,10 +944,10 @@
       "spider"
     ],
     [
-      "squidhead1"
+      "squid"
     ],
     [
-      "babysquid"
+      "baby_squid"
     ],
     [
       "stray"
@@ -1100,10 +1130,10 @@
       "bogged"
     ],
     [
-      "armadillo_head1"
+      "armadillo"
     ],
     [
-      "armadillo_head2"
+      "scared_armadillo"
     ],
     [
       "breeze"
@@ -1226,31 +1256,31 @@
       "camel"
     ],
     [
-      "coldfroghead"
+      "cold_frog"
     ],
     [
-      "coldfroggy"
+      "cold_froggy"
     ],
     [
-      "warmfroghead"
+      "warm_frog"
     ],
     [
-      "warmfroggy"
+      "warm_froggy"
     ],
     [
-      "temperatefroghead"
+      "temperate_frog"
     ],
     [
-      "temperatefroggy"
+      "temperate_froggy"
     ],
     [
       "tadpole"
     ],
     [
-      "glowsquidhead1"
+      "glow_squid"
     ],
     [
-      "babyglowsquid"
+      "baby_glow_squid"
     ],
     [
       "sniffer"

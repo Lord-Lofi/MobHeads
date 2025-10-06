@@ -24,6 +24,9 @@
       "drowned":{  
          "trigger":"minecraft:impossible"
       },
+      "drowned_villager":{
+         "trigger":"minecraft:impossible"
+       },
       "elder_guardian":{  
          "trigger":"minecraft:impossible"
       },
@@ -36,16 +39,16 @@
       "salmon":{  
          "trigger":"minecraft:impossible"
       },
-      "glowsquidhead1":{  
+      "glow_squid":{
          "trigger":"minecraft:impossible"
       },
-      "babyglowsquid":{  
+      "baby_glow_squid":{
          "trigger":"minecraft:impossible"
       },
-      "squidhead1":{  
+      "squid":{
          "trigger":"minecraft:impossible"
       },
-      "babysquid":{  
+      "baby_squid":{
          "trigger":"minecraft:impossible"
       },
       "turtle":{  
@@ -119,6 +122,9 @@
       [  
          "drowned"
       ],
+      [
+         "drowned_villager"
+      ],
       [  
          "elder_guardian"
       ],
@@ -132,7 +138,7 @@
          "salmon"
       ],
       [  
-         "glowsquidhead1" 
+         "glow_squid"
       ],
       [   
          "guardian"
@@ -141,13 +147,13 @@
          "salmon"
       ],
       [   
-         "babyglowsquid" 
+         "baby_glow_squid"
       ],
       [ 
-         "squidhead1"
+         "squid"
       ],
       [   
-         "babysquid" 
+         "baby_squid"
       ],
       [ 
          "turtle"

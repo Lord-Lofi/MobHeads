@@ -15,7 +15,7 @@
     "frame": "challenge"
   },
   "criteria": {
-    "panda_agressive": {
+    "panda_aggressive": {
       "trigger": "minecraft:impossible"
     },
     "panda_brown": {
@@ -40,7 +40,7 @@
   "rewards": {},
   "requirements": [
     [
-      "panda_agressive"
+      "panda_aggressive"
     ],
     [
       "panda_brown"
