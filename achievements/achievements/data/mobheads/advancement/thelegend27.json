@@ -677,6 +677,18 @@
     },
     "tropical_fish_13": {
       "trigger": "minecraft:impossible"
+    },
+    "copper_golem":{
+      "trigger":"minecraft:impossible"
+    },
+    "exposed_copper_golem":{
+      "trigger":"minecraft:impossible"
+    },
+    "weathered_copper_golem":{
+      "trigger":"minecraft:impossible"
+    },
+    "oxidized_copper_golem":{
+      "trigger":"minecraft:impossible"
     }
   },
   "rewards": {
@@ -1347,6 +1359,18 @@
     ],
     [
       "warden"
+    ],
+    [
+      "copper_golem"
+    ],
+    [
+      "exposed_copper_golem"
+    ],
+    [
+      "weathered_copper_golem"
+    ],
+    [
+      "oxidized_copper_golem"
     ]
   ],
   "parent": "mobheads:root"

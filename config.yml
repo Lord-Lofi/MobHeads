@@ -473,7 +473,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 cave_spider"
-  Chicken:
+  Temperate_Chicken:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
     dropOnChargedCreeperDeath: true
@@ -483,7 +483,29 @@ ListOfMobs:
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTYzODQ2OWE1OTljZWVmNzIwNzUzNzYwMzI0OGE5YWIxMWZmNTkxZmQzNzhiZWE0NzM1YjM0NmE3ZmFlODkzIn19fQ==
     advancements:
       - "mobheads:firstmobhead first_mob_head"
-      - "mobheads:thelegend27 chicken"
+      - "mobheads:thelegend27 temperate_chicken"
+  Cold_Chicken:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eChicken[Cold] Head"
+    random_uuid: 0d579158-bfd4-4845-beb3-7cceb056987f
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkxMWZjZDhiMjI2YTk4ZjhiNmQ2MDVmZjI3YTg4ZWQ5NzIzMGJiNzE2NzhlNGEwMDY2OTA5NWQ2OWQzZjJiNCJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 cold_chicken"
+  Warm_Chicken:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eChicken[Warm] Head"
+    random_uuid: 0d579158-bfd4-4845-beb3-7wceb056987f
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNThjMjMxYmY0NjRmOWE2YzY3ODZhMjJhNGQxMTllYTVlNTA1NzYyNGM1YTM5MTQ3MGQzNWZhMmI2ZmZhNTE4MyJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 warm_chicken"
   Cod:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -497,7 +519,7 @@ ListOfMobs:
       - "mobheads:thelegend27 cod"
       - "mobheads:fish cod"
       - "mobheads:watermobs cod"
-  Cow:
+  Temperate_Cow:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
     dropOnChargedCreeperDeath: true
@@ -507,7 +529,29 @@ ListOfMobs:
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWQ2YzZlZGE5NDJmN2Y1ZjcxYzMxNjFjNzMwNmY0YWVkMzA3ZDgyODk1ZjlkMmIwN2FiNDUyNTcxOGVkYzUifX19
     advancements:
       - "mobheads:firstmobhead first_mob_head"
-      - "mobheads:thelegend27 cow"
+      - "mobheads:thelegend27 temperate_cow"
+  Cold_Cow:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eCow[Cold] Head"
+    random_uuid: b32d23be-aeca-4f40-a813-accfbbec4372
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWQwNjg4ODVkMmRmYTNhMzA5MzYzYWYwYTg3ZGNhNmZiZjYyOWY3MTMwNzRmOTY4NjIxOWQ3YmE3YWY3MDA4ZCJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 cold_cow"
+  Warm_Cow:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eCow[Warm] Head"
+    random_uuid: b32d23be-aeca-4f40-a813-awcfbbec4372
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjNiMzM3NmZhZjI4MWMxNGJhNDcyZDJlN2Y2YjZkMDE2OWU0YmMyMzc0ODM1YTlmOGQwNzg4ZTA0ZDgxMzQzZCJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 warm_cow"
   Charged_Creeper:
     dropChance: 2%
     lootingBonus: 1%
@@ -2402,6 +2446,59 @@ ListOfFish:
       - "mobheads:thelegend27 pufferfish"
       - "mobheads:fish pufferfish"
       - "mobheads:watermobs pufferfish"
+
+  Copper_Golem:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eCopper Golem Head"
+    random_uuid: d23f3607-25a0-4c22-860a-0ucgb9a16412
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTllMjRlOTRkYmU0MmUyMzBkODMyOTNhNzdkNjFmZjcxMDFhOGM2OGFiNjhiYmM2YTkzZjk2MzBmYjJmZGI0In19fQ==
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 copper_golem"
+      - "mobheads:golem copper_golem"
+      - "mobheads:copperage copper_golem"
+  Exposed_Copper_Golem:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eExposed Copper Golem Head"
+    random_uuid: d23f3607-25a0-4c22-860a-0ecgb9a16412
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGE5ZTQxMGM4YjdmZGJkNGI5ZDhlYTgwNzViYzY2YTljMWFkYTliYzE1ODczYjRiMWRlYWRhYTI4MTJiODQ3ZCJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 exposed_copper_golem"
+      - "mobheads:golem copper_golem"
+      - "mobheads:copperage exposed_copper_golem"
+  Weathered_Copper_Golem:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eWeathered Copper Golem Head"
+    random_uuid: d23f3607-25a0-4c22-860a-0wcgb9a16412
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODI2Mjk5MmQ2ZDVhNjJhMWRkM2VkZThlNGMzNGYxYzE4MDUwYmFiNjQyNzFkOTI2YzFjMGM2MTYyYjJjZDc0ZSJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 weathered_copper_golem"
+      - "mobheads:golem copper_golem"
+      - "mobheads:copperage weathered_copper_golem"
+  Oxidized_Copper_Golem:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eOxidized Copper Golem Head"
+    random_uuid: d23f3607-25a0-4c22-860a-0ocgb9a16412
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2MyYWFiOGEwZmVjM2NjMDZhNGQ0NzQ4MGUwMjRmODhmMmIwN2JjOTZlZTA5ZTUzMzFlNWY0ZGI2YjI3Mzg4NSJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 oxidized_copper_golem"
+      - "mobheads:golem copper_golem"
+      - "mobheads:copperage oxidized_copper_golem"
 
 #Whenever a player dies by another player
 Player:
