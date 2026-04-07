@@ -9,8 +9,7 @@
          "color":"white"
       },
       "icon":{  
-         "id":"trident",
-         "tag":0
+         "id":"trident"
       },
       "frame":"challenge"
    },
@@ -213,8 +212,5 @@
          "Lucy_Axolotl"
       ]
    ],
-   "filename":9,
-   "parent-count":3,
-   "parent-type":"parent",
    "parent":"mobheads:firstmobhead"
 }

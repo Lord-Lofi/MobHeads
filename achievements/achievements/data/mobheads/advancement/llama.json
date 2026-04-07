@@ -9,8 +9,7 @@
 			"color": "white"
 		},
 		"icon": {
-			"id": "water_bucket",
-			"tag": 0
+			"id": "water_bucket"
 		},
 		"frame": "challenge"
 	},
@@ -51,8 +50,5 @@
         ["creamy_llama_trader"],
         ["brown_llama_trader"]
 	],
-	"filename": 13,
-	"parent-count": 3,
-	"parent-type": "parent",
 	"parent": "mobheads:firstmobhead"
 }

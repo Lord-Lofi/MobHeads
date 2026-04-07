@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "id": "ghast_tear",
-      "tag": 0
+      "id": "ghast_tear"
     },
     "frame": "challenge"
   },

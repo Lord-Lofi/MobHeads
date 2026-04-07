@@ -9,8 +9,7 @@
          "color":"white"
       },
       "icon":{
-         "id":"salmon",
-		 "tag":0
+         "id":"salmon"
       },
       "frame":"challenge"
    },
@@ -93,8 +92,5 @@
          "ocelot"
       ]
    ],
-   "filename":16,
-   "parent-count":3,
-   "parent-type":"parent",
    "parent":"mobheads:firstmobhead"
 }

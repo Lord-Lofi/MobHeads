@@ -9,8 +9,7 @@
 			"color": "white"
 		},
 		"icon": {
-			"id": "axolotl_bucket",
-			"tag": 0
+			"id": "axolotl_bucket"
 		},
 		"frame": "challenge"
 	},
@@ -39,8 +38,5 @@
 		["Lucy_Axolotl"],
 		["Wild_Axolotl"]
 	],
-	"filename": 24,
-	"parent-count": 3,
-	"parent-type": "parent",
 	"parent": "mobheads:firstmobhead"
 }

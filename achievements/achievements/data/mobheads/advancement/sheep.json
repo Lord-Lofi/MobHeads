@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "id": "white_wool",
-      "tag": 0
+      "id": "white_wool"
     },
     "frame": "challenge"
   },
@@ -121,8 +120,5 @@
       "yellow_sheep"
     ]
   ],
-  "filename": 17,
-  "parent-count": 3,
-  "parent-type": "parent",
   "parent": "mobheads:firstmobhead"
 }

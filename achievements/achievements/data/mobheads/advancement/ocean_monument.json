@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "id": "prismarine",
-      "tag": 0
+      "id": "prismarine"
     },
     "frame": "challenge"
   },
@@ -31,8 +30,5 @@
       "elder_guardian"
     ]
   ],
-  "filename": 15,
-  "parent-count": 3,
-  "parent-type": "parent",
   "parent": "mobheads:firstmobhead"
 }

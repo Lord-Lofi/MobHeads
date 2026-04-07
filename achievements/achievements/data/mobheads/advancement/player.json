@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "id": "player_head",
-      "tag": 0
+      "id": "player_head"
     },
     "frame": "task"
   },
@@ -26,7 +25,5 @@
     ]
   ],
   "parent": "mobheads:root",
-  "filename": 4,
-  "parent-count": 1,
   "parent-type": "parent"
 }

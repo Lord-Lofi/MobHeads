@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "item": "bamboo",
-      "tag": 0
+      "item": "bamboo"
     },
     "frame": "challenge"
   },
@@ -61,8 +60,5 @@
       "panda_worried"
     ]
   ],
-  "filename": 9,
-  "parent-count": 3,
-  "parent-type": "child",
   "parent": "mobheads:firstmobhead"
 }

@@ -9,8 +9,7 @@
       "color":"dark_aqua"
     },
     "icon":{
-      "id":"minecraft:copper_golem_spawn_egg",
-      "tag":0
+      "id":"minecraft:copper_golem_spawn_egg"
     },
     "frame":"challenge"
   },
@@ -45,8 +44,5 @@
       "oxidized_copper_golem"
     ]
   ],
-  "filename":35,
-  "parent-count":3,
-  "parent-type":"parent",
   "parent":"mobheads:firstmobhead"
 }

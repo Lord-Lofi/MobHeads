@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "id": "dragon_head",
-      "tag": 0
+      "id": "dragon_head"
     },
     "frame": "challenge"
   },

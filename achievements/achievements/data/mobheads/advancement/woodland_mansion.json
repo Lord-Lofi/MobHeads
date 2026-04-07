@@ -9,8 +9,7 @@
          "color":"white"
       },
       "icon":{
-         "id":"totem_of_undying",
-		 "tag": 0
+         "id":"totem_of_undying"
       },
       "frame":"challenge"
    },
@@ -39,8 +38,5 @@
          "evoker"
       ]
    ],
-   "filename":16,
-   "parent-count":3,
-   "parent-type":"parent",
    "parent":"mobheads:firstmobhead"
 }

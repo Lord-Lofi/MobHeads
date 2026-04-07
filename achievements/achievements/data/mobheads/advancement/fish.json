@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "id": "tropical_fish",
-      "tag": 0
+      "id": "tropical_fish"
     },
     "frame": "challenge"
   },
@@ -43,8 +42,5 @@
       "salmon"
     ]
   ],
-  "filename": 19,
-  "parent-count": 3,
-  "parent-type": "parent",
   "parent": "mobheads:firstmobhead"
 }
