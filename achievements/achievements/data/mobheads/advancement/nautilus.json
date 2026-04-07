@@ -1,0 +1,40 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain all nautilus heads",
+      "color": "white"
+    },
+    "title": {
+      "text": "Shell Shocked",
+      "color": "aqua"
+    },
+    "icon": {
+      "id": "nautilus_shell"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "nautilus": {
+      "trigger": "minecraft:impossible"
+    },
+    "temperate_zombie_nautilus": {
+      "trigger": "minecraft:impossible"
+    },
+    "warm_zombie_nautilus": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "nautilus"
+    ],
+    [
+      "temperate_zombie_nautilus"
+    ],
+    [
+      "warm_zombie_nautilus"
+    ]
+  ],
+  "parent": "mobheads:firstmobhead"
+}

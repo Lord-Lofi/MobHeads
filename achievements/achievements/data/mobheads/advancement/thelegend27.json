@@ -694,6 +694,21 @@
     },
     "derpy_snow_golem": {
       "trigger": "minecraft:impossible"
+    },
+    "parched": {
+      "trigger": "minecraft:impossible"
+    },
+    "camel_husk": {
+      "trigger": "minecraft:impossible"
+    },
+    "nautilus": {
+      "trigger": "minecraft:impossible"
+    },
+    "temperate_zombie_nautilus": {
+      "trigger": "minecraft:impossible"
+    },
+    "warm_zombie_nautilus": {
+      "trigger": "minecraft:impossible"
     }
   },
   "rewards": {
@@ -1382,6 +1397,21 @@
     ],
     [
       "derpy_snow_golem"
+    ],
+    [
+      "parched"
+    ],
+    [
+      "camel_husk"
+    ],
+    [
+      "nautilus"
+    ],
+    [
+      "temperate_zombie_nautilus"
+    ],
+    [
+      "warm_zombie_nautilus"
     ]
   ],
   "parent": "mobheads:root"

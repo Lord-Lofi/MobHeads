@@ -250,6 +250,15 @@ public enum MobNames {
 	Oxidized_Copper_Golem,
 	Weathered_Copper_Golem,
 
+	//nautilus types
+	Nautilus,
+	Temperate_Zombie_Nautilus,
+	Warm_Zombie_Nautilus,
+
+	//1.21.11 new mobs
+	Parched,
+	Camel_Husk,
+
 	//These are the invalid cats. Still have to load them:
 	Black_Cat,
 	Ginger_Cat,
@@ -289,6 +298,8 @@ public enum MobNames {
 				return Ocelot;
 			case CAMEL:
 				return Camel;
+			case CAMEL_HUSK:
+				return Camel_Husk;
 			case CAVE_SPIDER:
 				return Cave_Spider;
 			case CHICKEN:
@@ -375,6 +386,12 @@ public enum MobNames {
 				return Spider;
 			case SQUID:
 				return Squid;
+			case NAUTILUS:
+				return Nautilus;
+			case ZOMBIE_NAUTILUS:
+				return getZombieNautilusName((ZombieNautilus) entity);
+			case PARCHED:
+				return Parched;
 			case STRAY:
 				return Stray;
 			case TURTLE:
@@ -1003,6 +1020,19 @@ public enum MobNames {
 			return Villager_Weaponsmith;
 		}
 		return Villager;
+	}
+
+	private static MobNames getZombieNautilusName(ZombieNautilus zombieNautilus) {
+		if (zombieNautilus.getVariant() == null) {
+			return Temperate_Zombie_Nautilus;
+		}
+		if (zombieNautilus.getVariant() == ZombieNautilus.Variant.TEMPERATE) {
+			return Temperate_Zombie_Nautilus;
+		}
+		if (zombieNautilus.getVariant() == ZombieNautilus.Variant.WARM) {
+			return Warm_Zombie_Nautilus;
+		}
+		return Temperate_Zombie_Nautilus;
 	}
 
 	private static MobNames getFishName(Entity entity) {

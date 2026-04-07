@@ -25,6 +25,12 @@
     },
     "scared_armadillo": {
       "trigger": "minecraft:impossible"
+    },
+    "parched": {
+      "trigger": "minecraft:impossible"
+    },
+    "camel_husk": {
+      "trigger": "minecraft:impossible"
     }
   },
   "rewards": {},
@@ -40,6 +46,12 @@
     ],
     [
       "scared_armadillo"
+    ],
+    [
+      "parched"
+    ],
+    [
+      "camel_husk"
     ]
   ],
   "parent": "mobheads:firstmobhead"

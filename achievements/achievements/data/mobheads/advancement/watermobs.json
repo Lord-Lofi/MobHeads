@@ -106,7 +106,16 @@
       },
       "tropical_fish_13": {
         "trigger": "minecraft:impossible"
-    }
+      },
+      "nautilus": {
+        "trigger": "minecraft:impossible"
+      },
+      "temperate_zombie_nautilus": {
+        "trigger": "minecraft:impossible"
+      },
+      "warm_zombie_nautilus": {
+        "trigger": "minecraft:impossible"
+      }
   },
    "rewards":{  
 
@@ -208,8 +217,17 @@
       [
          "tropical_fish_13"
       ],
-      [  
+      [
          "Lucy_Axolotl"
+      ],
+      [
+         "nautilus"
+      ],
+      [
+         "temperate_zombie_nautilus"
+      ],
+      [
+         "warm_zombie_nautilus"
       ]
    ],
    "parent":"mobheads:firstmobhead"

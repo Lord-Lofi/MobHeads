@@ -164,6 +164,18 @@ ListOfMobs:
         - "mobheads:firstmobhead first_mob_head"
         - "mobheads:thelegend27 bogged"
         - "mobheads:swampmobs bogged"
+  Parched:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eParched Head"
+    random_uuid: a7f3c21e-5501-4b93-8d1f-9c42a87b6e01
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjRhZWNlZmY1ZjI2ZGQ4NDEzYzVjMDM1NDdjMjM0YWMwMzEwOGQxODdhZjBiOWNkODM0YThjZTEyNTk4NTkxYyJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 parched"
+      - "mobheads:desert parched"
   Breeze:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -294,6 +306,45 @@ ListOfMobs:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 tadpole"
       - "mobheads:swampmobs tadpole"
+  Nautilus:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eNautilus Head"
+    random_uuid: c9f5e430-7723-4d15-af31-be64ca9d8023
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2JiMzQwZGQzMzAyNjE1MzQ4ZGU1MTYyZmUxNjcwYjljNWM5YzYxNmNkOTJkMmRlOWQ4Mzk4Y2IzM2U4NDJhZSJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 nautilus"
+      - "mobheads:watermobs nautilus"
+      - "mobheads:nautilus nautilus"
+  Temperate_Zombie_Nautilus:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eTemperate Zombie Nautilus Head"
+    random_uuid: da061541-8834-4e26-b042-cf75db0e9134
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmQ5YTkzMzM3NmRhNDRjMzM5MTMwN2NiOWY0Y2YwM2YxNmYzYTU0ZjQ5NWZkNWExMWJhZDhhMzczZjlkNTcyMCJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 temperate_zombie_nautilus"
+      - "mobheads:watermobs temperate_zombie_nautilus"
+      - "mobheads:nautilus temperate_zombie_nautilus"
+  Warm_Zombie_Nautilus:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eWarm Zombie Nautilus Head"
+    random_uuid: eb172652-9945-4f37-c153-d086ec1f0245
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDUxNmUxOGY0MDBiOGM0ODE5MGIzNDM4YTc1ZmVlZmRhNDUzNjdmMGFlNWQ0ZTQ5NzMyYzQxNzI1MTY1MGVjZiJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 warm_zombie_nautilus"
+      - "mobheads:watermobs warm_zombie_nautilus"
+      - "mobheads:nautilus warm_zombie_nautilus"
   Glow_Squid:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -435,6 +486,18 @@ ListOfMobs:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 camel"
       - "mobheads:desert camel"
+  Camel_Husk:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eCamel Husk Head"
+    random_uuid: b8e4d32f-6612-4c04-9e20-ad53b98c7f12
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2JkN2E5MmE2ZjY3Yjc1MDBkMTZjNGUxMmYyODA1OGVjMjg1OTMxMTU1NmJhMDNiZTJkMWY1ODExNzBmMmRiNiJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 camel_husk"
+      - "mobheads:desert camel_husk"
   Sniffer:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
