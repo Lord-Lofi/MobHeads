@@ -38,14 +38,17 @@
       "bogged":{  
          "trigger":"minecraft:impossible"
       },
-      "tadpole":{  
+      "tadpole":{
+         "trigger":"minecraft:impossible"
+      },
+      "witch":{
          "trigger":"minecraft:impossible"
       }
    },
-   "rewards":{  
+   "rewards":{
 
    },
-   "requirements":[  
+   "requirements":[
       [  
          "cold_frog"
       ],
@@ -72,6 +75,9 @@
       ],
       [
          "tadpole"
+      ],
+      [
+         "witch"
       ]
    ],
    "parent":"mobheads:firstmobhead"

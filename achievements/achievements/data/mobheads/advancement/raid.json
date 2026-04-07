@@ -1,0 +1,34 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain all raid mob heads",
+      "color": "white"
+    },
+    "title": {
+      "text": "The Village Defenders",
+      "color": "red"
+    },
+    "icon": {
+      "id": "crossbow"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "pillager": {
+      "trigger": "minecraft:impossible"
+    },
+    "ravager": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "pillager"
+    ],
+    [
+      "ravager"
+    ]
+  ],
+  "parent": "mobheads:firstmobhead"
+}

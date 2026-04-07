@@ -1,0 +1,34 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain all mushroom island mob heads",
+      "color": "white"
+    },
+    "title": {
+      "text": "Fun-gus Among Us",
+      "color": "dark_red"
+    },
+    "icon": {
+      "id": "red_mushroom"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "mooshroom": {
+      "trigger": "minecraft:impossible"
+    },
+    "mooshroom_brown": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "mooshroom"
+    ],
+    [
+      "mooshroom_brown"
+    ]
+  ],
+  "parent": "mobheads:firstmobhead"
+}

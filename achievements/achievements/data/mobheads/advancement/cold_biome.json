@@ -1,0 +1,46 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain all cold biome mob heads",
+      "color": "white"
+    },
+    "title": {
+      "text": "It's Freezing Out Here",
+      "color": "aqua"
+    },
+    "icon": {
+      "id": "snowball"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "stray": {
+      "trigger": "minecraft:impossible"
+    },
+    "polar_bear": {
+      "trigger": "minecraft:impossible"
+    },
+    "snow_golem": {
+      "trigger": "minecraft:impossible"
+    },
+    "derpy_snow_golem": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "stray"
+    ],
+    [
+      "polar_bear"
+    ],
+    [
+      "snow_golem"
+    ],
+    [
+      "derpy_snow_golem"
+    ]
+  ],
+  "parent": "mobheads:firstmobhead"
+}

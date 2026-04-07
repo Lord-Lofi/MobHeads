@@ -566,7 +566,7 @@
     "ravager": {
       "trigger": "minecraft:impossible"
     },
-    "panda_agressive": {
+    "panda_aggressive": {
       "trigger": "minecraft:impossible"
     },
     "panda_brown": {
@@ -688,6 +688,12 @@
     },
     "oxidized_copper_golem":{
       "trigger":"minecraft:impossible"
+    },
+    "wither_skeleton": {
+      "trigger": "minecraft:impossible"
+    },
+    "derpy_snow_golem": {
+      "trigger": "minecraft:impossible"
     }
   },
   "rewards": {
@@ -1189,7 +1195,7 @@
       "ravager"
     ],
     [
-      "panda_agressive"
+      "panda_aggressive"
     ],
     [
       "panda_brown"
@@ -1370,6 +1376,12 @@
     ],
     [
       "oxidized_copper_golem"
+    ],
+    [
+      "wither_skeleton"
+    ],
+    [
+      "derpy_snow_golem"
     ]
   ],
   "parent": "mobheads:root"

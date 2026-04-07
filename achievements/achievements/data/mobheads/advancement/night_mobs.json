@@ -1,63 +1,57 @@
 {
   "display": {
     "description": {
-      "text": "Obtain all panda heads",
+      "text": "Obtain all common night mob heads",
       "color": "white"
     },
     "title": {
-      "text": "Black, White, and Head all over",
-      "color": "white"
+      "text": "Things That Go Bump",
+      "color": "dark_purple"
     },
     "icon": {
-      "id": "bamboo"
+      "id": "rotten_flesh"
     },
     "frame": "challenge"
   },
   "criteria": {
-    "panda_aggressive": {
+    "zombie": {
       "trigger": "minecraft:impossible"
     },
-    "panda_brown": {
+    "skeleton": {
       "trigger": "minecraft:impossible"
     },
-    "panda_lazy": {
+    "creeper": {
       "trigger": "minecraft:impossible"
     },
-    "panda_normal": {
+    "charged_creeper": {
       "trigger": "minecraft:impossible"
     },
-    "panda_playful": {
+    "phantom": {
       "trigger": "minecraft:impossible"
     },
-    "panda_weak": {
-      "trigger": "minecraft:impossible"
-    },
-    "panda_worried": {
+    "bat": {
       "trigger": "minecraft:impossible"
     }
   },
   "rewards": {},
   "requirements": [
     [
-      "panda_aggressive"
+      "zombie"
     ],
     [
-      "panda_brown"
+      "skeleton"
     ],
     [
-      "panda_lazy"
+      "creeper"
     ],
     [
-      "panda_normal"
+      "charged_creeper"
     ],
     [
-      "panda_playful"
+      "phantom"
     ],
     [
-      "panda_weak"
-    ],
-    [
-      "panda_worried"
+      "bat"
     ]
   ],
   "parent": "mobheads:firstmobhead"

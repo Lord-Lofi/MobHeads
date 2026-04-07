@@ -1,0 +1,46 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain all arthropod mob heads",
+      "color": "white"
+    },
+    "title": {
+      "text": "Eight Legs Too Many",
+      "color": "dark_gray"
+    },
+    "icon": {
+      "id": "spider_eye"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "spider": {
+      "trigger": "minecraft:impossible"
+    },
+    "cave_spider": {
+      "trigger": "minecraft:impossible"
+    },
+    "silverfish": {
+      "trigger": "minecraft:impossible"
+    },
+    "bee": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "spider"
+    ],
+    [
+      "cave_spider"
+    ],
+    [
+      "silverfish"
+    ],
+    [
+      "bee"
+    ]
+  ],
+  "parent": "mobheads:firstmobhead"
+}

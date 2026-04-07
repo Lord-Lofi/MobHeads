@@ -3,7 +3,7 @@
 		"icon": {
 			"id": "minecraft:parrot_spawn_egg"
 		},
-		"title": "Mob Heads",
+		"title": {"text": "Mob Heads"},
 		"frame": "challenge",
 		"description": [
 			"",

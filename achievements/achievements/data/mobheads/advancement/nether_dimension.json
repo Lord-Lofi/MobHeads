@@ -43,6 +43,9 @@
     },
     "magma_cube": {
       "trigger": "minecraft:impossible"
+    },
+    "wither_skeleton": {
+      "trigger": "minecraft:impossible"
     }
   },
   "rewards": {},
@@ -76,6 +79,9 @@
     ],
     [
       "magma_cube"
+    ],
+    [
+      "wither_skeleton"
     ]
   ],
   "parent": "mobheads:firstmobhead"

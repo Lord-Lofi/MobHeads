@@ -1,0 +1,46 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain all desert mob heads",
+      "color": "white"
+    },
+    "title": {
+      "text": "Sand in Your Head",
+      "color": "yellow"
+    },
+    "icon": {
+      "id": "cactus"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "husk": {
+      "trigger": "minecraft:impossible"
+    },
+    "camel": {
+      "trigger": "minecraft:impossible"
+    },
+    "armadillo": {
+      "trigger": "minecraft:impossible"
+    },
+    "scared_armadillo": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "husk"
+    ],
+    [
+      "camel"
+    ],
+    [
+      "armadillo"
+    ],
+    [
+      "scared_armadillo"
+    ]
+  ],
+  "parent": "mobheads:firstmobhead"
+}

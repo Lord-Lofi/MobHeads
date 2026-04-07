@@ -141,6 +141,7 @@ ListOfMobs:
         advancements:
         - "mobheads:firstmobhead first_mob_head"
         - "mobheads:thelegend27 armadillo"
+        - "mobheads:desert armadillo"
       ArmadilloHead2:
         displayName: "&eScared Armadillo"
         random_uuid: 078a9627-18e4-4794-a241-2armi262349
@@ -148,6 +149,7 @@ ListOfMobs:
         advancements:
         - "mobheads:firstmobhead first_mob_head"
         - "mobheads:thelegend27 scared_armadillo"
+        - "mobheads:desert scared_armadillo"
   Bogged:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -420,6 +422,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 bat"
+      - "mobheads:night_mobs bat"
   Camel:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -431,6 +434,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 camel"
+      - "mobheads:desert camel"
   Sniffer:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -504,6 +508,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 cave_spider"
+      - "mobheads:arthropods cave_spider"
   Temperate_Chicken:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -594,6 +599,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 charged_creeper"
+      - "mobheads:night_mobs charged_creeper"
   Dolphin:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -833,6 +839,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 husk"
+      - "mobheads:desert husk"
   Illusioner:
     dropChance: 10%
     lootingBonus: 1%
@@ -979,6 +986,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 mooshroom"
+      - "mobheads:mushroom mooshroom"
   Mule:
     dropChance: 0.3%
     lootingBonus: DEFAULT
@@ -1073,6 +1081,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 phantom"
+      - "mobheads:night_mobs phantom"
   Temperate_Pig:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -1117,6 +1126,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 polar_bear"
+      - "mobheads:cold_biome polar_bear"
   Pufferfish:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -1466,6 +1476,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 silverfish"
+      - "mobheads:arthropods silverfish"
   Slime:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -1490,6 +1501,7 @@ ListOfMobs:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 snow_golem"
       - "mobheads:golem snow_golem"
+      - "mobheads:cold_biome snow_golem"
   Derpy_Snow_Golem:
     dropChance: 1%
     lootingBonus: 0.35%
@@ -1500,7 +1512,9 @@ ListOfMobs:
     textureCode: PLACEHOLDER_DERPY_SNOW_GOLEM
     advancements:
       - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 derpy_snow_golem"
       - "mobheads:golem derpy_snow_golem"
+      - "mobheads:cold_biome derpy_snow_golem"
   Spider:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -1512,6 +1526,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 spider"
+      - "mobheads:arthropods spider"
   Squid:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -1545,6 +1560,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 stray"
+      - "mobheads:cold_biome stray"
   Tropical_Fish:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -1836,6 +1852,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 witch"
+      - "mobheads:swampmobs witch"
   Wild_Wolf:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -1957,6 +1974,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 bee"
+      - "mobheads:arthropods bee"
   Zombie_Butcher_Villager:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -2034,6 +2052,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 wandering_trader"
+      - "mobheads:wanderer wandering_trader"
 
 
   Pillager:
@@ -2047,6 +2066,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 pillager"
+      - "mobheads:raid pillager"
 
   Mooshroom_Brown:
     dropChance: 1%
@@ -2059,6 +2079,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 mooshroom_brown"
+      - "mobheads:mushroom mooshroom_brown"
 
   Ravager:
     dropChance: 2%
@@ -2071,6 +2092,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 ravager"
+      - "mobheads:raid ravager"
 
 
   Panda_Aggressive:
@@ -2348,6 +2370,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 zombie"
+      - "mobheads:night_mobs zombie"
   Skeleton:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -2359,6 +2382,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 skeleton"
+      - "mobheads:night_mobs skeleton"
   Wither_Skeleton:
     dropChance: NONE
     lootingBonus: NONE
@@ -2370,6 +2394,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 wither_skeleton"
+      - "mobheads:nether_dimension wither_skeleton"
   Creeper:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -2381,6 +2406,7 @@ ListOfMobs:
     advancements:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 creeper"
+      - "mobheads:night_mobs creeper"
   Ender_Dragon:
     dropChance: 100%
     lootingBonus: 0%

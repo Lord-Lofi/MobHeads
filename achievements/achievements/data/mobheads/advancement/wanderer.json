@@ -1,0 +1,28 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain the wandering trader's head",
+      "color": "white"
+    },
+    "title": {
+      "text": "Stranger Danger",
+      "color": "blue"
+    },
+    "icon": {
+      "id": "blue_dye"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "wandering_trader": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "wandering_trader"
+    ]
+  ],
+  "parent": "mobheads:firstmobhead"
+}
