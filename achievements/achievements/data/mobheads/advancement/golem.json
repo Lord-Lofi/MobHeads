@@ -1,0 +1,48 @@
+{
+  "display":{
+    "description":{
+      "text":"Obtain all golem mob heads",
+      "color":"white"
+    },
+    "title":{
+      "text":"The Golem Rule!",
+      "color":"gold"
+    },
+    "icon":{
+      "id":"carved_pumpkin"
+    },
+    "frame":"challenge"
+  },
+  "criteria":{
+    "snow_golem":{
+      "trigger":"minecraft:impossible"
+    },
+    "iron_golem":{
+      "trigger":"minecraft:impossible"
+    },
+    "copper_golem":{
+      "trigger":"minecraft:impossible"
+    },
+    "derpy_snow_golem":{
+      "trigger":"minecraft:impossible"
+    }
+  },
+  "rewards":{
+
+  },
+  "requirements":[
+    [
+      "snow_golem"
+    ],
+    [
+      "iron_golem"
+    ],
+    [
+      "copper_golem"
+    ],
+    [
+      "derpy_snow_golem"
+    ]
+  ],
+  "parent":"mobheads:firstmobhead"
+}

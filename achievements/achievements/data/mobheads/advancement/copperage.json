@@ -1,0 +1,48 @@
+{
+  "display":{
+    "description":{
+      "text":"Obtain all copper golem mob heads",
+      "color":"white"
+    },
+    "title":{
+      "text":"The Copper Age!",
+      "color":"dark_aqua"
+    },
+    "icon":{
+      "id":"minecraft:copper_golem_spawn_egg"
+    },
+    "frame":"challenge"
+  },
+  "criteria":{
+    "copper_golem":{
+      "trigger":"minecraft:impossible"
+    },
+    "exposed_copper_golem":{
+      "trigger":"minecraft:impossible"
+    },
+    "weathered_copper_golem":{
+      "trigger":"minecraft:impossible"
+    },
+    "oxidized_copper_golem":{
+      "trigger":"minecraft:impossible"
+    }
+  },
+  "rewards":{
+
+  },
+  "requirements":[
+    [
+      "copper_golem"
+    ],
+    [
+      "exposed_copper_golem"
+    ],
+    [
+      "weathered_copper_golem"
+    ],
+    [
+      "oxidized_copper_golem"
+    ]
+  ],
+  "parent":"mobheads:firstmobhead"
+}

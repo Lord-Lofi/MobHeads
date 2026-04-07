@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "id": "magma_cream",
-      "tag": 0
+      "id": "magma_cream"
     },
     "frame": "challenge"
   },
@@ -43,6 +42,9 @@
       "trigger": "minecraft:impossible"
     },
     "magma_cube": {
+      "trigger": "minecraft:impossible"
+    },
+    "wither_skeleton": {
       "trigger": "minecraft:impossible"
     }
   },
@@ -77,10 +79,10 @@
     ],
     [
       "magma_cube"
+    ],
+    [
+      "wither_skeleton"
     ]
   ],
-  "filename": 10,
-  "parent-count": 3,
-  "parent-type": "parent",
   "parent": "mobheads:firstmobhead"
 }

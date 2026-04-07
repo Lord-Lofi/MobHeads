@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "id": "carrot",
-      "tag": 0
+      "id": "carrot"
     },
     "frame": "challenge"
   },
@@ -61,8 +60,5 @@
       "white_rabbit"
     ]
   ],
-  "filename": 8,
-  "parent-count": 3,
-  "parent-type": "child",
   "parent": "mobheads:firstmobhead"
 }

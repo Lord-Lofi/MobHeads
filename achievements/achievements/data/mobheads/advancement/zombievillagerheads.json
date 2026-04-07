@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "id": "zombie_villager_spawn_egg",
-      "tag": 0
+      "id": "zombie_villager_spawn_egg"
     },
     "frame": "challenge"
   },
@@ -110,7 +109,5 @@
       "zombie_weaponsmith_villager"
     ]
   ],
-  "filename": 27,
-  "parent-count": 3,
   "parent-type": "parent"
 }

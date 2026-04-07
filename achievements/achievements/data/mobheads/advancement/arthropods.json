@@ -1,45 +1,45 @@
 {
   "display": {
     "description": {
-      "text": "Obtain all fish heads",
+      "text": "Obtain all arthropod mob heads",
       "color": "white"
     },
     "title": {
-      "text": "You smell!",
-      "color": "white"
+      "text": "Eight Legs Too Many",
+      "color": "dark_gray"
     },
     "icon": {
-      "id": "tropical_fish"
+      "id": "spider_eye"
     },
     "frame": "challenge"
   },
   "criteria": {
-    "fish": {
+    "spider": {
       "trigger": "minecraft:impossible"
     },
-    "tropical_fish": {
+    "cave_spider": {
       "trigger": "minecraft:impossible"
     },
-    "pufferfish": {
+    "silverfish": {
       "trigger": "minecraft:impossible"
     },
-    "salmon": {
+    "bee": {
       "trigger": "minecraft:impossible"
     }
   },
   "rewards": {},
   "requirements": [
     [
-      "fish"
+      "spider"
     ],
     [
-      "tropical_fish"
+      "cave_spider"
     ],
     [
-      "pufferfish"
+      "silverfish"
     ],
     [
-      "salmon"
+      "bee"
     ]
   ],
   "parent": "mobheads:firstmobhead"

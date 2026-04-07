@@ -9,28 +9,27 @@
          "color":"white"
       },
       "icon":{  
-         "id":"mangrove_propagule",
-         "tag":0
+         "id":"mangrove_propagule"
       },
       "frame":"challenge"
    },
    "criteria":{
-      "coldfroghead":{  
+      "cold_frog":{
          "trigger":"minecraft:impossible"
       },
-      "coldfroggy":{  
+      "cold_froggy":{
          "trigger":"minecraft:impossible"
       },
-      "warmfroghead":{  
+      "warm_frog":{
          "trigger":"minecraft:impossible"
       },
-      "warmfroggy":{  
+      "warm_froggy":{
          "trigger":"minecraft:impossible"
       },
-      "temperatefroghead":{  
+      "temperate_frog":{
          "trigger":"minecraft:impossible"
       },
-      "temperatefroggy":{  
+      "temperate_froggy":{
          "trigger":"minecraft:impossible"
       },
       "slime":{  
@@ -39,31 +38,34 @@
       "bogged":{  
          "trigger":"minecraft:impossible"
       },
-      "tadpole":{  
+      "tadpole":{
+         "trigger":"minecraft:impossible"
+      },
+      "witch":{
          "trigger":"minecraft:impossible"
       }
    },
-   "rewards":{  
+   "rewards":{
 
    },
-   "requirements":[  
+   "requirements":[
       [  
-         "coldfroghead"
+         "cold_frog"
       ],
       [  
-         "coldfroggy"
+         "cold_froggy"
       ],
       [ 
-         "warmfroghead"
+         "warm_frog"
       ],
       [  
-         "warmfroggy"
+         "warm_froggy"
       ],
       [  
-         "temperatefroghead"
+         "temperate_frog"
       ],
       [  
-         "temperatefroggy"
+         "temperate_froggy"
       ],
       [ 
          "slime"
@@ -73,10 +75,10 @@
       ],
       [
          "tadpole"
+      ],
+      [
+         "witch"
       ]
    ],
-   "filename":22,
-   "parent-count":3,
-   "parent-type":"parent",
    "parent":"mobheads:firstmobhead"
 }

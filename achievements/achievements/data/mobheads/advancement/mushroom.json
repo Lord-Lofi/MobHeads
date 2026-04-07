@@ -1,28 +1,33 @@
 {
   "display": {
     "description": {
-      "text": "Obtain the Wardens Head!",
+      "text": "Obtain all mushroom island mob heads",
       "color": "white"
     },
     "title": {
-      "text": "Silenced the Darkness",
-      "color": "white"
+      "text": "Fun-gus Among Us",
+      "color": "dark_red"
     },
     "icon": {
-      "id": "sculk_shrieker"
+      "id": "red_mushroom"
     },
     "frame": "challenge"
   },
   "criteria": {
-    "warden": {
+    "mooshroom": {
+      "trigger": "minecraft:impossible"
+    },
+    "mooshroom_brown": {
       "trigger": "minecraft:impossible"
     }
-
   },
   "rewards": {},
   "requirements": [
     [
-      "warden"
+      "mooshroom"
+    ],
+    [
+      "mooshroom_brown"
     ]
   ],
   "parent": "mobheads:firstmobhead"

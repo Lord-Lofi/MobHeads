@@ -9,8 +9,7 @@
          "color":"white"
       },
       "icon":{  
-         "id":"minecraft:beetroot_seeds",
-		 "tag":0
+         "id":"minecraft:beetroot_seeds"
       },
       "frame":"challenge"
    },
@@ -51,8 +50,5 @@
          "cyan_parrot"
       ]
    ],
-   "filename":14,
-   "parent-count":3,
-   "parent-type":"parent",
    "parent":"mobheads:firstmobhead"
 }

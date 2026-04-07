@@ -9,8 +9,7 @@
       "color": "white"
     },
     "icon": {
-      "id": "rotten_flesh",
-      "tag": 0
+      "id": "rotten_flesh"
     },
     "frame": "goal",
     "hidden": true
@@ -26,8 +25,5 @@
       "zombie_horse"
     ]
   ],
-  "filename": 21,
-  "parent-count": 12,
-  "parent-type": "child",
   "parent": "mobheads:horse"
 }

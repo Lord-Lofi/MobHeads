@@ -1,69 +1,57 @@
 {
   "display": {
     "description": {
-      "text": "Obtain all horse heads",
+      "text": "Obtain all desert mob heads",
       "color": "white"
     },
     "title": {
-      "text": "Legend Cowboy",
-      "color": "white"
+      "text": "Sand in Your Head",
+      "color": "yellow"
     },
     "icon": {
-      "id": "saddle"
+      "id": "cactus"
     },
     "frame": "challenge"
   },
   "criteria": {
-    "skeleton_horse": {
+    "husk": {
       "trigger": "minecraft:impossible"
     },
-    "white_horse": {
+    "camel": {
       "trigger": "minecraft:impossible"
     },
-    "gray_horse": {
+    "armadillo": {
       "trigger": "minecraft:impossible"
     },
-    "dark_brown_horse": {
+    "scared_armadillo": {
       "trigger": "minecraft:impossible"
     },
-    "creamy_horse": {
+    "parched": {
       "trigger": "minecraft:impossible"
     },
-    "chestnut_horse": {
-      "trigger": "minecraft:impossible"
-    },
-    "brown_horse": {
-      "trigger": "minecraft:impossible"
-    },
-    "black_horse": {
+    "camel_husk": {
       "trigger": "minecraft:impossible"
     }
   },
   "rewards": {},
   "requirements": [
     [
-      "skeleton_horse"
+      "husk"
     ],
     [
-      "white_horse"
+      "camel"
     ],
     [
-      "gray_horse"
+      "armadillo"
     ],
     [
-      "dark_brown_horse"
+      "scared_armadillo"
     ],
     [
-      "creamy_horse"
+      "parched"
     ],
     [
-      "chestnut_horse"
-    ],
-    [
-      "brown_horse"
-    ],
-    [
-      "black_horse"
+      "camel_husk"
     ]
   ],
   "parent": "mobheads:firstmobhead"

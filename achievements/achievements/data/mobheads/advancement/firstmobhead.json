@@ -9,8 +9,7 @@
          "color":"white"
       },
       "icon":{
-         "id":"creeper_head",
-         "tag":0
+         "id":"creeper_head"
       }
    },
    "criteria":{

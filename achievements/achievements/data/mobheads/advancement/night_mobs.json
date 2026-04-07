@@ -1,69 +1,57 @@
 {
   "display": {
     "description": {
-      "text": "Obtain all horse heads",
+      "text": "Obtain all common night mob heads",
       "color": "white"
     },
     "title": {
-      "text": "Legend Cowboy",
-      "color": "white"
+      "text": "Things That Go Bump",
+      "color": "dark_purple"
     },
     "icon": {
-      "id": "saddle"
+      "id": "rotten_flesh"
     },
     "frame": "challenge"
   },
   "criteria": {
-    "skeleton_horse": {
+    "zombie": {
       "trigger": "minecraft:impossible"
     },
-    "white_horse": {
+    "skeleton": {
       "trigger": "minecraft:impossible"
     },
-    "gray_horse": {
+    "creeper": {
       "trigger": "minecraft:impossible"
     },
-    "dark_brown_horse": {
+    "charged_creeper": {
       "trigger": "minecraft:impossible"
     },
-    "creamy_horse": {
+    "phantom": {
       "trigger": "minecraft:impossible"
     },
-    "chestnut_horse": {
-      "trigger": "minecraft:impossible"
-    },
-    "brown_horse": {
-      "trigger": "minecraft:impossible"
-    },
-    "black_horse": {
+    "bat": {
       "trigger": "minecraft:impossible"
     }
   },
   "rewards": {},
   "requirements": [
     [
-      "skeleton_horse"
+      "zombie"
     ],
     [
-      "white_horse"
+      "skeleton"
     ],
     [
-      "gray_horse"
+      "creeper"
     ],
     [
-      "dark_brown_horse"
+      "charged_creeper"
     ],
     [
-      "creamy_horse"
+      "phantom"
     ],
     [
-      "chestnut_horse"
-    ],
-    [
-      "brown_horse"
-    ],
-    [
-      "black_horse"
+      "bat"
     ]
   ],
   "parent": "mobheads:firstmobhead"

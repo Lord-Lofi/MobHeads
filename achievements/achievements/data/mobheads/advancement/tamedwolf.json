@@ -9,8 +9,7 @@
          "color":"white"
       },
       "icon":{
-         "id":"lead",
-		 "tag":0
+         "id":"lead"
       },
       "frame":"challenge",
       "hidden": false
@@ -80,9 +79,5 @@
       "tamed_spotted_wolf"
     ]
    ],
-     
-   "filename":21,
-   "parent-count":9,
-   "parent-type":"child",
    "parent":"mobheads:wildwolf"
 }

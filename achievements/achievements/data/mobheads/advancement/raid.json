@@ -1,28 +1,33 @@
 {
   "display": {
     "description": {
-      "text": "Obtain the Wardens Head!",
+      "text": "Obtain all raid mob heads",
       "color": "white"
     },
     "title": {
-      "text": "Silenced the Darkness",
-      "color": "white"
+      "text": "The Village Defenders",
+      "color": "red"
     },
     "icon": {
-      "id": "sculk_shrieker"
+      "id": "crossbow"
     },
     "frame": "challenge"
   },
   "criteria": {
-    "warden": {
+    "pillager": {
+      "trigger": "minecraft:impossible"
+    },
+    "ravager": {
       "trigger": "minecraft:impossible"
     }
-
   },
   "rewards": {},
   "requirements": [
     [
-      "warden"
+      "pillager"
+    ],
+    [
+      "ravager"
     ]
   ],
   "parent": "mobheads:firstmobhead"

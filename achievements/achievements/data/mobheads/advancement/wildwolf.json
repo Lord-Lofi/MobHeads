@@ -9,8 +9,7 @@
          "color":"white"
       },
       "icon":{
-         "id":"bone",
-		 "tag":0
+         "id":"bone"
       },
       "frame":"challenge"
    },
@@ -81,9 +80,5 @@
       "wild_spotted_wolf"
     ]
    ],
-     
-   "filename":160,
-   "parent-count":3,
-   "parent-type":"parent",
    "parent":"mobheads:firstmobhead"
 }

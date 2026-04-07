@@ -9,26 +9,22 @@
 			"color": "white"
 		},
 		"icon": {
-			"id": "goat_horn",
-			"tag": 0
+			"id": "goat_horn"
 		},
 		"frame": "challenge"
 	},
 	"criteria": {
-		"goat_head1": {
+		"goat": {
 			"trigger": "minecraft:impossible"
 		},
-		"screaming_goat_head1": {
+		"screaming_goat": {
 			"trigger": "minecraft:impossible"
 		}
 	},
 	"rewards": {},
 	"requirements": [
-		["goat_head1"],
-		["screaming_goat_head1"]
+		["goat"],
+		["screaming_goat"]
 	],
-	"filename": 23,
-	"parent-count": 3,
-	"parent-type": "parent",
 	"parent": "mobheads:firstmobhead"
 }

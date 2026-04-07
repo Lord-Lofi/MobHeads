@@ -9,8 +9,7 @@
 			"color": "white"
 		},
 		"icon": {
-			"id": "lead",
-			"tag": 0
+			"id": "lead"
 		},
 		"frame": "challenge",
         "hidden": true
@@ -36,8 +35,5 @@
 		["creamy_llama_trader"],
 		["brown_llama_trader"]
 	],
-	"filename": 30,
-	"parent-count": 13,
-    "parent-type": "child",
     "parent": "mobheads:llama"
 }

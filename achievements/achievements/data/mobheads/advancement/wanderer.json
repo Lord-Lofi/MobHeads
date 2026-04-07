@@ -1,28 +1,27 @@
 {
   "display": {
     "description": {
-      "text": "Obtain the Wardens Head!",
+      "text": "Obtain the wandering trader's head",
       "color": "white"
     },
     "title": {
-      "text": "Silenced the Darkness",
-      "color": "white"
+      "text": "Stranger Danger",
+      "color": "blue"
     },
     "icon": {
-      "id": "sculk_shrieker"
+      "id": "blue_dye"
     },
     "frame": "challenge"
   },
   "criteria": {
-    "warden": {
+    "wandering_trader": {
       "trigger": "minecraft:impossible"
     }
-
   },
   "rewards": {},
   "requirements": [
     [
-      "warden"
+      "wandering_trader"
     ]
   ],
   "parent": "mobheads:firstmobhead"

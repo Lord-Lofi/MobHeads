@@ -1,45 +1,39 @@
 {
   "display": {
     "description": {
-      "text": "Obtain all fish heads",
+      "text": "Obtain all nautilus heads",
       "color": "white"
     },
     "title": {
-      "text": "You smell!",
-      "color": "white"
+      "text": "Shell Shocked",
+      "color": "aqua"
     },
     "icon": {
-      "id": "tropical_fish"
+      "id": "nautilus_shell"
     },
     "frame": "challenge"
   },
   "criteria": {
-    "fish": {
+    "nautilus": {
       "trigger": "minecraft:impossible"
     },
-    "tropical_fish": {
+    "temperate_zombie_nautilus": {
       "trigger": "minecraft:impossible"
     },
-    "pufferfish": {
-      "trigger": "minecraft:impossible"
-    },
-    "salmon": {
+    "warm_zombie_nautilus": {
       "trigger": "minecraft:impossible"
     }
   },
   "rewards": {},
   "requirements": [
     [
-      "fish"
+      "nautilus"
     ],
     [
-      "tropical_fish"
+      "temperate_zombie_nautilus"
     ],
     [
-      "pufferfish"
-    ],
-    [
-      "salmon"
+      "warm_zombie_nautilus"
     ]
   ],
   "parent": "mobheads:firstmobhead"

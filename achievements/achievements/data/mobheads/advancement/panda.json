@@ -9,13 +9,12 @@
       "color": "white"
     },
     "icon": {
-      "item": "bamboo",
-      "tag": 0
+      "id": "bamboo"
     },
     "frame": "challenge"
   },
   "criteria": {
-    "panda_agressive": {
+    "panda_aggressive": {
       "trigger": "minecraft:impossible"
     },
     "panda_brown": {
@@ -40,7 +39,7 @@
   "rewards": {},
   "requirements": [
     [
-      "panda_agressive"
+      "panda_aggressive"
     ],
     [
       "panda_brown"
@@ -61,8 +60,5 @@
       "panda_worried"
     ]
   ],
-  "filename": 9,
-  "parent-count": 3,
-  "parent-type": "child",
   "parent": "mobheads:firstmobhead"
 }

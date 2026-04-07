@@ -244,6 +244,21 @@ public enum MobNames {
 	Fox_Normal,
 	Fox_Snow,
 
+	//copper golem types
+	Copper_Golem,
+	Exposed_Copper_Golem,
+	Oxidized_Copper_Golem,
+	Weathered_Copper_Golem,
+
+	//nautilus types
+	Nautilus,
+	Temperate_Zombie_Nautilus,
+	Warm_Zombie_Nautilus,
+
+	//1.21.11 new mobs
+	Parched,
+	Camel_Husk,
+
 	//These are the invalid cats. Still have to load them:
 	Black_Cat,
 	Ginger_Cat,
@@ -283,10 +298,14 @@ public enum MobNames {
 				return Ocelot;
 			case CAMEL:
 				return Camel;
+			case CAMEL_HUSK:
+				return Camel_Husk;
 			case CAVE_SPIDER:
 				return Cave_Spider;
 			case CHICKEN:
 				return getChickenName((Chicken) entity);
+			case COPPER_GOLEM:
+				return getCopperGolemName((CopperGolem) entity);
 			case COW:
 				return getCowName((Cow) entity);
 			case CREAKING:
@@ -367,6 +386,12 @@ public enum MobNames {
 				return Spider;
 			case SQUID:
 				return Squid;
+			case NAUTILUS:
+				return Nautilus;
+			case ZOMBIE_NAUTILUS:
+				return getZombieNautilusName((ZombieNautilus) entity);
+			case PARCHED:
+				return Parched;
 			case STRAY:
 				return Stray;
 			case TURTLE:
@@ -585,8 +610,7 @@ public enum MobNames {
 
 	private static MobNames getAxolotlName(Axolotl axolotl) {
 		if (axolotl.getVariant() == null) {
-                System.out.println("Warning: Axolotl variant is null!");
-                return null;
+			return null;
 		}
 		switch (axolotl.getVariant()) {
 			case BLUE:
@@ -600,7 +624,6 @@ public enum MobNames {
 			case WILD:
 				return Wild_Axolotl;
 		}
-        System.out.println("Warning: Unrecognized Axolotl variant: " + axolotl.getVariant());
 		return null;
 	}
 
@@ -638,6 +661,23 @@ public enum MobNames {
 			return Derpy_Snow_Golem;
 		}
 		return Snow_Golem;
+	}
+
+	private static MobNames getCopperGolemName(CopperGolem coppergolem) {
+		if (coppergolem.getWeatherState() == null) {
+                return Copper_Golem;
+		}
+		switch (coppergolem.getWeatherState()) {
+			case EXPOSED:
+				return Exposed_Copper_Golem;
+			case OXIDIZED:
+				return Oxidized_Copper_Golem;
+			case WEATHERED:
+				return Weathered_Copper_Golem;
+			case UNAFFECTED:
+				return Copper_Golem;
+		}
+		return Copper_Golem;
 	}
 
 	private static MobNames getHorseName(Horse horse) {
@@ -809,13 +849,11 @@ public enum MobNames {
 	}
 
 	private static MobNames getWolfName(Wolf wolf) {
-		// Get the NamespacedKey of the wolf's variant
-		final NamespacedKey wolfVariantKey = wolf.getVariant().getKey();
 		if (wolf.isTamed()) {
-			// Check if the wolf's variant is null
 			if (wolf.getVariant() == null) {
 				return Tamed_Wolf;
 			}
+			final NamespacedKey wolfVariantKey = wolf.getVariant().getKey();
 
 			// Compare the key to the registry variants
 			if (wolfVariantKey.equals(Registry.WOLF_VARIANT.get(new NamespacedKey("minecraft", "ashen")).getKey())) {
@@ -848,10 +886,10 @@ public enum MobNames {
 			// Default return if no match is found
 			return Tamed_Wolf;
 		}
-		// Check if the wolf's variant is null
 		if (wolf.getVariant() == null) {
 			return Wild_Wolf;
 		}
+		final NamespacedKey wolfVariantKey = wolf.getVariant().getKey();
 
 		// Compare the key to the registry variants
 		if (wolfVariantKey.equals(Registry.WOLF_VARIANT.get(new NamespacedKey("minecraft", "ashen")).getKey())) {
@@ -982,6 +1020,19 @@ public enum MobNames {
 			return Villager_Weaponsmith;
 		}
 		return Villager;
+	}
+
+	private static MobNames getZombieNautilusName(ZombieNautilus zombieNautilus) {
+		if (zombieNautilus.getVariant() == null) {
+			return Temperate_Zombie_Nautilus;
+		}
+		if (zombieNautilus.getVariant() == ZombieNautilus.Variant.TEMPERATE) {
+			return Temperate_Zombie_Nautilus;
+		}
+		if (zombieNautilus.getVariant() == ZombieNautilus.Variant.WARM) {
+			return Warm_Zombie_Nautilus;
+		}
+		return Temperate_Zombie_Nautilus;
 	}
 
 	private static MobNames getFishName(Entity entity) {

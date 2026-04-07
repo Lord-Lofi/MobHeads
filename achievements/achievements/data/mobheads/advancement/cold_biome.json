@@ -1,45 +1,45 @@
 {
   "display": {
     "description": {
-      "text": "Obtain all fish heads",
+      "text": "Obtain all cold biome mob heads",
       "color": "white"
     },
     "title": {
-      "text": "You smell!",
-      "color": "white"
+      "text": "It's Freezing Out Here",
+      "color": "aqua"
     },
     "icon": {
-      "id": "tropical_fish"
+      "id": "snowball"
     },
     "frame": "challenge"
   },
   "criteria": {
-    "fish": {
+    "stray": {
       "trigger": "minecraft:impossible"
     },
-    "tropical_fish": {
+    "polar_bear": {
       "trigger": "minecraft:impossible"
     },
-    "pufferfish": {
+    "snow_golem": {
       "trigger": "minecraft:impossible"
     },
-    "salmon": {
+    "derpy_snow_golem": {
       "trigger": "minecraft:impossible"
     }
   },
   "rewards": {},
   "requirements": [
     [
-      "fish"
+      "stray"
     ],
     [
-      "tropical_fish"
+      "polar_bear"
     ],
     [
-      "pufferfish"
+      "snow_golem"
     ],
     [
-      "salmon"
+      "derpy_snow_golem"
     ]
   ],
   "parent": "mobheads:firstmobhead"
