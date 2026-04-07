@@ -593,8 +593,7 @@ public enum MobNames {
 
 	private static MobNames getAxolotlName(Axolotl axolotl) {
 		if (axolotl.getVariant() == null) {
-                System.out.println("Warning: Axolotl variant is null!");
-                return null;
+			return null;
 		}
 		switch (axolotl.getVariant()) {
 			case BLUE:
@@ -608,7 +607,6 @@ public enum MobNames {
 			case WILD:
 				return Wild_Axolotl;
 		}
-        System.out.println("Warning: Unrecognized Axolotl variant: " + axolotl.getVariant());
 		return null;
 	}
 
@@ -834,13 +832,11 @@ public enum MobNames {
 	}
 
 	private static MobNames getWolfName(Wolf wolf) {
-		// Get the NamespacedKey of the wolf's variant
-		final NamespacedKey wolfVariantKey = wolf.getVariant().getKey();
 		if (wolf.isTamed()) {
-			// Check if the wolf's variant is null
 			if (wolf.getVariant() == null) {
 				return Tamed_Wolf;
 			}
+			final NamespacedKey wolfVariantKey = wolf.getVariant().getKey();
 
 			// Compare the key to the registry variants
 			if (wolfVariantKey.equals(Registry.WOLF_VARIANT.get(new NamespacedKey("minecraft", "ashen")).getKey())) {
@@ -873,10 +869,10 @@ public enum MobNames {
 			// Default return if no match is found
 			return Tamed_Wolf;
 		}
-		// Check if the wolf's variant is null
 		if (wolf.getVariant() == null) {
 			return Wild_Wolf;
 		}
+		final NamespacedKey wolfVariantKey = wolf.getVariant().getKey();
 
 		// Compare the key to the registry variants
 		if (wolfVariantKey.equals(Registry.WOLF_VARIANT.get(new NamespacedKey("minecraft", "ashen")).getKey())) {
