@@ -305,7 +305,7 @@ public enum MobNames {
 			case CHICKEN:
 				return getChickenName((Chicken) entity);
 			case COPPER_GOLEM:
-				return getCopperGolemName((CopperGolem) entity);
+				return getCopperGolemName(entity);
 			case COW:
 				return getCowName((Cow) entity);
 			case CREAKING:
@@ -663,21 +663,32 @@ public enum MobNames {
 		return Snow_Golem;
 	}
 
-	private static MobNames getCopperGolemName(CopperGolem coppergolem) {
-		if (coppergolem.getWeatherState() == null) {
-                return Copper_Golem;
-		}
-		switch (coppergolem.getWeatherState()) {
-			case EXPOSED:
-				return Exposed_Copper_Golem;
-			case OXIDIZED:
-				return Oxidized_Copper_Golem;
-			case WEATHERED:
-				return Weathered_Copper_Golem;
-			case UNAFFECTED:
+	private static MobNames getCopperGolemName(Entity entity) {
+		try {
+			// Paper API: getWeatheringState()
+			Object state = entity.getClass().getMethod("getWeatheringState").invoke(entity);
+			switch (state.toString()) {
+				case "EXPOSED":   return Exposed_Copper_Golem;
+				case "WEATHERED": return Weathered_Copper_Golem;
+				case "OXIDIZED":  return Oxidized_Copper_Golem;
+				default:          return Copper_Golem;
+			}
+		} catch (NoSuchMethodException e) {
+			try {
+				// Spigot API fallback: getWeatherState()
+				Object state = entity.getClass().getMethod("getWeatherState").invoke(entity);
+				switch (state.toString()) {
+					case "EXPOSED":   return Exposed_Copper_Golem;
+					case "WEATHERED": return Weathered_Copper_Golem;
+					case "OXIDIZED":  return Oxidized_Copper_Golem;
+					default:          return Copper_Golem;
+				}
+			} catch (Exception ex) {
 				return Copper_Golem;
+			}
+		} catch (Exception e) {
+			return Copper_Golem;
 		}
-		return Copper_Golem;
 	}
 
 	private static MobNames getHorseName(Horse horse) {
