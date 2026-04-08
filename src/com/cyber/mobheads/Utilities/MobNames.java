@@ -1,5 +1,6 @@
 package com.cyber.mobheads.Utilities;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.*;
 import org.bukkit.entity.Villager.Profession;
@@ -664,9 +665,11 @@ public enum MobNames {
 	}
 
 	private static MobNames getCopperGolemName(Entity entity) {
+		Bukkit.getLogger().info("[MobHeads DEBUG] getCopperGolemName called, entity class: " + entity.getClass().getName());
 		try {
 			// Paper API: getWeatheringState()
 			Object state = entity.getClass().getMethod("getWeatheringState").invoke(entity);
+			Bukkit.getLogger().info("[MobHeads DEBUG] getWeatheringState() returned: " + state);
 			switch (state.toString()) {
 				case "EXPOSED":   return Exposed_Copper_Golem;
 				case "WEATHERED": return Weathered_Copper_Golem;
@@ -674,9 +677,11 @@ public enum MobNames {
 				default:          return Copper_Golem;
 			}
 		} catch (NoSuchMethodException e) {
+			Bukkit.getLogger().info("[MobHeads DEBUG] getWeatheringState() not found, trying getWeatherState()");
 			try {
 				// Spigot API fallback: getWeatherState()
 				Object state = entity.getClass().getMethod("getWeatherState").invoke(entity);
+				Bukkit.getLogger().info("[MobHeads DEBUG] getWeatherState() returned: " + state);
 				switch (state.toString()) {
 					case "EXPOSED":   return Exposed_Copper_Golem;
 					case "WEATHERED": return Weathered_Copper_Golem;
@@ -684,9 +689,11 @@ public enum MobNames {
 					default:          return Copper_Golem;
 				}
 			} catch (Exception ex) {
+				Bukkit.getLogger().info("[MobHeads DEBUG] getWeatherState() also failed: " + ex.getClass().getName() + ": " + ex.getMessage());
 				return Copper_Golem;
 			}
 		} catch (Exception e) {
+			Bukkit.getLogger().info("[MobHeads DEBUG] getWeatheringState() invocation failed: " + e.getClass().getName() + ": " + e.getMessage());
 			return Copper_Golem;
 		}
 	}
