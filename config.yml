@@ -2523,6 +2523,59 @@ ListOfMobs:
           - "mobheads:thelegend27 invulnerable_wither_2"
           - "mobheads:wither invulnerable_wither_2"
 
+  Copper_Golem:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eCopper Golem Head"
+    random_uuid: d23f3607-25a0-4c22-860a-0ucgb9a16412
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTllMjRlOTRkYmU0MmUyMzBkODMyOTNhNzdkNjFmZjcxMDFhOGM2OGFiNjhiYmM2YTkzZjk2MzBmYjJmZGI0In19fQ==
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 copper_golem"
+      - "mobheads:golem copper_golem"
+      - "mobheads:copperage copper_golem"
+  Exposed_Copper_Golem:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eExposed Copper Golem Head"
+    random_uuid: d23f3607-25a0-4c22-860a-0ecgb9a16412
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGE5ZTQxMGM4YjdmZGJkNGI5ZDhlYTgwNzViYzY2YTljMWFkYTliYzE1ODczYjRiMWRlYWRhYTI4MTJiODQ3ZCJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 exposed_copper_golem"
+      - "mobheads:golem copper_golem"
+      - "mobheads:copperage exposed_copper_golem"
+  Weathered_Copper_Golem:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eWeathered Copper Golem Head"
+    random_uuid: d23f3607-25a0-4c22-860a-0wcgb9a16412
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODI2Mjk5MmQ2ZDVhNjJhMWRkM2VkZThlNGMzNGYxYzE4MDUwYmFiNjQyNzFkOTI2YzFjMGM2MTYyYjJjZDc0ZSJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 weathered_copper_golem"
+      - "mobheads:golem copper_golem"
+      - "mobheads:copperage weathered_copper_golem"
+  Oxidized_Copper_Golem:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eOxidized Copper Golem Head"
+    random_uuid: d23f3607-25a0-4c22-860a-0ocgb9a16412
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2MyYWFiOGEwZmVjM2NjMDZhNGQ0NzQ4MGUwMjRmODhmMmIwN2JjOTZlZTA5ZTUzMzFlNWY0ZGI2YjI3Mzg4NSJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 oxidized_copper_golem"
+      - "mobheads:golem copper_golem"
+      - "mobheads:copperage oxidized_copper_golem"
+
 
 #List of all fish that are supported in this plugin.
 #You can obtain these fish by fishing. When you catch a fish, there is a chance (dropChance) that the player will also catch the corresponding fish head.
@@ -2577,59 +2630,6 @@ ListOfFish:
       - "mobheads:thelegend27 pufferfish"
       - "mobheads:fish pufferfish"
       - "mobheads:watermobs pufferfish"
-
-  Copper_Golem:
-    dropChance: DEFAULT
-    lootingBonus: DEFAULT
-    dropOnChargedCreeperDeath: true
-    broadcastMessage: true
-    displayName: "&eCopper Golem Head"
-    random_uuid: d23f3607-25a0-4c22-860a-0ucgb9a16412
-    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTllMjRlOTRkYmU0MmUyMzBkODMyOTNhNzdkNjFmZjcxMDFhOGM2OGFiNjhiYmM2YTkzZjk2MzBmYjJmZGI0In19fQ==
-    advancements:
-      - "mobheads:firstmobhead first_mob_head"
-      - "mobheads:thelegend27 copper_golem"
-      - "mobheads:golem copper_golem"
-      - "mobheads:copperage copper_golem"
-  Exposed_Copper_Golem:
-    dropChance: DEFAULT
-    lootingBonus: DEFAULT
-    dropOnChargedCreeperDeath: true
-    broadcastMessage: true
-    displayName: "&eExposed Copper Golem Head"
-    random_uuid: d23f3607-25a0-4c22-860a-0ecgb9a16412
-    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGE5ZTQxMGM4YjdmZGJkNGI5ZDhlYTgwNzViYzY2YTljMWFkYTliYzE1ODczYjRiMWRlYWRhYTI4MTJiODQ3ZCJ9fX0=
-    advancements:
-      - "mobheads:firstmobhead first_mob_head"
-      - "mobheads:thelegend27 exposed_copper_golem"
-      - "mobheads:golem copper_golem"
-      - "mobheads:copperage exposed_copper_golem"
-  Weathered_Copper_Golem:
-    dropChance: DEFAULT
-    lootingBonus: DEFAULT
-    dropOnChargedCreeperDeath: true
-    broadcastMessage: true
-    displayName: "&eWeathered Copper Golem Head"
-    random_uuid: d23f3607-25a0-4c22-860a-0wcgb9a16412
-    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODI2Mjk5MmQ2ZDVhNjJhMWRkM2VkZThlNGMzNGYxYzE4MDUwYmFiNjQyNzFkOTI2YzFjMGM2MTYyYjJjZDc0ZSJ9fX0=
-    advancements:
-      - "mobheads:firstmobhead first_mob_head"
-      - "mobheads:thelegend27 weathered_copper_golem"
-      - "mobheads:golem copper_golem"
-      - "mobheads:copperage weathered_copper_golem"
-  Oxidized_Copper_Golem:
-    dropChance: DEFAULT
-    lootingBonus: DEFAULT
-    dropOnChargedCreeperDeath: true
-    broadcastMessage: true
-    displayName: "&eOxidized Copper Golem Head"
-    random_uuid: d23f3607-25a0-4c22-860a-0ocgb9a16412
-    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2MyYWFiOGEwZmVjM2NjMDZhNGQ0NzQ4MGUwMjRmODhmMmIwN2JjOTZlZTA5ZTUzMzFlNWY0ZGI2YjI3Mzg4NSJ9fX0=
-    advancements:
-      - "mobheads:firstmobhead first_mob_head"
-      - "mobheads:thelegend27 oxidized_copper_golem"
-      - "mobheads:golem copper_golem"
-      - "mobheads:copperage oxidized_copper_golem"
 
 #Whenever a player dies by another player
 Player:

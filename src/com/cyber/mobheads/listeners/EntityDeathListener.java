@@ -31,18 +31,13 @@ public class EntityDeathListener
 	public void onChargedCreeperDeath(EntityDamageByEntityEvent event) {
 		if (event.getEntity() instanceof LivingEntity) {
 			LivingEntity le = (LivingEntity) event.getEntity();
-			boolean willDie = le.getHealth() - event.getDamage() <= 0.0D;
-			boolean isChargedCreeper = event.getDamager() instanceof Creeper && ((Creeper) event.getDamager()).isPowered();
-			if (le.getType().name().equals("COPPER_GOLEM")) {
-				Bukkit.getLogger().info("[MobHeads DEBUG] COPPER_GOLEM damage event - health: " + le.getHealth() + ", damage: " + event.getDamage() + ", willDie: " + willDie + ", isChargedCreeper: " + isChargedCreeper + ", damager: " + event.getDamager().getType().name());
-			}
-			if (willDie && isChargedCreeper) {
+			if (le.getHealth() - event.getDamage() <= 0.0D &&
+					event.getDamager() instanceof Creeper && (
+					(Creeper) event.getDamager()).isPowered()) {
+
 				MobNames mobName = MobNames.getName(event.getEntity());
-				boolean creeperDrop = mobName != null && ConfigController.chargedCreeperDrop(mobName);
-				if (le.getType().name().equals("COPPER_GOLEM")) {
-					Bukkit.getLogger().info("[MobHeads DEBUG] COPPER_GOLEM killing blow - mobName: " + mobName + ", creeperDrop: " + creeperDrop);
-				}
-				if (creeperDrop || (event.getEntity() instanceof Player && ConfigController.chargedCreeperDropForPlayer())) {
+				if ((mobName != null && ConfigController.chargedCreeperDrop(mobName)) || (event
+						.getEntity() instanceof Player && ConfigController.chargedCreeperDropForPlayer())) {
 					this.killedByChargedCreeper.add(event.getEntity().getUniqueId());
 				}
 			}
