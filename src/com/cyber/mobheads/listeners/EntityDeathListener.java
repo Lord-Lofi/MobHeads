@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 public class EntityDeathListener
 		implements Listener {
@@ -66,12 +67,14 @@ public class EntityDeathListener
 
 
 		if (this.killedByChargedCreeper.remove(livingEntity.getUniqueId())) {
+			Bukkit.getLogger().info("[MobHeads DEBUG] Charged creeper drop triggered for: " + livingEntity.getType().name());
 			ItemStack skull;
 			if (livingEntity instanceof Player) {
 				skull = getPlayerHead((Player) livingEntity, null, true);
 			} else {
 				skull = getMobHead(null, livingEntity, true);
 			}
+			Bukkit.getLogger().info("[MobHeads DEBUG] skull is: " + (skull == null ? "NULL" : skull.getType().name()));
 
 			boolean alreadyThere = false;
 			for (ItemStack is : event.getDrops()) {
