@@ -1,2 +1,7 @@
-To install the custom advancements for the mob heads plugin.
-Simply drop this zip file into your world/datapacks folder.
+This is the Mob Heads advancements data pack.
+
+The MobHeads plugin installs and updates it automatically in your main world's
+datapacks/mobheads folder every time the server starts. You don't need to copy it yourself.
+
+To manage it yourself instead, set auto_update_achievements: false in the plugin's config.yml.
+To force a fresh reinstall, run /mobheads initachievements.

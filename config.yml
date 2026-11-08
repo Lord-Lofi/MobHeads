@@ -31,6 +31,10 @@ default_looting_bonus: 0.1%
 
 auto-update: true
 
+#Automatically installs and updates the advancements data pack in your main world's datapacks folder on startup.
+#Set to false if you want to manage the data pack yourself (you can still run /mobheads initachievements).
+auto_update_achievements: true
+
 enable_worldguard_support: false
 
 #These are the messages that are sent to players when the plugin is active.

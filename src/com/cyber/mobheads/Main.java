@@ -2,6 +2,7 @@ package com.cyber.mobheads;
 
 import com.cyber.mobheads.Config.ConfigController;
 import com.cyber.mobheads.Utilities.*;
+import com.cyber.mobheads.advancements.DatapackInstaller;
 import com.cyber.mobheads.listeners.EntityDeathListener;
 import com.cyber.mobheads.listeners.FishListener;
 import com.cyber.mobheads.listeners.SkullBreakListener;
@@ -18,11 +19,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.Set;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
 
 public class Main
 		extends JavaPlugin {
@@ -63,12 +61,30 @@ public class Main
 
 		ConfigController.configurationCheck();
 
+		if (config.getBoolean("auto_update_achievements", true)) {
+			installAchievements(false);
+		}
+
 		//SpiGetUpdater.checkAutoUpdate(this, 70019, getConfig().getBoolean("auto-update") == true);
 		//Broadcaster.outputInfoConsole("Mob Heads enabled", 0);
 	}
 
 	public void onDisable() {
 		/*Broadcaster.outputInfoConsole("Mob Heads disabled", 0);*/
+	}
+
+	/**
+	 * Installs/updates the advancements data pack and, if anything changed,
+	 * reloads the server's data packs on the next tick so it takes effect now.
+	 */
+	private DatapackInstaller.Result installAchievements(boolean force) {
+		DatapackInstaller.Result result = DatapackInstaller.install(this, getFile(), force);
+		if (result == DatapackInstaller.Result.INSTALLED || result == DatapackInstaller.Result.UPDATED) {
+			getLogger().info("Advancements data pack " + result.name().toLowerCase()
+					+ " at " + DatapackInstaller.getPackDirectory() + "; reloading data packs.");
+			Bukkit.getScheduler().runTask(this, Bukkit::reloadData);
+		}
+		return result;
 	}
 
 	public void a(List<String> tabs, String test, String args) {
@@ -104,33 +120,6 @@ public class Main
 		}
 		return null;
 	}
-	public void copyFile(String inputPrefix, String inputPath, String outputPath ) throws IOException {
-
-		InputStream inputStream = null;
-
-		OutputStream outputStream = null;
-		try {
-
-			inputStream = getClass().getResourceAsStream("/"+inputPrefix+"/"+inputPath);
-			outputStream = new FileOutputStream(outputPath+"/"+inputPath);
-
-			byte[] buf = new byte[1024];
-
-			int bytesRead;
-
-			while ((bytesRead = inputStream.read(buf)) > 0) {
-
-				outputStream.write(buf, 0, bytesRead);
-
-			}
-		}catch (Exception e5){
-			e5.printStackTrace();
-		} finally {
-			inputStream.close();
-			outputStream.close();
-		}
-	}
-
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (args.length >= 1) {
 			String message;
@@ -145,53 +134,12 @@ public class Main
 						return false;
 					}
 
-					File baseDirectory = getDataFolder().getParentFile().getParentFile();
-					File world = new File(baseDirectory,Bukkit.getWorlds().get(0).getName());
-					File datapacks = new File(world,"datapacks");
-					File mobHeads = new File(datapacks,"mobheads");
-
-
-
-					String achievementsDir = null;
-				try {
-					achievementsDir = getClass().getResource("").getPath();
-					achievementsDir = achievementsDir.substring(5,achievementsDir.indexOf("!")).replaceAll("%20"," ");
-
-					if(!mobHeads.exists())
-						mobHeads.mkdirs();
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-					try{
-						final JarFile jar = new JarFile(achievementsDir);
-						final Enumeration<JarEntry> entries = jar.entries(); //gives ALL entries in jar
-						while(entries.hasMoreElements()) {
-							final String name = entries.nextElement().getName();
-
-							if (name.startsWith("achievements")) { //filter according to the path
-								String relavtivePath = name.substring("achievements".length()+1);
-								String fileName = name.substring(name.lastIndexOf('/')+1);
-
-								if(name.contains("."))//has extension
-								{
-									copyFile("achievements",relavtivePath, mobHeads.getPath());
-								}else{
-									new File(mobHeads.getPath(),relavtivePath).mkdirs();
-								}
-							}
-						}
-						jar.close();
-
-						//copyContentsTo(achievementsDir,mobHeads);
-
-
-					}catch (Error|Exception e4){
+					// Force a fresh copy of the bundled pack, then reload so it applies immediately.
+					if (installAchievements(true) == DatapackInstaller.Result.FAILED) {
 						message = ConfigController.getMessage("Messages.Error.Fail");
 						if (!message.isEmpty()) {
 							sender.sendMessage(message);
 						}
-						e4.printStackTrace();
 						return true;
 					}
 					message = ConfigController.getMessage("Messages.Success.Head-achievements");
