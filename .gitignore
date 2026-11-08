@@ -8,11 +8,13 @@
 /*.jar
 /*.zip
 
-# Eclipse / VS Code project settings
+# IDE project settings (Eclipse / VS Code / IntelliJ)
 .settings
 .project
 .classpath
 .vscode/
+.idea/
+*.iml
 
 # OS clutter
 Thumbs.db

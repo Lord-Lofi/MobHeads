@@ -1,0 +1,15 @@
+# Dependabot opens pull requests when newer versions of our dependencies are released.
+# This file must live at .github/dependabot.yml (not inside .github/workflows/).
+version: 2
+updates:
+  # pom.xml dependencies (spigot-api, worldguard-bukkit, maven-compiler-plugin)
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # GitHub Actions used in .github/workflows (checkout, setup-java, upload-artifact)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
