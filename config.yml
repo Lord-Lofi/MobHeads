@@ -7,7 +7,7 @@
 #Only change the values. If you change any of the variable names, the plugin might not work correctly.
 
 #Used by the plugin to update this file automatically when you install a new version. Do not change it.
-config_version: 5
+config_version: 6
 
 #A few general settings
 
@@ -36,6 +36,10 @@ auto-update: true
 #Automatically installs and updates the advancements data pack in your main world's datapacks folder on startup.
 #Set to false if you want to manage the data pack yourself (you can still run /mobheads initachievements).
 auto_update_achievements: true
+
+#Lists every mob in your Minecraft version that doesn't have a head yet, in the console on startup.
+#Handy after a Minecraft update to see which new mobs aren't supported.
+log_mobs_without_heads: false
 
 enable_worldguard_support: false
 

@@ -12,6 +12,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
@@ -69,12 +70,34 @@ public class Main
 			installAchievements(false);
 		}
 
+		if (config.getBoolean("log_mobs_without_heads", false)) {
+			logMobsWithoutHeads();
+		}
+
 		//SpiGetUpdater.checkAutoUpdate(this, 70019, getConfig().getBoolean("auto-update") == true);
 		//Broadcaster.outputInfoConsole("Mob Heads enabled", 0);
 	}
 
 	public void onDisable() {
 		/*Broadcaster.outputInfoConsole("Mob Heads disabled", 0);*/
+	}
+
+	/** Living entity types that are not mobs and never need a head. */
+	private static final Set<String> NOT_MOBS = Set.of("PLAYER", "ARMOR_STAND", "MANNEQUIN");
+
+	/** Logs every living entity type in this Minecraft version that has no head yet. */
+	private void logMobsWithoutHeads() {
+		List<String> missing = new ArrayList<>();
+		for (EntityType type : EntityType.values()) {
+			if (type.isAlive() && !NOT_MOBS.contains(type.name()) && !MobNames.hasHead(type)) {
+				missing.add(type.name());
+			}
+		}
+		if (missing.isEmpty()) {
+			getLogger().info("Every mob in this Minecraft version has a head.");
+		} else {
+			getLogger().warning(missing.size() + " mob(s) have no head yet: " + String.join(", ", missing));
+		}
 	}
 
 	/** Updates an older config.yml in place (with a backup) when a new plugin version adds things. */
@@ -412,15 +435,13 @@ public class Main
 
 	private void showAllSupportedMobs(CommandSender sender) {
 		List<String> mobList = ConfigController.getAllMobNames();
-		String output = "";
-
-		for (int i = 0; i < mobList.size(); i++) {
-			if (i < mobList.size()) {
-				output = output + mobList.get(i) + ", ";
-			} else {
-
-				output = output + "and " + mobList.get(i);
-			}
+		String output;
+		if (mobList.size() <= 1) {
+			output = String.join("", mobList);
+		} else {
+			// "A, B, C and D"
+			output = String.join(", ", mobList.subList(0, mobList.size() - 1))
+					+ " and " + mobList.get(mobList.size() - 1);
 		}
 		String message = ConfigController.getMessage("Messages.Commands-usage.Show-all-supported-heads");
 		if (!message.isEmpty()) {

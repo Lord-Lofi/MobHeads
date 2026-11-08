@@ -7,6 +7,10 @@ import org.bukkit.entity.Villager.Profession;
 import org.bukkit.Registry;
 import org.bukkit.NamespacedKey;
 
+import java.util.EnumMap;
+import java.util.Map;
+import java.util.function.Function;
+
 public enum MobNames {
 	Allay,
 	Armadillo,
@@ -283,195 +287,117 @@ public enum MobNames {
 	;
 
 
+	/**
+	 * Which head each entity type drops. Types with variants (frogs, cats, ...)
+	 * pick the right head from the entity itself. This table is the single
+	 * source of truth: getName() uses it to pick a head, hasHead() to check coverage.
+	 */
+	private static final Map<EntityType, Function<Entity, MobNames>> HEADS = new EnumMap<>(EntityType.class);
+	static {
+		HEADS.put(EntityType.ARMADILLO, entity -> Armadillo);
+		HEADS.put(EntityType.BAT, entity -> Bat);
+		HEADS.put(EntityType.BLAZE, entity -> Blaze);
+		HEADS.put(EntityType.BOGGED, entity -> Bogged);
+		HEADS.put(EntityType.BREEZE, entity -> Breeze);
+		HEADS.put(EntityType.OCELOT, entity -> Ocelot);
+		HEADS.put(EntityType.CAMEL, entity -> Camel);
+		HEADS.put(EntityType.CAMEL_HUSK, entity -> Camel_Husk);
+		HEADS.put(EntityType.CAVE_SPIDER, entity -> Cave_Spider);
+		HEADS.put(EntityType.CHICKEN, entity -> getChickenName((Chicken) entity));
+		HEADS.put(EntityType.COPPER_GOLEM, entity -> getCopperGolemName(entity));
+		HEADS.put(EntityType.COW, entity -> getCowName((Cow) entity));
+		HEADS.put(EntityType.CREAKING, entity -> Creaking);
+		HEADS.put(EntityType.CREEPER, entity -> getCreeperName((Creeper) entity));
+		HEADS.put(EntityType.DOLPHIN, entity -> Dolphin);
+		HEADS.put(EntityType.DONKEY, entity -> Donkey);
+		HEADS.put(EntityType.DROWNED, entity -> Drowned);
+		HEADS.put(EntityType.ELDER_GUARDIAN, entity -> Elder_Guardian);
+		HEADS.put(EntityType.ENDERMAN, entity -> Enderman);
+		HEADS.put(EntityType.ENDERMITE, entity -> Endermite);
+		HEADS.put(EntityType.ENDER_DRAGON, entity -> Ender_Dragon);
+		HEADS.put(EntityType.EVOKER, entity -> Evoker);
+		HEADS.put(EntityType.GHAST, entity -> Ghast);
+		HEADS.put(EntityType.GIANT, entity -> Giant);
+		HEADS.put(EntityType.GUARDIAN, entity -> Guardian);
+		HEADS.put(EntityType.HAPPY_GHAST, entity -> Happy_Ghast);
+		HEADS.put(EntityType.HORSE, entity -> getHorseName((Horse) entity));
+		HEADS.put(EntityType.ZOMBIE_HORSE, entity -> Zombie_Horse);
+		HEADS.put(EntityType.SKELETON_HORSE, entity -> Skeleton_Horse);
+		HEADS.put(EntityType.HUSK, entity -> Husk);
+		HEADS.put(EntityType.ILLUSIONER, entity -> Illusioner);
+		HEADS.put(EntityType.IRON_GOLEM, entity -> Iron_Golem);
+		HEADS.put(EntityType.LLAMA, entity -> getLLamaName((Llama) entity));
+		HEADS.put(EntityType.TRADER_LLAMA, entity -> getLLamaTraderName((TraderLlama) entity));
+		HEADS.put(EntityType.MAGMA_CUBE, entity -> Magma_Cube);
+		HEADS.put(EntityType.MOOSHROOM, entity -> getMooshroomName((MushroomCow) entity));
+		HEADS.put(EntityType.MULE, entity -> Mule);
+		HEADS.put(EntityType.PARROT, entity -> getParrotName((Parrot) entity));
+		HEADS.put(EntityType.PHANTOM, entity -> Phantom);
+		HEADS.put(EntityType.PIG, entity -> getPigName((Pig) entity));
+		HEADS.put(EntityType.POLAR_BEAR, entity -> Polar_Bear);
+		HEADS.put(EntityType.RABBIT, entity -> getRabbitName((Rabbit) entity));
+		HEADS.put(EntityType.SHEEP, entity -> getSheepName((Sheep) entity));
+		HEADS.put(EntityType.SHULKER, entity -> Shulker);
+		HEADS.put(EntityType.SILVERFISH, entity -> Silverfish);
+		HEADS.put(EntityType.SKELETON, entity -> Skeleton);
+		HEADS.put(EntityType.SLIME, entity -> Slime);
+		HEADS.put(EntityType.SNIFFER, entity -> Sniffer);
+		HEADS.put(EntityType.SNOW_GOLEM, entity -> getSnowGolemName((Snowman) entity));
+		HEADS.put(EntityType.SPIDER, entity -> Spider);
+		HEADS.put(EntityType.SQUID, entity -> Squid);
+		HEADS.put(EntityType.NAUTILUS, entity -> Nautilus);
+		HEADS.put(EntityType.ZOMBIE_NAUTILUS, entity -> getZombieNautilusName((ZombieNautilus) entity));
+		HEADS.put(EntityType.PARCHED, entity -> Parched);
+		HEADS.put(EntityType.SULFUR_CUBE, entity -> Sulfur_Cube);
+		HEADS.put(EntityType.STRAY, entity -> Stray);
+		HEADS.put(EntityType.TURTLE, entity -> Turtle);
+		HEADS.put(EntityType.VEX, entity -> Vex);
+		HEADS.put(EntityType.VILLAGER, entity -> getVillagerName((Villager)entity));
+		HEADS.put(EntityType.VINDICATOR, entity -> Vindicator);
+		HEADS.put(EntityType.WITCH, entity -> Witch);
+		HEADS.put(EntityType.WITHER, entity -> Wither);
+		HEADS.put(EntityType.WITHER_SKELETON, entity -> Wither_Skeleton);
+		HEADS.put(EntityType.WOLF, entity -> getWolfName((Wolf) entity));
+		HEADS.put(EntityType.ZOMBIE, entity -> Zombie);
+		HEADS.put(EntityType.ZOMBIE_VILLAGER, entity -> getZombieVillagerName((ZombieVillager) entity));
+		HEADS.put(EntityType.COD, entity -> Cod);
+		HEADS.put(EntityType.PUFFERFISH, entity -> Pufferfish);
+		HEADS.put(EntityType.SALMON, entity -> Salmon);
+		HEADS.put(EntityType.TROPICAL_FISH, entity -> Tropical_Fish);
+		HEADS.put(EntityType.ARROW, entity -> getFishName(entity));
+		HEADS.put(EntityType.WANDERING_TRADER, entity -> Wandering_Trader);
+		HEADS.put(EntityType.PILLAGER, entity -> Pillager);
+		HEADS.put(EntityType.RAVAGER, entity -> Ravager);
+		HEADS.put(EntityType.CAT, entity -> getCatName((Cat) entity));
+		HEADS.put(EntityType.PANDA, entity -> getPandaName((Panda) entity));
+		HEADS.put(EntityType.BEE, entity -> Bee);
+		HEADS.put(EntityType.FOX, entity -> getFoxName((Fox) entity));
+		HEADS.put(EntityType.ZOMBIFIED_PIGLIN, entity -> Zombie_Pigman);
+		HEADS.put(EntityType.PIGLIN, entity -> Piglin);
+		HEADS.put(EntityType.PIGLIN_BRUTE, entity -> Piglin_Brute);
+		HEADS.put(EntityType.STRIDER, entity -> getStriderName((Strider) entity));
+		HEADS.put(EntityType.ZOGLIN, entity -> Zoglin);
+		HEADS.put(EntityType.HOGLIN, entity -> Hoglin);
+		HEADS.put(EntityType.ALLAY, entity -> Allay);
+		HEADS.put(EntityType.WARDEN, entity -> Warden);
+		HEADS.put(EntityType.FROG, entity -> getFrogName((Frog) entity));
+		HEADS.put(EntityType.TADPOLE, entity -> Tadpole);
+		HEADS.put(EntityType.GLOW_SQUID, entity -> Glow_Squid);
+		HEADS.put(EntityType.AXOLOTL, entity -> getAxolotlName((Axolotl) entity));
+		HEADS.put(EntityType.GOAT, entity -> getGoatName((Goat) entity));
+	}
+
 	public static MobNames getName(Entity entity) {
 		if(entity.getType().name().equals("PIG_ZOMBIE"))
 			return Zombie_Pigman;
 
-		switch (entity.getType()) {
-			case ARMADILLO:
-				return Armadillo;
-			case BAT:
-				return Bat;
-			case BLAZE:
-				return Blaze;
-			case BOGGED:
-				return Bogged;
-			case BREEZE:
-				return Breeze;
-			case OCELOT:
-				return Ocelot;
-			case CAMEL:
-				return Camel;
-			case CAMEL_HUSK:
-				return Camel_Husk;
-			case CAVE_SPIDER:
-				return Cave_Spider;
-			case CHICKEN:
-				return getChickenName((Chicken) entity);
-			case COPPER_GOLEM:
-				return getCopperGolemName(entity);
-			case COW:
-				return getCowName((Cow) entity);
-			case CREAKING:
-				return Creaking;
-			case CREEPER:
-				return getCreeperName((Creeper) entity);
-			case DOLPHIN:
-				return Dolphin;
-			case DONKEY:
-				return Donkey;
-			case DROWNED:
-				return Drowned;
-			case ELDER_GUARDIAN:
-				return Elder_Guardian;
-			case ENDERMAN:
-				return Enderman;
-			case ENDERMITE:
-				return Endermite;
-			case ENDER_DRAGON:
-				return Ender_Dragon;
-			case EVOKER:
-				return Evoker;
-			case GHAST:
-				return Ghast;
-			case GIANT:
-				return Giant;
-			case GUARDIAN:
-				return Guardian;
-			case HAPPY_GHAST:
-				return Happy_Ghast;
-			case HORSE:
-				return getHorseName((Horse) entity);
-			case ZOMBIE_HORSE:
-				return Zombie_Horse;
-			case SKELETON_HORSE:
-				return Skeleton_Horse;
-			case HUSK:
-				return Husk;
-			case ILLUSIONER:
-				return Illusioner;
-			case IRON_GOLEM:
-				return Iron_Golem;
-			case LLAMA:
-				return getLLamaName((Llama) entity);
-			case TRADER_LLAMA:
-				return getLLamaTraderName((TraderLlama) entity);
-			case MAGMA_CUBE:
-				return Magma_Cube;
-			case MOOSHROOM:
-				return getMooshroomName((MushroomCow) entity);
-			case MULE:
-				return Mule;
-			case PARROT:
-				return getParrotName((Parrot) entity);
-			case PHANTOM:
-				return Phantom;
-			case PIG:
-				return getPigName((Pig) entity);
-			case POLAR_BEAR:
-				return Polar_Bear;
-			case RABBIT:
-				return getRabbitName((Rabbit) entity);
-			case SHEEP:
-				return getSheepName((Sheep) entity);
-			case SHULKER:
-				return Shulker;
-			case SILVERFISH:
-				return Silverfish;
-			case SKELETON:
-				return Skeleton;
-			case SLIME:
-				return Slime;
-			case SNIFFER:
-				return Sniffer;
-			case SNOW_GOLEM:
-				return getSnowGolemName((Snowman) entity);
-			case SPIDER:
-				return Spider;
-			case SQUID:
-				return Squid;
-			case NAUTILUS:
-				return Nautilus;
-			case ZOMBIE_NAUTILUS:
-				return getZombieNautilusName((ZombieNautilus) entity);
-			case PARCHED:
-				return Parched;
-			case SULFUR_CUBE:
-				return Sulfur_Cube;
-			case STRAY:
-				return Stray;
-			case TURTLE:
-				return Turtle;
-			case VEX:
-				return Vex;
-			case VILLAGER:
-				return getVillagerName((Villager)entity);
-			case VINDICATOR:
-				return Vindicator;
-			case WITCH:
-				return Witch;
-			case WITHER:
-				return Wither;
-			case WITHER_SKELETON:
-				return Wither_Skeleton;
-			case WOLF:
-				return getWolfName((Wolf) entity);
-			case ZOMBIE:
-				return Zombie;
-			case ZOMBIE_VILLAGER:
-				return getZombieVillagerName((ZombieVillager) entity);
-			case COD:
-				return Cod;
-			case PUFFERFISH:
-				return Pufferfish;
-			case SALMON:
-				return Salmon;
-			case TROPICAL_FISH:
-				return Tropical_Fish;
-			case ARROW:
-				return getFishName(entity);
-			case WANDERING_TRADER:
-				return Wandering_Trader;
-			case PILLAGER:
-				return Pillager;
-			case RAVAGER:
-				return Ravager;
-			case CAT:
-				return getCatName((Cat) entity);
-			case PANDA:
-				return getPandaName((Panda) entity);
-			case BEE:
-				return Bee;
-			case FOX:
-				return getFoxName((Fox) entity);
-			case ZOMBIFIED_PIGLIN:
-				return Zombie_Pigman;
-			case PIGLIN:
-				return Piglin;
-			case PIGLIN_BRUTE:
-				return Piglin_Brute;
-			case STRIDER:
-				return getStriderName((Strider) entity);
-			case ZOGLIN:
-				return Zoglin;
-			case HOGLIN:
-				return Hoglin;
-			case ALLAY:
-				return Allay;
-			case WARDEN:
-				return Warden;
-			case FROG:
-				return getFrogName((Frog) entity);
-			case TADPOLE:
-				return Tadpole;
-			case GLOW_SQUID:
-				return Glow_Squid;
-			case AXOLOTL:
-				return getAxolotlName((Axolotl) entity);
-			case GOAT:
-				return getGoatName((Goat) entity);
-		}
-		return null;
+		Function<Entity, MobNames> head = HEADS.get(entity.getType());
+		return head == null ? null : head.apply(entity);
+	}
+
+	/** True if this plugin has a head for the given entity type. */
+	public static boolean hasHead(EntityType type) {
+		return HEADS.containsKey(type);
 	}
 
 	private static MobNames getCatName(Cat ocelot) {
