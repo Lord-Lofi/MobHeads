@@ -4,7 +4,6 @@ import com.cyber.mobheads.Config.ConfigController;
 import com.cyber.mobheads.Main;
 import com.cyber.mobheads.Utilities.*;
 import com.cyber.mobheads.advancements.AdvancementsManager;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.*;
@@ -67,62 +66,64 @@ public class EntityDeathListener
 
 
 		if (this.killedByChargedCreeper.remove(livingEntity.getUniqueId())) {
-			Bukkit.getLogger().info("[MobHeads DEBUG] Charged creeper drop triggered for: " + livingEntity.getType().name());
 			ItemStack skull;
 			if (livingEntity instanceof Player) {
 				skull = getPlayerHead((Player) livingEntity, null, true);
 			} else {
 				skull = getMobHead(null, livingEntity, true);
 			}
-			Bukkit.getLogger().info("[MobHeads DEBUG] skull is: " + (skull == null ? "NULL" : skull.getType().name()));
+			if (skull == null) {
+				return;
+			}
 
-			boolean alreadyThere = false;
-			for (ItemStack is : event.getDrops()) {
-				if (is != null && is.getType() == skull.getType()) {
-					alreadyThere = true;
-					break;
+			// Minecraft itself drops zombie/skeleton/creeper/etc. heads on charged creeper kills;
+			// don't add a second copy of those.
+			boolean vanillaAlreadyDropped = false;
+			if (skull.getType() != Material.PLAYER_HEAD) {
+				for (ItemStack drop : event.getDrops()) {
+					if (drop != null && drop.getType() == skull.getType()) {
+						vanillaAlreadyDropped = true;
+						break;
+					}
 				}
 			}
-			final boolean alreadyThere2 = alreadyThere;
-				new BukkitRunnable(){
+			if (!vanillaAlreadyDropped) {
+				event.getDrops().add(skull);
+			}
 
+			// Credit (advancements, collection, broadcast) goes to the nearest player, as before.
+			if (!(livingEntity instanceof Player)) {
+				new BukkitRunnable() {
 					@Override
 					public void run() {
-
-						MobNames mobName = MobNames.getName(event.getEntity());
+						MobNames mobName = MobNames.getName(livingEntity);
+						if (mobName == null) return;
 						MobMeta mobmeta = ConfigController.getRandomConfigMobMeta(mobName, false);
+						if (mobmeta == null) return;
 
 						Player nearest = null;
-						double nearestLoc = Double.MAX_VALUE;
-								for(Player player : livingEntity.getWorld().getPlayers()){
-									double dist = player.getLocation().distanceSquared(livingEntity.getLocation());
-									if(nearestLoc > dist){
-										nearestLoc=dist;
-										nearest=player;
-									}
-								}
-
-						if(nearest != null) {
-							AdvancementsManager.triggerAdvancement(nearest, mobmeta.getAdvancements());
-							HeadCollection.record(nearest, mobName);
-							if (mobmeta.isShouldBroadcast()) {
-								String name = mobmeta.getUsedDisplayName();
-								if (name == null) {
-									name = SkullFactory.getVanillaName(livingEntity);
-								}
-								Broadcaster.broadCastMobHead(nearest, name);
-								livingEntity.getWorld().dropItem(livingEntity.getLocation(), skull);
-								//	if(nearest.getInventory().firstEmpty()>=0){
-								//		nearest.getInventory().addItem(skull);
-								//	}else {
-								//		livingEntity.getWorld().dropItem(nearest.getLocation(), skull);
-								//	}
+						double nearestDistance = Double.MAX_VALUE;
+						for (Player player : livingEntity.getWorld().getPlayers()) {
+							double distance = player.getLocation().distanceSquared(livingEntity.getLocation());
+							if (distance < nearestDistance) {
+								nearestDistance = distance;
+								nearest = player;
 							}
 						}
+						if (nearest == null) return;
 
-
+						AdvancementsManager.triggerAdvancement(nearest, mobmeta.getAdvancements());
+						HeadCollection.record(nearest, mobName);
+						if (mobmeta.isShouldBroadcast()) {
+							String name = mobmeta.getUsedDisplayName();
+							if (name == null) {
+								name = SkullFactory.getVanillaName(livingEntity);
+							}
+							Broadcaster.broadCastMobHead(nearest, name);
+						}
 					}
-				}.runTaskLater(Main.getPlugin(),1);
+				}.runTaskLater(Main.getPlugin(), 1);
+			}
 			return;
 		}
 
