@@ -45,12 +45,25 @@ The advancements data pack is installed automatically into your main world's `da
 
 ---
 
+## Commands
+
+| Command | Description |
+|---|---|
+| `/mh collection` | Opens a book showing which mob heads you've collected and which are missing |
+| `/mh collection <player>` | Shows another online player's collection |
+| `/mh headlore [on\|off]` | Turns the "Beheaded by" lore on your heads on or off (toggles with no argument) |
+
+---
+
 ## Permissions
 
-| Permission | Description |
-|---|---|
-| `com.cyber.mobheads.behead.mobs` | Allows the player to receive mob heads on kill |
-| `com.cyber.mobheads.behead.players` | Allows the player to receive player heads on kill |
+| Permission | Default | Description |
+|---|---|---|
+| `com.cyber.mobheads.behead.mobs` | op | Allows the player to receive mob heads on kill |
+| `com.cyber.mobheads.behead.players` | op | Allows the player to receive player heads on kill |
+| `com.cyber.mobheads.collection` | everyone | Use `/mh collection` |
+| `com.cyber.mobheads.collection.others` | op | Use `/mh collection <player>` |
+| `com.cyber.mobheads.headlore` | everyone | Use `/mh headlore` |
 
 ---
 

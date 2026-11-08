@@ -104,6 +104,7 @@ public class EntityDeathListener
 
 						if(nearest != null) {
 							AdvancementsManager.triggerAdvancement(nearest, mobmeta.getAdvancements());
+							HeadCollection.record(nearest, mobName);
 							if (mobmeta.isShouldBroadcast()) {
 								String name = mobmeta.getUsedDisplayName();
 								if (name == null) {
@@ -138,7 +139,10 @@ public class EntityDeathListener
 
 		if (livingEntity instanceof Player) {
 
-			ItemStack playerSkull = getPlayerHead((Player) livingEntity, killer, false);
+			ItemStack playerSkull = HeadLore.apply(getPlayerHead((Player) livingEntity, killer, false), killer);
+			if (playerSkull == null) {
+				return;
+			}
 			if (ConfigController.dropOutsideInventory()) {
 				event.getEntity().getWorld().dropItem(event.getEntity().getLocation(), playerSkull);
 			} else {
@@ -154,6 +158,7 @@ public class EntityDeathListener
 					MobMeta mobmeta = ConfigController.getRandomConfigMobMeta(mobname, false);
 					//TODO: Check if correct: This will show the advancements, but not duplicate head if already exists
 					AdvancementsManager.triggerAdvancement(killer, mobmeta.getAdvancements());
+					HeadCollection.record(killer, mobname);
 
 					if (mobmeta.isShouldBroadcast()) {
 						String name = mobmeta.getUsedDisplayName();
@@ -165,7 +170,10 @@ public class EntityDeathListener
 					return;
 				}
 			}
-			event.getDrops().add(getMobHead(killer, livingEntity, false));
+			ItemStack mobHead = HeadLore.apply(getMobHead(killer, livingEntity, false), killer);
+			if (mobHead != null) {
+				event.getDrops().add(mobHead);
+			}
 		}
 	}
 

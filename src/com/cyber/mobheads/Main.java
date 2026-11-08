@@ -148,8 +148,18 @@ public class Main
 			a(tabs, "probability", args[0]);
 			a(tabs, "reload", args[0]);
 			a(tabs,"initachievements",args[0]);
+			a(tabs, "collection", args[0]);
+			a(tabs, "headlore", args[0]);
 			return tabs;
 		} else if (args.length == 2) {
+			if (args[0].equalsIgnoreCase("headlore")) {
+				a(tabs, "on", args[1]);
+				a(tabs, "off", args[1]);
+				return tabs;
+			}
+			if (args[0].equalsIgnoreCase("collection")) {
+				return null; // Bukkit suggests online player names
+			}
 			if (args[0].equalsIgnoreCase("probability")) {
 				List<String> mobList = ConfigController.getAllMobNames();
 				for (String k : mobList) {
@@ -171,7 +181,59 @@ public class Main
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (args.length >= 1) {
 			String message;
-			switch (args[0]) {
+			switch (args[0].toLowerCase()) {
+				case "collection": {
+					if (!(sender instanceof Player viewer)) {
+						sendIfSet(sender, "Messages.Error.Players-only");
+						return true;
+					}
+					Player target = viewer;
+					if (args.length >= 2) {
+						if (!sender.hasPermission("com.cyber.mobheads.collection.others")) {
+							sendIfSet(sender, "Messages.Error.No-permission");
+							return true;
+						}
+						target = Bukkit.getPlayer(args[1]);
+						if (target == null) {
+							message = ConfigController.getMessage("Messages.Error.No-such-player");
+							if (!message.isEmpty()) sender.sendMessage(message.replace("[given-player-name]", args[1]));
+							return true;
+						}
+					} else if (!sender.hasPermission("com.cyber.mobheads.collection")) {
+						sendIfSet(sender, "Messages.Error.No-permission");
+						return true;
+					}
+					viewer.openBook(HeadCollection.buildBook(target));
+					return true;
+				}
+				case "headlore": {
+					if (!(sender instanceof Player player)) {
+						sendIfSet(sender, "Messages.Error.Players-only");
+						return true;
+					}
+					if (!sender.hasPermission("com.cyber.mobheads.headlore")) {
+						sendIfSet(sender, "Messages.Error.No-permission");
+						return true;
+					}
+					if (!HeadLore.isEnabledOnServer()) {
+						sendIfSet(sender, "Messages.Error.Head-lore-disabled");
+						return true;
+					}
+					boolean enable;
+					if (args.length >= 2 && args[1].equalsIgnoreCase("on")) {
+						enable = true;
+					} else if (args.length >= 2 && args[1].equalsIgnoreCase("off")) {
+						enable = false;
+					} else if (args.length >= 2) {
+						sendIfSet(sender, "Messages.Commands-usage.Headlore");
+						return true;
+					} else {
+						enable = !HeadLore.isEnabledFor(player); // no argument: toggle
+					}
+					HeadLore.setEnabledFor(player, enable);
+					sendIfSet(sender, enable ? "Messages.Success.Head-lore-on" : "Messages.Success.Head-lore-off");
+					return true;
+				}
 				case "initachievements":
 					if (!sender.hasPermission("com.cyber.mobheads.initachievements")) {
 						message = ConfigController.getMessage("Messages.Error.No-permission");
@@ -378,7 +440,20 @@ public class Main
 		return false;
 	}
 
+	private void sendIfSet(CommandSender sender, String messagePath) {
+		String message = ConfigController.getMessage(messagePath);
+		if (!message.isEmpty()) {
+			sender.sendMessage(message);
+		}
+	}
+
 	private void showHelp(CommandSender sender) {
+		if (sender.hasPermission("com.cyber.mobheads.collection")) {
+			sendIfSet(sender, "Messages.Commands-usage.Collection");
+		}
+		if (sender.hasPermission("com.cyber.mobheads.headlore") && HeadLore.isEnabledOnServer()) {
+			sendIfSet(sender, "Messages.Commands-usage.Headlore");
+		}
 		String message = ConfigController.getMessage("Messages.Commands-usage.Give");
 		if (!message.isEmpty()) {
 			sender.sendMessage(message);

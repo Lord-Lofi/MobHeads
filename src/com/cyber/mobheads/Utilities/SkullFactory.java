@@ -30,6 +30,7 @@ public class SkullFactory{
         if (encodedTexture == null || encodedTexture.equalsIgnoreCase("[vanilla]")) {
             if (owner != null) {
                 AdvancementsManager.triggerAdvancement(owner, mobmeta.getAdvancements());
+                HeadCollection.record(owner, mobmeta.getMobName());
             }
             if (displayName.equalsIgnoreCase("[vanilla]")) {
                 return getVanillaSkull(mobmeta.getMobName());
@@ -71,6 +72,7 @@ public class SkullFactory{
 
         if (owner != null) {
             AdvancementsManager.triggerAdvancement(owner, mobmeta.getAdvancements());
+            HeadCollection.record(owner, mobmeta.getMobName());
         }
 
         skull.setItemMeta(meta);

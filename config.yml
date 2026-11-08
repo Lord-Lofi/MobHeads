@@ -7,7 +7,7 @@
 #Only change the values. If you change any of the variable names, the plugin might not work correctly.
 
 #Used by the plugin to update this file automatically when you install a new version. Do not change it.
-config_version: 6
+config_version: 7
 
 #A few general settings
 
@@ -41,6 +41,19 @@ auto_update_achievements: true
 #Handy after a Minecraft update to see which new mobs aren't supported.
 log_mobs_without_heads: false
 
+#Adds lore to heads players get from kills, like "Beheaded by Steve" and the date.
+#Note: heads with different lore (another player or another day) won't stack with each other.
+head_lore:
+  enabled: true
+  #Whether heads get lore for players who haven't chosen with "/mobheads headlore on|off"
+  default_on: true
+  #[player] = the player who got the head, [date] = the day it dropped
+  lines:
+    - "&7Beheaded by [player]"
+    - "&8[date]"
+  #How [date] is written. Examples: "MMM d, yyyy" = Nov 7, 2026 / "dd-MM-yyyy" = 07-11-2026
+  date_format: "MMM d, yyyy"
+
 enable_worldguard_support: false
 
 #These are the messages that are sent to players when the plugin is active.
@@ -61,6 +74,12 @@ Messages:
     #Something Failed
     Fail: "&3Something has failed!"
 
+    #Shown when the console uses a command that only works for players
+    Players-only: "&3Only players can use this command!"
+
+    #Shown when a player uses "/mobheads headlore" but head_lore.enabled is false
+    Head-lore-disabled: "&3Head lore is turned off on this server."
+
   Success:
     #Shown when a player runs the "/mobheads reload" command
     Reload: "&3The config file has been successfully reloaded!"
@@ -68,7 +87,11 @@ Messages:
     #Shown to the sender of the "/mobheads give" command
     Head-given-sender: "&3Successfully gave &b[name-of-head] &3to &b[receiver]!"
 
-    Head-achievements: "&3Successfully initialized datapack to the datapack folder! Reload server to apply the advancements. When a new update of MobHeads is released, make sure to run the command again to update the advancements."
+    Head-achievements: "&3Reinstalled the Mob Heads advancements data pack and reloaded data packs."
+
+    #Shown when a player turns head lore on or off with "/mobheads headlore"
+    Head-lore-on: "&3Heads you get will now show who beheaded the mob and when."
+    Head-lore-off: "&3Heads you get will no longer have lore."
 
 
     #Shown to the sender of the "/mobheads probability" command
@@ -120,6 +143,16 @@ Messages:
     #[input] will be replaced with the skull name that was used in the command.
     #[skull-list] will be replaced with a list of possible sub skulls.
     Show-sub-skulls: "&3There are multiple variants for the &b[input] &3skull. Try to use one of the following sub skulls: &b[skull-list]"
+
+    #Shown in "/mobheads help"
+    Collection: "&3Usage: &b/mobheads collection &3- see which mob heads you have collected"
+    Headlore: "&3Usage: &b/mobheads headlore [on|off] &3- show or hide who beheaded the mob on your heads"
+
+  #The book opened by "/mobheads collection"
+  Collection:
+    Book-title: "&lMob Head Collection"
+    #[collected], [total] and [percent] will be replaced
+    Book-summary: "&0You have collected &2[collected]&0 of &2[total]&0 mob heads (&2[percent]%&0)."
 
 
 #List of all mobs that are supported in this plugin.
