@@ -1,0 +1,59 @@
+# Approves a pull request when the repository owner comments 👍 (or +1) on it.
+#
+# Works for both:
+# - a regular comment (the comment box at the bottom of the PR's Conversation tab), and
+# - a review submitted as "Comment" (Files changed → Review changes → Comment).
+#
+# Notes:
+# - The comment must be only the 👍. Emoji *reactions* don't trigger workflows.
+# - The approval is submitted by github-actions[bot], on your behalf.
+# - Only the repository owner's comments count, so nobody else can approve PRs this way.
+# - Requires: Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests".
+name: Approve on +1
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review:
+    types: [submitted]
+
+permissions:
+  pull-requests: write # submit the approval
+
+jobs:
+  approve:
+    # Regular comment on a PR by the owner, or a "Comment" review by the owner.
+    if: >-
+      (github.event_name == 'issue_comment' &&
+       github.event.issue.pull_request &&
+       github.event.comment.user.login == github.repository_owner) ||
+      (github.event_name == 'pull_request_review' &&
+       github.event.review.state == 'commented' &&
+       github.event.review.user.login == github.repository_owner)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Approve if the comment is a thumbs up
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          EVENT_NAME: ${{ github.event_name }}
+          PR_NUMBER: ${{ github.event.issue.number || github.event.pull_request.number }}
+          COMMENT_ID: ${{ github.event.comment.id }}
+          COMMENT_BODY: ${{ github.event.comment.body || github.event.review.body }}
+          COMMENTER: ${{ github.event.comment.user.login || github.event.review.user.login }}
+        run: |
+          # Ignore spaces/newlines so "👍 " or a 👍 on its own line still count.
+          body="$(printf '%s' "$COMMENT_BODY" | tr -d '[:space:]')"
+          case "$body" in
+            "👍"|"👍🏻"|"👍🏼"|"👍🏽"|"👍🏾"|"👍🏿"|":+1:"|":thumbsup:"|"+1") ;;
+            *) echo "Comment is not a thumbs up, nothing to do."; exit 0 ;;
+          esac
+
+          gh pr review "$PR_NUMBER" --approve --body "Approved via 👍 from @$COMMENTER."
+
+          # On regular comments, react with 🚀 so you can see that it worked.
+          # (GitHub has no reactions on reviews; the approval itself shows up in the PR.)
+          if [ "$EVENT_NAME" = "issue_comment" ]; then
+            gh api "repos/$GH_REPO/issues/comments/$COMMENT_ID/reactions" -f content=rocket --silent
+          fi
