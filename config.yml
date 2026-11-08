@@ -5,7 +5,9 @@
 #############################################################
 
 #Only change the values. If you change any of the variable names, the plugin might not work correctly.
-#version: 1.21.8
+
+#Used by the plugin to update this file automatically when you install a new version. Do not change it.
+config_version: 5
 
 #A few general settings
 

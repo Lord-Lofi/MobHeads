@@ -1,6 +1,7 @@
 package com.cyber.mobheads;
 
 import com.cyber.mobheads.Config.ConfigController;
+import com.cyber.mobheads.Config.ConfigMigrator;
 import com.cyber.mobheads.Utilities.*;
 import com.cyber.mobheads.advancements.DatapackInstaller;
 import com.cyber.mobheads.listeners.EntityDeathListener;
@@ -17,7 +18,9 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
+import java.util.logging.Level;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -47,12 +50,13 @@ public class Main
 	}
 
 	public void onEnable() {
-		config = getConfig();
-		config.options().copyDefaults(true);
+		plugin = this;
+
 		saveDefaultConfig();
 		configFile = new File(getDataFolder(), "config.yml");
-
-		plugin = this;
+		migrateConfig();
+		loadConfigWithDefaults();
+		ConfigController.refreshConfig(config);
 
 
 		Bukkit.getPluginManager().registerEvents(new EntityDeathListener(), this);
@@ -71,6 +75,27 @@ public class Main
 
 	public void onDisable() {
 		/*Broadcaster.outputInfoConsole("Mob Heads disabled", 0);*/
+	}
+
+	/** Updates an older config.yml in place (with a backup) when a new plugin version adds things. */
+	private void migrateConfig() {
+		try (InputStream in = getResource("config.yml")) {
+			if (in == null) return;
+			YamlConfiguration defaults = YamlConfiguration.loadConfiguration(new InputStreamReader(in, StandardCharsets.UTF_8));
+			ConfigMigrator.Report report = ConfigMigrator.migrateFile(configFile, defaults);
+			if (report.migrated) {
+				getLogger().info(report.summary());
+			}
+		} catch (Exception e) {
+			getLogger().log(Level.WARNING, "Could not update config.yml automatically; using it as-is.", e);
+		}
+	}
+
+	/** (Re)loads config.yml from disk, falling back to the bundled values for anything missing. */
+	private void loadConfigWithDefaults() {
+		reloadConfig();
+		config = getConfig();
+		config.options().copyDefaults(true);
 	}
 
 	/**
@@ -309,7 +334,7 @@ public class Main
 						return false;
 					}
 
-					config = YamlConfiguration.loadConfiguration(configFile);
+					loadConfigWithDefaults();
 					ConfigController.refreshConfig(config);
 					message = ConfigController.getMessage("Messages.Success.Reload");
 					if (!message.isEmpty()) {

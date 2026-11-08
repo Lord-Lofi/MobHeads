@@ -39,6 +39,8 @@ A Paper plugin that adds custom player-skull drops for nearly every mob in the g
 4. Adjust drop chances, textures, and other settings to your liking
 5. Use `/mh reload` to apply config changes without restarting
 
+**Upgrading:** just replace the jar. On startup the plugin updates your existing `config.yml` — adding new mobs and settings, new advancement links, and fixing invalid head UUIDs — while keeping your own drop chances, names and other values. A backup of the old file is saved as `config.yml.backup-v<old version>`.
+
 The advancements data pack is installed automatically into your main world's `datapacks/mobheads` folder, and updated whenever a new plugin version includes changes to it. Set `auto_update_achievements: false` in `config.yml` to manage it yourself, or run `/mh initachievements` to force a reinstall.
 
 ---
