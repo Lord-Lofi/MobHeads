@@ -2,8 +2,6 @@ package com.cyber.mobheads.Utilities;
 
 import com.cyber.mobheads.Config.ConfigController;
 import com.cyber.mobheads.advancements.AdvancementsManager;
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

@@ -15,7 +15,6 @@ A Paper plugin that adds custom player-skull drops for nearly every mob in the g
 - **Charged creeper support** — guaranteed drops when a mob is killed by a charged creeper (configurable per mob)
 - **Fish heads** — obtainable while fishing, with Luck of the Sea bonus support
 - **WorldGuard support** — respects region flags
-- **bStats metrics**
 
 ---
 
