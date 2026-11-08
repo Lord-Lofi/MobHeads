@@ -5,7 +5,9 @@
 #############################################################
 
 #Only change the values. If you change any of the variable names, the plugin might not work correctly.
-#version: 1.21.8
+
+#Used by the plugin to update this file automatically when you install a new version. Do not change it.
+config_version: 8
 
 #A few general settings
 
@@ -31,6 +33,31 @@ default_looting_bonus: 0.1%
 
 auto-update: true
 
+#Automatically installs and updates the advancements data pack in your main world's datapacks folder on startup.
+#Set to false if you want to manage the data pack yourself (you can still run /mobheads initachievements).
+auto_update_achievements: true
+
+#Lists every mob in your Minecraft version that doesn't have a head yet, in the console on startup.
+#Handy after a Minecraft update to see which new mobs aren't supported.
+log_mobs_without_heads: false
+
+#Adds lore to heads players get from kills, like "Beheaded by Steve" and the date.
+#Note: heads with different lore (another player or another day) won't stack with each other.
+head_lore:
+  enabled: true
+  #Whether heads get lore for players who haven't chosen with "/mobheads headlore on|off"
+  default_on: true
+  #[player] = the player who got the head, [date] = the day it dropped
+  lines:
+    - "&7Beheaded by [player]"
+    - "&8[date]"
+  #Same as lines, but for heads players catch while fishing
+  fishing_lines:
+    - "&7Caught by [player]"
+    - "&8[date]"
+  #How [date] is written. Examples: "MMM d, yyyy" = Nov 7, 2026 / "dd-MM-yyyy" = 07-11-2026
+  date_format: "MMM d, yyyy"
+
 enable_worldguard_support: false
 
 #These are the messages that are sent to players when the plugin is active.
@@ -51,6 +78,12 @@ Messages:
     #Something Failed
     Fail: "&3Something has failed!"
 
+    #Shown when the console uses a command that only works for players
+    Players-only: "&3Only players can use this command!"
+
+    #Shown when a player uses "/mobheads headlore" but head_lore.enabled is false
+    Head-lore-disabled: "&3Head lore is turned off on this server."
+
   Success:
     #Shown when a player runs the "/mobheads reload" command
     Reload: "&3The config file has been successfully reloaded!"
@@ -58,7 +91,11 @@ Messages:
     #Shown to the sender of the "/mobheads give" command
     Head-given-sender: "&3Successfully gave &b[name-of-head] &3to &b[receiver]!"
 
-    Head-achievements: "&3Successfully initialized datapack to the datapack folder! Reload server to apply the advancements. When a new update of MobHeads is released, make sure to run the command again to update the advancements."
+    Head-achievements: "&3Reinstalled the Mob Heads advancements data pack and reloaded data packs."
+
+    #Shown when a player turns head lore on or off with "/mobheads headlore"
+    Head-lore-on: "&3Heads you get will now show who beheaded the mob and when."
+    Head-lore-off: "&3Heads you get will no longer have lore."
 
 
     #Shown to the sender of the "/mobheads probability" command
@@ -111,6 +148,16 @@ Messages:
     #[skull-list] will be replaced with a list of possible sub skulls.
     Show-sub-skulls: "&3There are multiple variants for the &b[input] &3skull. Try to use one of the following sub skulls: &b[skull-list]"
 
+    #Shown in "/mobheads help"
+    Collection: "&3Usage: &b/mobheads collection &3- see which mob heads you have collected"
+    Headlore: "&3Usage: &b/mobheads headlore [on|off] &3- show or hide who beheaded the mob on your heads"
+
+  #The book opened by "/mobheads collection"
+  Collection:
+    Book-title: "&lMob Head Collection"
+    #[collected], [total] and [percent] will be replaced
+    Book-summary: "&0You have collected &2[collected]&0 of &2[total]&0 mob heads (&2[percent]%&0)."
+
 
 #List of all mobs that are supported in this plugin.
 #dropChance = the chance of the mob dropping their corresponding head.
@@ -136,7 +183,7 @@ ListOfMobs:
     skullList:
       ArmadilloHead1:
         displayName: "&eArmadillo Head"
-        random_uuid: 078a9627-18e4-4794-a241-2armi162348
+        random_uuid: 15213bb3-1c52-47af-b689-c56e0408a6b3
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTg1MmIzM2JhMjk0ZjU2MDA5MDc1MmQxMTNmZTcyOGNiYzdkZDA0MjAyOWEzOGQ1MzgyZDY1YTIxNDYwNjhiNyJ9fX0=
         advancements:
         - "mobheads:firstmobhead first_mob_head"
@@ -144,7 +191,7 @@ ListOfMobs:
         - "mobheads:desert armadillo"
       ArmadilloHead2:
         displayName: "&eScared Armadillo"
-        random_uuid: 078a9627-18e4-4794-a241-2armi262349
+        random_uuid: 3a43d712-368c-453c-80b4-01b759c04056
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTc4ODMzODQ0MzE5OTA5ZjEyMzg0MDUwMTVkODc0MGFlOTZjNmZiM2ZhNGM3MzllMWNkZmMzNzljZDdlOWE2In19fQ==
         advancements:
         - "mobheads:firstmobhead first_mob_head"
@@ -158,7 +205,7 @@ ListOfMobs:
     skullList:
       BoggedHead1:
         displayName: "&eBogged Head"
-        random_uuid: 078a9627-18e4-4794-a241-2bog1462348
+        random_uuid: b09e32fe-946d-45b1-8eec-0804b35b910f
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTNiOTAwM2JhMmQwNTU2MmM3NTExOWI4YTYyMTg1YzY3MTMwZTkyODJmN2FjYmFjNGJjMjgyNGMyMWViOTVkOSJ9fX0=
         advancements:
         - "mobheads:firstmobhead first_mob_head"
@@ -184,7 +231,7 @@ ListOfMobs:
     skullList:
       BreezeHead1:
         displayName: "&eBreeze Head"
-        random_uuid: 078a9627-18e4-4794-a241-2brez162348
+        random_uuid: ddaf0b97-bf7f-44b8-916e-41d7f68e4874
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTI3NTcyOGFmN2U2YTI5Yzg4MTI1YjY3NWEzOWQ4OGFlOTkxOWJiNjFmZGMyMDAzMzdmZWQ2YWIwYzQ5ZDY1YyJ9fX0=
         advancements:
         - "mobheads:firstmobhead first_mob_head"
@@ -197,7 +244,7 @@ ListOfMobs:
     skullList:
       CreakingHead1:
         displayName: "&eCreaking Head"
-        random_uuid: 078a9627-18e4-4794-a241-2d477462348
+        random_uuid: 160dca8a-43db-45ac-99fb-33dcaef0f5ca
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzdiNWJlNzI3NjljY2ZmMWE2Y2I3N2M1ODQ4ZTAxZDdlNTcwNGEzZDM0OWMwNzM3ZmY5M2NiNTRkMDIzODBhYyJ9fX0=
         advancements:
         - "mobheads:firstmobhead first_mob_head"
@@ -211,7 +258,7 @@ ListOfMobs:
     skullList:
       HappyGhastHead1:
         displayName: "&eHappy Ghast Head"
-        random_uuid: 078a9627-18e4-4794-a241-2d477462348
+        random_uuid: 40f89b21-29d7-4b85-b2d1-2d5e9e886194
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTFhMzZjYjkzZDAxNjc1YzQ2MjJkZDVjOGQ4NzIxMTA5MTFlYzEyYzM3MmU4OWFmYThiYTAzODYyODY3ZjZmYiJ9fX0=
         advancements:
           - "mobheads:firstmobhead first_mob_head"
@@ -258,7 +305,7 @@ ListOfMobs:
     skullList:
       WarmFrogHead:
         displayName: "&eWarm Frog Head"
-        random_uuid: 078a9627-18e4-4794-a241-2d47643e6434
+        random_uuid: 77fba144-364e-4ef7-b313-1514f48e8467
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWU5MzEyYjViMmJhYjlhZDUxZWE0YjZhNDA3ZDZkMzkwYmI1MDQzNDA4NzU3Yjk3NmE3NTU2ODk4YWM0M2RlMCJ9fX0=
         advancements:
           - "mobheads:firstmobhead first_mob_head"
@@ -266,7 +313,7 @@ ListOfMobs:
           - "mobheads:swampmobs warm_frog"
       WarmFroggy:
         displayName: "&eWarm Frog"
-        random_uuid: 078a9627-18e4-4794-a241-2d47643ad432
+        random_uuid: 062ca62c-2484-4a95-ada6-bb73c8b776a4
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjc3MzE0ZmEwMzhlYzMxMzU3ODQ1YTkzMjc0YjRkYzg4NDEyNDY4NjcyOGZmZTBkZWQ5YzM1NDY2YWNhMGFhYiJ9fX0=
         advancements:
           - "mobheads:firstmobhead first_mob_head"
@@ -280,7 +327,7 @@ ListOfMobs:
     skullList:
       TemperateFrogHead:
         displayName: "&eTemperate Frog Head"
-        random_uuid: 078a9627-18e4-4794-a241-2d47643e6434
+        random_uuid: 669a9c6a-4d79-48eb-97c2-b8e1df09da1c
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWYzZTI5ZGQ5NDdhMTc3ODk1ZjYxMjFkMjMzMWI2NWFjM2Y4OTZmZGE0YmRkMTE1MTQ5MWU0MGI4MDQ5NTJhNyJ9fX0=
         advancements:
           - "mobheads:firstmobhead first_mob_head"
@@ -288,7 +335,7 @@ ListOfMobs:
           - "mobheads:swampmobs temperate_frog"
       TemperateFroggy:
         displayName: "&eTemperate Frog"
-        random_uuid: 078a9627-18e4-4794-a241-2d47643ad432
+        random_uuid: b2b35e9a-b6a2-4fba-b38e-f0726509fa7b
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjNjZTZmOTk5OGVkMmRhNzU3ZDFlNjM3MmYwNGVmYTIwZTU3ZGZjMTdjM2EwNjQ3ODY1N2JiZGY1MWMyZjJhMiJ9fX0=
         advancements:
           - "mobheads:firstmobhead first_mob_head"
@@ -353,7 +400,7 @@ ListOfMobs:
     skullList:
       GlowSquidHead1:
         displayName: "&eGlow Squid Head"
-        random_uuid: 078a9627-18e4-4794-a241-2d477462348
+        random_uuid: 4160b8f5-5089-4202-9963-6c11b3634b5b
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTczMjdlZTExODEyYjc2NGM3YWRlNzBiMjgyY2NlNGM1OGU2MzViMjAxNTI0NDA4MWQxNDkwNTQzZGE3MjgwZSJ9fX0=
         advancements:
         - "mobheads:firstmobhead first_mob_head"
@@ -361,7 +408,7 @@ ListOfMobs:
         - "mobheads:watermobs glow_squid"
       BabyGlowSquid:
         displayName: "&eBaby Glow Squid"
-        random_uuid: 078a9627-18e4-4794-a241-2d477462349
+        random_uuid: 970e0d1f-08c8-4c2b-8e35-26206483e123
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTVlMmI0NmU1MmFjOTJkNDE5YTJkZGJjYzljZGNlN2I0NTFjYjQ4YWU3MzlkODVkNjA3ZGIwNTAyYTAwOGNlMCJ9fX0=
         advancements:
         - "mobheads:firstmobhead first_mob_head"
@@ -375,21 +422,21 @@ ListOfMobs:
     skullList:
       LucyAxolotl:
         displayName: "&eLucy Axolotl Head"
-        random_uuid: 038a9627-18e4-4794-a241-2d477462352
+        random_uuid: 4860895b-0a55-4b73-9be3-3b1fd5191326
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGViZjJiMTEzZjRhODEzNzBhMWNmOWQyNTA0ZTg3NTZiNjZkZWVmNzllOTQzMzE4N2RhNzc0Yjk2YzlmMzViYSJ9fX0=
         advancements:
           - "mobheads:firstmobhead first_mob_head"
           - "mobheads:axolotl Lucy_Axolotl"
       SlimeAxolotl:
         displayName: "&eSlime Axolotl Head"
-        random_uuid: 038a9627-18e4-4794-a241-2d477462355
+        random_uuid: 76628ab8-0868-40d8-ae6d-6054390dbbb7
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2NkMWUxMzhjM2ZiODhhMTMzMjQ2ZTdkMWI4MzZjNGMyODI3ZTcwNzgwYjgwOGI1ZTlkY2VjMjBkMzM2OWVmOCJ9fX0=
         advancements:
           - "mobheads:firstmobhead first_mob_head"
           - "mobheads:axolotl Lucy_Axolotl"
       BlackAxolotl:
         displayName: "&eBlack Axolotl Head"
-        random_uuid: 038a9627-18e4-4794-a241-2d477462356
+        random_uuid: 059ad32e-8037-4a81-99d3-c8a2a77ae11f
         textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWY1NjFmNDAzYTljMjdhNWU3MmE0Njg0MzY5MGViNDM3ODg1MjI5YTlkZTZjMjVlYmMyMWI5M2U2ZmRjZDliZCJ9fX0=
         advancements:
           - "mobheads:firstmobhead first_mob_head"
@@ -400,7 +447,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eCyan Axolotl Head"
-    random_uuid: 038a9627-18e4-4794-a241-2d477462353
+    random_uuid: 6658e9c7-010f-4ea9-8262-78ac9e412ad0
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWU4YzcwZTZhNTYxNjFlY2RjNmI3NTY3NDA3MGZiMzA4NzE0YTJiMmI3MGUxZTZkNzZiYzkyMGNlNmNlN2RlNiJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -411,7 +458,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eWild Axolotl Head"
-    random_uuid: 038a9627-18e4-4794-a241-2d477462354
+    random_uuid: ea2c997a-c2cc-4e24-a72b-6764cbed657c
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTQ2MWM0ZjJjYjFlZGE4ZTE0Y2Q1OWVmYjBiZjg5ZWEyMDc2ZjU0YTA4YjhiNmQwZGIwYmQwNzk3ZDk5YmVlOCJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -422,7 +469,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eGold Axolotl Head"
-    random_uuid: 038a9627-18e4-4794-a241-2d477462360
+    random_uuid: 60fecbe0-83fd-4fa6-bb25-de202c4f4c0d
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2E2NTM0YzMyYWI4NTYwMjg1NTg0NzgxMTVkOTA0ZDUyZjVmMTU0ZDgwZWNiOTAzYjg2NmIxOTA5OWEyNWU0NiJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -433,7 +480,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eBlue Axolotl Head"
-    random_uuid: 038a9627-18e4-4794-a241-2d477462357
+    random_uuid: 54d86e49-96e6-49f7-8893-29af6a15c6f3
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjgyNjg3YzBlMzJmODBmYmYyNzUyZjJhNzVjM2JiZTBjZTk1MjU3MDRiNjVhNmQyNDFmNGM0NGRlMzk2MmE3MyJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -444,7 +491,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eGoat Head"
-    random_uuid: 078a9627-18e4-4794-a241-2d477462350
+    random_uuid: 85ae4b2c-fe3f-4f45-87aa-e02492007e4c
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDU3YTBkNTM4ZmEwOGE3YWZmZTMxMjkwMzQ2ODg2MTcyMGY5ZmEzNGU4NmQ0NGI4OWRjZWM1NjM5MjY1ZjAzIn19fQ==
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -456,7 +503,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eScreaming Goat Head"
-    random_uuid: 078a9627-18e4-4794-a241-2d477462351
+    random_uuid: 2f41da18-6350-4ac2-99df-59a7225e3dec
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjVjNzM0OWM3YjUzNDQzN2I2YmM5NTk0YzdlZDAwZmU1YjZjMWVjMDY0NmRjNGI4OTg0ZjM0ZWI0MTAzNzU4NCJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -498,6 +545,19 @@ ListOfMobs:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 camel_husk"
       - "mobheads:desert camel_husk"
+  Sulfur_Cube:
+    dropChance: DEFAULT
+    lootingBonus: DEFAULT
+    dropOnChargedCreeperDeath: true
+    broadcastMessage: true
+    displayName: "&eSulfur Cube Head"
+    random_uuid: 257329d0-7c79-433f-91cf-521167ba931b
+    textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2E5NTcwY2QxZGM0M2MxZTgzZjM2Y2M0OTk1NjY1NTEzZGMyNDA1ZGFkMjQxZDIxMTQyNDllOGRhOTc2ZmMzZCJ9fX0=
+    advancements:
+      - "mobheads:firstmobhead first_mob_head"
+      - "mobheads:thelegend27 sulfur_cube"
+      - "mobheads:cubes sulfur_cube"
+      - "mobheads:sulfur_caves sulfur_cube"
   Sniffer:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -572,6 +632,7 @@ ListOfMobs:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 cave_spider"
       - "mobheads:arthropods cave_spider"
+      - "mobheads:sulfur_caves cave_spider"
   Temperate_Chicken:
     dropChance: DEFAULT
     lootingBonus: DEFAULT
@@ -600,7 +661,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eChicken[Warm] Head"
-    random_uuid: 0d579158-bfd4-4845-beb3-7wceb056987f
+    random_uuid: 1650c432-20c7-4ede-81f6-a9e7f8641ef8
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNThjMjMxYmY0NjRmOWE2YzY3ODZhMjJhNGQxMTllYTVlNTA1NzYyNGM1YTM5MTQ3MGQzNWZhMmI2ZmZhNTE4MyJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -646,7 +707,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eCow[Warm] Head"
-    random_uuid: b32d23be-aeca-4f40-a813-awcfbbec4372
+    random_uuid: 91e5eb0e-bdbb-4a7c-9e88-f216e8d002c7
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjNiMzM3NmZhZjI4MWMxNGJhNDcyZDJlN2Y2YjZkMDE2OWU0YmMyMzc0ODM1YTlmOGQwNzg4ZTA0ZDgxMzQzZCJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -1038,6 +1099,7 @@ ListOfMobs:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 magma_cube"
       - "mobheads:nether_dimension magma_cube"
+      - "mobheads:cubes magma_cube"
   Mooshroom:
     dropChance: 1%
     lootingBonus: 1%
@@ -1162,7 +1224,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eCold Pig Head"
-    random_uuid: bffb9c02-b8d0-4358-bac2-4cpb591f1388
+    random_uuid: 161d57cc-401b-4818-ba13-7a88f2c63618
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmExOGQ0MDQzY2Q2YzkwMzg2Njc4ODkxNGZkNTM0MzE1MjgxYWY5ZjI1OWUzNDgzN2UzZTE3NWU1NDVjMmVkZSJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -1173,7 +1235,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eWarm Pig Head"
-    random_uuid: bffb9c02-b8d0-4358-bac2-4wpb591f1388
+    random_uuid: 10594992-cc9a-4ab6-a7b1-77a846fba537
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2JlYmExYTJkNTZlODRmOGU1MWZlZDY2NTlmMmNiN2MxNGZlZDQzODU5YWY1ODQ3Mzc4OTdiZjcwYzAzOTQ3NSJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -1552,6 +1614,7 @@ ListOfMobs:
       - "mobheads:firstmobhead first_mob_head"
       - "mobheads:thelegend27 slime"
       - "mobheads:swampmobs slime"
+      - "mobheads:cubes slime"
   Snow_Golem:
     dropChance: 1%
     lootingBonus: 0.35%
@@ -2529,7 +2592,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eCopper Golem Head"
-    random_uuid: d23f3607-25a0-4c22-860a-0ucgb9a16412
+    random_uuid: 84d01199-3930-46aa-9f91-c102a2dcb170
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTllMjRlOTRkYmU0MmUyMzBkODMyOTNhNzdkNjFmZjcxMDFhOGM2OGFiNjhiYmM2YTkzZjk2MzBmYjJmZGI0In19fQ==
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -2542,7 +2605,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eExposed Copper Golem Head"
-    random_uuid: d23f3607-25a0-4c22-860a-0ecgb9a16412
+    random_uuid: 06db5cae-98d1-4847-9637-2fcd99f63051
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGE5ZTQxMGM4YjdmZGJkNGI5ZDhlYTgwNzViYzY2YTljMWFkYTliYzE1ODczYjRiMWRlYWRhYTI4MTJiODQ3ZCJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -2555,7 +2618,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eWeathered Copper Golem Head"
-    random_uuid: d23f3607-25a0-4c22-860a-0wcgb9a16412
+    random_uuid: c73222c0-3055-4dd6-9da9-16cf3fc73b7f
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODI2Mjk5MmQ2ZDVhNjJhMWRkM2VkZThlNGMzNGYxYzE4MDUwYmFiNjQyNzFkOTI2YzFjMGM2MTYyYjJjZDc0ZSJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -2568,7 +2631,7 @@ ListOfMobs:
     dropOnChargedCreeperDeath: true
     broadcastMessage: true
     displayName: "&eOxidized Copper Golem Head"
-    random_uuid: d23f3607-25a0-4c22-860a-0ocgb9a16412
+    random_uuid: c17c86d1-c552-44ce-806b-b384391ca221
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2MyYWFiOGEwZmVjM2NjMDZhNGQ0NzQ4MGUwMjRmODhmMmIwN2JjOTZlZTA5ZTUzMzFlNWY0ZGI2YjI3Mzg4NSJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -2587,7 +2650,7 @@ ListOfFish:
     luckOfTheSeaBonus: 0.1%
     broadcastMessage: true
     displayName: "Cod Head"
-    random_uuid: 512d6218-cdf1-476c-9507-c9ea98574623
+    random_uuid: 74c87578-c067-448b-b0f4-f1bedc30fbf8
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzg5MmQ3ZGQ2YWFkZjM1Zjg2ZGEyN2ZiNjNkYTRlZGRhMjExZGY5NmQyODI5ZjY5MTQ2MmE0ZmIxY2FiMCJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -2611,7 +2674,7 @@ ListOfFish:
     luckOfTheSeaBonus: 0.1%
     broadcastMessage: true
     displayName: "Salmon Head"
-    random_uuid: 8c986470-776d-4991-9a4d-4ccd14888c06
+    random_uuid: 188083a3-37de-47b9-8f71-ffaab3bc76a0
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGFlYjIxYTI1ZTQ2ODA2Y2U4NTM3ZmJkNjY2ODI4MWNmMTc2Y2VhZmU5NWFmOTBlOTRhNWZkODQ5MjQ4NzgifX19
     advancements:
       - "mobheads:firstmobhead first_mob_head"
@@ -2623,7 +2686,7 @@ ListOfFish:
     luckOfTheSeaBonus: 0.1%
     broadcastMessage: true
     displayName: "Pufferfish Head"
-    random_uuid: f7e68f1e-3f55-4166-9e04-65d40663436c
+    random_uuid: fd848482-4078-46c7-a3b9-47e9a6b16e24
     textureCode: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTcxNTI4NzZiYzNhOTZkZDJhMjI5OTI0NWVkYjNiZWVmNjQ3YzhhNTZhYzg4NTNhNjg3YzNlN2I1ZDhiYiJ9fX0=
     advancements:
       - "mobheads:firstmobhead first_mob_head"

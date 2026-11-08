@@ -2,8 +2,6 @@ package com.cyber.mobheads.Utilities;
 
 import com.cyber.mobheads.Config.ConfigController;
 import com.cyber.mobheads.advancements.AdvancementsManager;
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -30,6 +28,7 @@ public class SkullFactory{
         if (encodedTexture == null || encodedTexture.equalsIgnoreCase("[vanilla]")) {
             if (owner != null) {
                 AdvancementsManager.triggerAdvancement(owner, mobmeta.getAdvancements());
+                HeadCollection.record(owner, mobmeta.getMobName());
             }
             if (displayName.equalsIgnoreCase("[vanilla]")) {
                 return getVanillaSkull(mobmeta.getMobName());
@@ -46,7 +45,7 @@ public class SkullFactory{
         ItemStack skull = new ItemStack(Material.PLAYER_HEAD, 1);
         SkullMeta meta = (SkullMeta) skull.getItemMeta();
 
-        PlayerProfile profile = Bukkit.createPlayerProfile(UUID.randomUUID(), "MobHead");
+        PlayerProfile profile = Bukkit.createPlayerProfile(getProfileUUID(mobmeta.getUUID(), encodedTexture), "MobHead");
         PlayerTextures textures = profile.getTextures();
 
         try {
@@ -71,10 +70,27 @@ public class SkullFactory{
 
         if (owner != null) {
             AdvancementsManager.triggerAdvancement(owner, mobmeta.getAdvancements());
+            HeadCollection.record(owner, mobmeta.getMobName());
         }
 
         skull.setItemMeta(meta);
         return skull;
+    }
+
+    /**
+     * Gives each head type a fixed profile UUID so identical heads stack.
+     * Uses the config's random_uuid when it is a valid UUID; otherwise (missing,
+     * malformed, or an old server config) derives a stable UUID from the texture.
+     */
+    private static UUID getProfileUUID(String configUUID, String encodedTexture) {
+        if (configUUID != null) {
+            try {
+                return UUID.fromString(configUUID.trim());
+            } catch (IllegalArgumentException ignored) {
+                // fall through to texture-based UUID
+            }
+        }
+        return UUID.nameUUIDFromBytes(encodedTexture.getBytes(java.nio.charset.StandardCharsets.UTF_8));
     }
 
     public static ItemStack getPlayerSkull(String playername, Player killer) {

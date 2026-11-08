@@ -1,7 +1,9 @@
 package com.cyber.mobheads;
 
 import com.cyber.mobheads.Config.ConfigController;
+import com.cyber.mobheads.Config.ConfigMigrator;
 import com.cyber.mobheads.Utilities.*;
+import com.cyber.mobheads.advancements.DatapackInstaller;
 import com.cyber.mobheads.listeners.EntityDeathListener;
 import com.cyber.mobheads.listeners.FishListener;
 import com.cyber.mobheads.listeners.SkullBreakListener;
@@ -10,19 +12,19 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
+import java.util.logging.Level;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.Set;
-import java.util.jar.JarEntry;
-import java.util.jar.JarFile;
 
 public class Main
 		extends JavaPlugin {
@@ -49,12 +51,13 @@ public class Main
 	}
 
 	public void onEnable() {
-		config = getConfig();
-		config.options().copyDefaults(true);
+		plugin = this;
+
 		saveDefaultConfig();
 		configFile = new File(getDataFolder(), "config.yml");
-
-		plugin = this;
+		migrateConfig();
+		loadConfigWithDefaults();
+		ConfigController.refreshConfig(config);
 
 
 		Bukkit.getPluginManager().registerEvents(new EntityDeathListener(), this);
@@ -63,12 +66,73 @@ public class Main
 
 		ConfigController.configurationCheck();
 
+		if (config.getBoolean("auto_update_achievements", true)) {
+			installAchievements(false);
+		}
+
+		if (config.getBoolean("log_mobs_without_heads", false)) {
+			logMobsWithoutHeads();
+		}
+
 		//SpiGetUpdater.checkAutoUpdate(this, 70019, getConfig().getBoolean("auto-update") == true);
 		//Broadcaster.outputInfoConsole("Mob Heads enabled", 0);
 	}
 
 	public void onDisable() {
 		/*Broadcaster.outputInfoConsole("Mob Heads disabled", 0);*/
+	}
+
+	/** Living entity types that are not mobs and never need a head. */
+	private static final Set<String> NOT_MOBS = Set.of("PLAYER", "ARMOR_STAND", "MANNEQUIN");
+
+	/** Logs every living entity type in this Minecraft version that has no head yet. */
+	private void logMobsWithoutHeads() {
+		List<String> missing = new ArrayList<>();
+		for (EntityType type : EntityType.values()) {
+			if (type.isAlive() && !NOT_MOBS.contains(type.name()) && !MobNames.hasHead(type)) {
+				missing.add(type.name());
+			}
+		}
+		if (missing.isEmpty()) {
+			getLogger().info("Every mob in this Minecraft version has a head.");
+		} else {
+			getLogger().warning(missing.size() + " mob(s) have no head yet: " + String.join(", ", missing));
+		}
+	}
+
+	/** Updates an older config.yml in place (with a backup) when a new plugin version adds things. */
+	private void migrateConfig() {
+		try (InputStream in = getResource("config.yml")) {
+			if (in == null) return;
+			YamlConfiguration defaults = YamlConfiguration.loadConfiguration(new InputStreamReader(in, StandardCharsets.UTF_8));
+			ConfigMigrator.Report report = ConfigMigrator.migrateFile(configFile, defaults);
+			if (report.migrated) {
+				getLogger().info(report.summary());
+			}
+		} catch (Exception e) {
+			getLogger().log(Level.WARNING, "Could not update config.yml automatically; using it as-is.", e);
+		}
+	}
+
+	/** (Re)loads config.yml from disk, falling back to the bundled values for anything missing. */
+	private void loadConfigWithDefaults() {
+		reloadConfig();
+		config = getConfig();
+		config.options().copyDefaults(true);
+	}
+
+	/**
+	 * Installs/updates the advancements data pack and, if anything changed,
+	 * reloads the server's data packs on the next tick so it takes effect now.
+	 */
+	private DatapackInstaller.Result installAchievements(boolean force) {
+		DatapackInstaller.Result result = DatapackInstaller.install(this, getFile(), force);
+		if (result == DatapackInstaller.Result.INSTALLED || result == DatapackInstaller.Result.UPDATED) {
+			getLogger().info("Advancements data pack " + result.name().toLowerCase()
+					+ " at " + DatapackInstaller.getPackDirectory() + "; reloading data packs.");
+			Bukkit.getScheduler().runTask(this, Bukkit::reloadData);
+		}
+		return result;
 	}
 
 	public void a(List<String> tabs, String test, String args) {
@@ -84,8 +148,18 @@ public class Main
 			a(tabs, "probability", args[0]);
 			a(tabs, "reload", args[0]);
 			a(tabs,"initachievements",args[0]);
+			a(tabs, "collection", args[0]);
+			a(tabs, "headlore", args[0]);
 			return tabs;
 		} else if (args.length == 2) {
+			if (args[0].equalsIgnoreCase("headlore")) {
+				a(tabs, "on", args[1]);
+				a(tabs, "off", args[1]);
+				return tabs;
+			}
+			if (args[0].equalsIgnoreCase("collection")) {
+				return null; // Bukkit suggests online player names
+			}
 			if (args[0].equalsIgnoreCase("probability")) {
 				List<String> mobList = ConfigController.getAllMobNames();
 				for (String k : mobList) {
@@ -104,37 +178,62 @@ public class Main
 		}
 		return null;
 	}
-	public void copyFile(String inputPrefix, String inputPath, String outputPath ) throws IOException {
-
-		InputStream inputStream = null;
-
-		OutputStream outputStream = null;
-		try {
-
-			inputStream = getClass().getResourceAsStream("/"+inputPrefix+"/"+inputPath);
-			outputStream = new FileOutputStream(outputPath+"/"+inputPath);
-
-			byte[] buf = new byte[1024];
-
-			int bytesRead;
-
-			while ((bytesRead = inputStream.read(buf)) > 0) {
-
-				outputStream.write(buf, 0, bytesRead);
-
-			}
-		}catch (Exception e5){
-			e5.printStackTrace();
-		} finally {
-			inputStream.close();
-			outputStream.close();
-		}
-	}
-
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (args.length >= 1) {
 			String message;
-			switch (args[0]) {
+			switch (args[0].toLowerCase()) {
+				case "collection": {
+					if (!(sender instanceof Player viewer)) {
+						sendIfSet(sender, "Messages.Error.Players-only");
+						return true;
+					}
+					Player target = viewer;
+					if (args.length >= 2) {
+						if (!sender.hasPermission("com.cyber.mobheads.collection.others")) {
+							sendIfSet(sender, "Messages.Error.No-permission");
+							return true;
+						}
+						target = Bukkit.getPlayer(args[1]);
+						if (target == null) {
+							message = ConfigController.getMessage("Messages.Error.No-such-player");
+							if (!message.isEmpty()) sender.sendMessage(message.replace("[given-player-name]", args[1]));
+							return true;
+						}
+					} else if (!sender.hasPermission("com.cyber.mobheads.collection")) {
+						sendIfSet(sender, "Messages.Error.No-permission");
+						return true;
+					}
+					viewer.openBook(HeadCollection.buildBook(target));
+					return true;
+				}
+				case "headlore": {
+					if (!(sender instanceof Player player)) {
+						sendIfSet(sender, "Messages.Error.Players-only");
+						return true;
+					}
+					if (!sender.hasPermission("com.cyber.mobheads.headlore")) {
+						sendIfSet(sender, "Messages.Error.No-permission");
+						return true;
+					}
+					if (!HeadLore.isEnabledOnServer()) {
+						sendIfSet(sender, "Messages.Error.Head-lore-disabled");
+						return true;
+					}
+					boolean enable;
+					if (args.length >= 2 && args[1].equalsIgnoreCase("on")) {
+						enable = true;
+					} else if (args.length >= 2 && args[1].equalsIgnoreCase("off")) {
+						enable = false;
+					} else if (args.length >= 2) {
+						sendIfSet(sender, "Messages.Commands-usage.Headlore");
+						return true;
+					} else {
+						enable = !HeadLore.isEnabledFor(player); // no argument: toggle
+					}
+					HeadLore.setEnabledFor(player, enable);
+					sendIfSet(sender, enable ? "Messages.Success.Head-lore-on" : "Messages.Success.Head-lore-off");
+					return true;
+				}
 				case "initachievements":
 					if (!sender.hasPermission("com.cyber.mobheads.initachievements")) {
 						message = ConfigController.getMessage("Messages.Error.No-permission");
@@ -145,53 +244,12 @@ public class Main
 						return false;
 					}
 
-					File baseDirectory = getDataFolder().getParentFile().getParentFile();
-					File world = new File(baseDirectory,Bukkit.getWorlds().get(0).getName());
-					File datapacks = new File(world,"datapacks");
-					File mobHeads = new File(datapacks,"mobheads");
-
-
-
-					String achievementsDir = null;
-				try {
-					achievementsDir = getClass().getResource("").getPath();
-					achievementsDir = achievementsDir.substring(5,achievementsDir.indexOf("!")).replaceAll("%20"," ");
-
-					if(!mobHeads.exists())
-						mobHeads.mkdirs();
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-					try{
-						final JarFile jar = new JarFile(achievementsDir);
-						final Enumeration<JarEntry> entries = jar.entries(); //gives ALL entries in jar
-						while(entries.hasMoreElements()) {
-							final String name = entries.nextElement().getName();
-
-							if (name.startsWith("achievements")) { //filter according to the path
-								String relavtivePath = name.substring("achievements".length()+1);
-								String fileName = name.substring(name.lastIndexOf('/')+1);
-
-								if(name.contains("."))//has extension
-								{
-									copyFile("achievements",relavtivePath, mobHeads.getPath());
-								}else{
-									new File(mobHeads.getPath(),relavtivePath).mkdirs();
-								}
-							}
-						}
-						jar.close();
-
-						//copyContentsTo(achievementsDir,mobHeads);
-
-
-					}catch (Error|Exception e4){
+					// Force a fresh copy of the bundled pack, then reload so it applies immediately.
+					if (installAchievements(true) == DatapackInstaller.Result.FAILED) {
 						message = ConfigController.getMessage("Messages.Error.Fail");
 						if (!message.isEmpty()) {
 							sender.sendMessage(message);
 						}
-						e4.printStackTrace();
 						return true;
 					}
 					message = ConfigController.getMessage("Messages.Success.Head-achievements");
@@ -361,7 +419,7 @@ public class Main
 						return false;
 					}
 
-					config = YamlConfiguration.loadConfiguration(configFile);
+					loadConfigWithDefaults();
 					ConfigController.refreshConfig(config);
 					message = ConfigController.getMessage("Messages.Success.Reload");
 					if (!message.isEmpty()) {
@@ -382,7 +440,20 @@ public class Main
 		return false;
 	}
 
+	private void sendIfSet(CommandSender sender, String messagePath) {
+		String message = ConfigController.getMessage(messagePath);
+		if (!message.isEmpty()) {
+			sender.sendMessage(message);
+		}
+	}
+
 	private void showHelp(CommandSender sender) {
+		if (sender.hasPermission("com.cyber.mobheads.collection")) {
+			sendIfSet(sender, "Messages.Commands-usage.Collection");
+		}
+		if (sender.hasPermission("com.cyber.mobheads.headlore") && HeadLore.isEnabledOnServer()) {
+			sendIfSet(sender, "Messages.Commands-usage.Headlore");
+		}
 		String message = ConfigController.getMessage("Messages.Commands-usage.Give");
 		if (!message.isEmpty()) {
 			sender.sendMessage(message);
@@ -439,15 +510,13 @@ public class Main
 
 	private void showAllSupportedMobs(CommandSender sender) {
 		List<String> mobList = ConfigController.getAllMobNames();
-		String output = "";
-
-		for (int i = 0; i < mobList.size(); i++) {
-			if (i < mobList.size()) {
-				output = output + mobList.get(i) + ", ";
-			} else {
-
-				output = output + "and " + mobList.get(i);
-			}
+		String output;
+		if (mobList.size() <= 1) {
+			output = String.join("", mobList);
+		} else {
+			// "A, B, C and D"
+			output = String.join(", ", mobList.subList(0, mobList.size() - 1))
+					+ " and " + mobList.get(mobList.size() - 1);
 		}
 		String message = ConfigController.getMessage("Messages.Commands-usage.Show-all-supported-heads");
 		if (!message.isEmpty()) {

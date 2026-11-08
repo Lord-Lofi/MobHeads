@@ -15,7 +15,6 @@ A Paper plugin that adds custom player-skull drops for nearly every mob in the g
 - **Charged creeper support** — guaranteed drops when a mob is killed by a charged creeper (configurable per mob)
 - **Fish heads** — obtainable while fishing, with Luck of the Sea bonus support
 - **WorldGuard support** — respects region flags
-- **bStats metrics**
 
 ---
 
@@ -24,8 +23,8 @@ A Paper plugin that adds custom player-skull drops for nearly every mob in the g
 | Requirement | Version |
 |---|---|
 | Server software | [Paper](https://papermc.io) |
-| Minecraft | 1.21.11 |
-| Java | 17+ |
+| Minecraft | 26.3 |
+| Java | 25+ |
 
 > This plugin targets Paper specifically. It will not work correctly on vanilla Spigot due to API differences introduced in 1.21.10+.
 
@@ -39,14 +38,31 @@ A Paper plugin that adds custom player-skull drops for nearly every mob in the g
 4. Adjust drop chances, textures, and other settings to your liking
 5. Use `/mh reload` to apply config changes without restarting
 
+**Upgrading:** just replace the jar. On startup the plugin updates your existing `config.yml` — adding new mobs and settings, new advancement links, and fixing invalid head UUIDs — while keeping your own drop chances, names and other values. A backup of the old file is saved as `config.yml.backup-v<old version>`.
+
+The advancements data pack is installed automatically into your main world's `datapacks/mobheads` folder, and updated whenever a new plugin version includes changes to it. Set `auto_update_achievements: false` in `config.yml` to manage it yourself, or run `/mh initachievements` to force a reinstall.
+
+---
+
+## Commands
+
+| Command | Description |
+|---|---|
+| `/mh collection` | Opens a book showing which mob heads you've collected and which are missing |
+| `/mh collection <player>` | Shows another online player's collection |
+| `/mh headlore [on\|off]` | Turns the "Beheaded by" lore on your heads on or off (toggles with no argument) |
+
 ---
 
 ## Permissions
 
-| Permission | Description |
-|---|---|
-| `com.cyber.mobheads.behead.mobs` | Allows the player to receive mob heads on kill |
-| `com.cyber.mobheads.behead.players` | Allows the player to receive player heads on kill |
+| Permission | Default | Description |
+|---|---|---|
+| `com.cyber.mobheads.behead.mobs` | op | Allows the player to receive mob heads on kill |
+| `com.cyber.mobheads.behead.players` | op | Allows the player to receive player heads on kill |
+| `com.cyber.mobheads.collection` | everyone | Use `/mh collection` |
+| `com.cyber.mobheads.collection.others` | op | Use `/mh collection <player>` |
+| `com.cyber.mobheads.headlore` | everyone | Use `/mh headlore` |
 
 ---
 
@@ -131,6 +147,7 @@ Sniffer
 Spider
 Squid
 Stray
+Sulfur_Cube
 Tadpole
 Turtle
 Vex

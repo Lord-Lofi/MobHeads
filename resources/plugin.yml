@@ -5,7 +5,7 @@ authors:
     - CyberDrain
     - Zombie_Striker
     - Lord_Lofi
-api-version: 1.21.8
+api-version: '26.3'
 description: Allows players to behead mobs and other players!
 commands:
     mobheads:
@@ -13,3 +13,13 @@ commands:
         aliases: [mh, mobhead]
 softdepend:
     - WorldGuard
+permissions:
+    com.cyber.mobheads.collection:
+        description: Open your own mob head collection book with /mobheads collection
+        default: true
+    com.cyber.mobheads.collection.others:
+        description: View another online player's collection with /mobheads collection <player>
+        default: op
+    com.cyber.mobheads.headlore:
+        description: Turn head lore on or off for your own heads with /mobheads headlore
+        default: true

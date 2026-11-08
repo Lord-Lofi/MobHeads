@@ -21,8 +21,8 @@
         </repository>
     </repositories>
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>25</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 
@@ -37,6 +37,13 @@
                 <includes>
                     <include>plugin.yml</include>
                     <include>changelog.txt</include>
+                </includes>
+            </resource>
+            <!-- The live config.yml is the one in the project root -->
+            <resource>
+                <directory>${basedir}</directory>
+                <filtering>false</filtering>
+                <includes>
                     <include>config.yml</include>
                 </includes>
             </resource>
@@ -61,6 +68,14 @@
         </resources>
         <sourceDirectory>src</sourceDirectory>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
+                <configuration>
+                    <release>25</release>
+                </configuration>
+            </plugin>
 <!--            <plugin>-->
 <!--                <artifactId>maven-compiler-plugin</artifactId>-->
 <!--                <version>3.7.0</version>-->
@@ -81,33 +96,19 @@
     </build>
 
     <dependencies>
-        <!--Spigot API-->
-        <!--You only need one of the two, don't put both. Spigot is recommended.-->
+        <!-- Spigot API. Must stay a SNAPSHOT: that's the only form Spigot publishes. -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.21.11-R0.1-SNAPSHOT</version>
+            <version>26.3-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-        <!-- WorldGuard API -->
+        <!-- WorldGuard API (optional soft-dependency at runtime), pinned to a release -->
         <dependency>
             <groupId>com.sk89q.worldguard</groupId>
-            <artifactId>worldguard-legacy</artifactId>
-            <version>7.0.0-SNAPSHOT</version>
+            <artifactId>worldguard-bukkit</artifactId>
+            <version>7.0.21</version>
             <scope>provided</scope>
-        </dependency>
-        <!-- MCAPI -->
-        <dependency>
-            <groupId>com.mojang</groupId>
-            <artifactId>authlib</artifactId>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/authlib-1.5.25.jar</systemPath>
-            <version>1.5.25</version>
-        </dependency>
-        <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>2.2.1</version>
         </dependency>
     </dependencies>
     

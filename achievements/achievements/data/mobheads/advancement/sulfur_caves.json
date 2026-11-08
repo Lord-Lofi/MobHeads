@@ -1,0 +1,34 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain all sulfur cave mob heads",
+      "color": "white"
+    },
+    "title": {
+      "text": "Smells Like Rotten Eggs",
+      "color": "white"
+    },
+    "icon": {
+      "id": "potent_sulfur"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "sulfur_cube": {
+      "trigger": "minecraft:impossible"
+    },
+    "cave_spider": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "sulfur_cube"
+    ],
+    [
+      "cave_spider"
+    ]
+  ],
+  "parent": "mobheads:firstmobhead"
+}
