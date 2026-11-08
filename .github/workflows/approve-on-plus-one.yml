@@ -1,0 +1,46 @@
+# Approves a pull request when the repository owner comments "+1" (or 👍) on it.
+#
+# Notes:
+# - It must be a typed comment. Emoji *reactions* don't trigger workflows.
+# - The approval is submitted by github-actions[bot], on your behalf.
+# - Only comments from the repository owner count, so nobody else can approve PRs this way.
+# - Requires: Settings → Actions → General → "Allow GitHub Actions to create and approve pull requests".
+# - Comment-triggered workflows always run the version of this file on the default branch (main).
+name: Approve on +1
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  pull-requests: write # submit the approval
+
+jobs:
+  approve:
+    # Only on pull requests (not issues), and only for the repository owner.
+    if: >-
+      github.event.issue.pull_request &&
+      github.event.comment.user.login == github.repository_owner
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Approve if the comment is +1
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          COMMENT_ID: ${{ github.event.comment.id }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENTER: ${{ github.event.comment.user.login }}
+        run: |
+          # Ignore spaces/newlines so "+1 " or a 👍 on its own line still count.
+          body="$(printf '%s' "$COMMENT_BODY" | tr -d '[:space:]')"
+          case "$body" in
+            "👍"|"👍🏻"|"👍🏼"|"👍🏽"|"👍🏾"|"👍🏿"|":+1:"|":thumbsup:"|"+1") ;;
+            *) echo "Comment is not a +1, nothing to do."; exit 0 ;;
+          esac
+
+          gh pr review "$PR_NUMBER" --approve --body "Approved via +1 comment from @$COMMENTER."
+
+          # React with 🚀 so you can see in the PR that it worked.
+          gh api "repos/$GH_REPO/issues/comments/$COMMENT_ID/reactions" -f content=rocket --silent
