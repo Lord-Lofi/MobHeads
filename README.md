@@ -24,8 +24,8 @@ A Paper plugin that adds custom player-skull drops for nearly every mob in the g
 | Requirement | Version |
 |---|---|
 | Server software | [Paper](https://papermc.io) |
-| Minecraft | 1.21.11 |
-| Java | 17+ |
+| Minecraft | 26.3 |
+| Java | 25+ |
 
 > This plugin targets Paper specifically. It will not work correctly on vanilla Spigot due to API differences introduced in 1.21.10+.
 
@@ -131,6 +131,7 @@ Sniffer
 Spider
 Squid
 Stray
+Sulfur_Cube
 Tadpole
 Turtle
 Vex

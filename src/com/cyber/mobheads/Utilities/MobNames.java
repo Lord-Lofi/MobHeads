@@ -260,6 +260,9 @@ public enum MobNames {
 	Parched,
 	Camel_Husk,
 
+	//26.x new mobs
+	Sulfur_Cube,
+
 	//These are the invalid cats. Still have to load them:
 	Black_Cat,
 	Ginger_Cat,
@@ -393,6 +396,8 @@ public enum MobNames {
 				return getZombieNautilusName((ZombieNautilus) entity);
 			case PARCHED:
 				return Parched;
+			case SULFUR_CUBE:
+				return Sulfur_Cube;
 			case STRAY:
 				return Stray;
 			case TURTLE:

@@ -709,6 +709,9 @@
     },
     "warm_zombie_nautilus": {
       "trigger": "minecraft:impossible"
+    },
+    "sulfur_cube": {
+      "trigger": "minecraft:impossible"
     }
   },
   "rewards": {
@@ -1412,6 +1415,9 @@
     ],
     [
       "warm_zombie_nautilus"
+    ],
+    [
+      "sulfur_cube"
     ]
   ],
   "parent": "mobheads:root"

@@ -1,0 +1,40 @@
+{
+  "display": {
+    "description": {
+      "text": "Obtain the slime, magma cube and sulfur cube heads",
+      "color": "white"
+    },
+    "title": {
+      "text": "Thinking Inside the Box",
+      "color": "white"
+    },
+    "icon": {
+      "id": "slime_ball"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "slime": {
+      "trigger": "minecraft:impossible"
+    },
+    "magma_cube": {
+      "trigger": "minecraft:impossible"
+    },
+    "sulfur_cube": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {},
+  "requirements": [
+    [
+      "slime"
+    ],
+    [
+      "magma_cube"
+    ],
+    [
+      "sulfur_cube"
+    ]
+  ],
+  "parent": "mobheads:firstmobhead"
+}
