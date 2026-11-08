@@ -46,8 +46,17 @@ public final class HeadLore {
 		player.getPersistentDataContainer().set(key(), PersistentDataType.BYTE, (byte) (enabled ? 1 : 0));
 	}
 
-	/** Adds the configured lore to a head the player got. Does nothing if lore is off for them. */
+	/** Adds the kill lore (head_lore.lines) to a head the player got. Does nothing if lore is off for them. */
 	public static ItemStack apply(ItemStack head, Player player) {
+		return apply(head, player, "head_lore.lines");
+	}
+
+	/** Adds the fishing lore (head_lore.fishing_lines) to a head the player fished up. */
+	public static ItemStack applyFishing(ItemStack head, Player player) {
+		return apply(head, player, "head_lore.fishing_lines");
+	}
+
+	private static ItemStack apply(ItemStack head, Player player, String linesPath) {
 		if (head == null || player == null || !isEnabledFor(player)) return head;
 
 		FileConfiguration config = Main.getMyConfig();
@@ -59,7 +68,7 @@ public final class HeadLore {
 		}
 
 		List<String> lore = new ArrayList<>();
-		for (String line : config.getStringList("head_lore.lines")) {
+		for (String line : config.getStringList(linesPath)) {
 			lore.add(ChatColor.translateAlternateColorCodes('&',
 					line.replace("[player]", player.getName()).replace("[date]", date)));
 		}

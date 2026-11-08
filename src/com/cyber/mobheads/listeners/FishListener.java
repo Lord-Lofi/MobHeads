@@ -2,6 +2,7 @@ package com.cyber.mobheads.listeners;
 
 import com.cyber.mobheads.Config.ConfigController;
 import com.cyber.mobheads.Utilities.Broadcaster;
+import com.cyber.mobheads.Utilities.HeadLore;
 import com.cyber.mobheads.Utilities.MobMeta;
 import com.cyber.mobheads.Utilities.MobNames;
 import com.cyber.mobheads.Utilities.SkullFactory;
@@ -41,7 +42,10 @@ public class FishListener implements Listener {
 
 			if (willDrop(chance)) {
 
-				ItemStack skull = (new SkullFactory()).getMobSkull(mobmeta, event.getPlayer());
+				ItemStack skull = HeadLore.applyFishing(SkullFactory.getMobSkull(mobmeta, event.getPlayer()), event.getPlayer());
+				if (skull == null) {
+					return;
+				}
 
 				Item fish = (Item) event.getCaught();
 				Item skullItem = fish.getWorld().dropItem(fish.getLocation(), skull);
